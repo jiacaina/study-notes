@@ -60,6 +60,9 @@ main{padding:28px 40px 90px;min-width:0}
 .btn:hover{border-color:var(--accent);color:var(--accent)}
 .btn.act{background:#FBEDE9;border-color:var(--rust);color:var(--rust)}
 .tally{font-family:var(--mono);font-size:11px;color:var(--ink-3)}
+.ver{font-family:var(--mono);font-size:11px;color:var(--ink-3);padding:6px 9px}
+.ver.checking{opacity:.5}
+.ver.newver{color:#fff;background:var(--accent);border-color:var(--accent)}
 .tally b{color:var(--rust);font-weight:500}
 
 .lede{font-family:var(--serif);font-size:14.5px;color:var(--ink-2);line-height:1.75;max-width:66ch;margin-bottom:26px;padding-bottom:20px;border-bottom:1px solid var(--rule)}
@@ -176,6 +179,7 @@ body[data-sub="yj"] .spine{color:#6B5B95;background:#F1EFF5}
     <button class="btn" id="only">只看标记</button>
     <button class="btn" id="exp" title="导出所有已标记的条目">导出错题本</button>
     <span class="tally"><b id="cnt">0</b> 条</span>
+    <button class="btn ver" id="refresh" title="强制拉取最新版本（绕过缓存）">↻ <span id="vertext">v—</span></button>
   </div>
   <p class="lede" id="lede"></p>
   <div id="body"></div>
@@ -4025,6 +4029,43 @@ const bodyEl=document.getElementById('body'),navEl=document.getElementById('nav'
       expBtn=document.getElementById('exp'),
       emptyEl=document.getElementById('empty'),subsEl=document.getElementById('subs');
 let curSub=0,curView='map',onlyFlag=false;
+
+// ── 版本与强制刷新 ──────────────────────────────
+// 每次改内容后，把下面这个日期改成当天（或任意递增字符串）即可。
+const BUILD='2026-07-15';
+(function(){
+  const vt=document.getElementById('vertext');
+  const btn=document.getElementById('refresh');
+  if(vt) vt.textContent=BUILD;
+  if(!btn) return;
+  // 点击 = 绕过缓存强制重载
+  btn.onclick=async()=>{
+    btn.classList.add('checking');
+    // 尝试清掉 Service Worker 缓存（若有），再带时间戳重载，双保险绕过主屏 App 缓存
+    try{
+      if(window.caches&&caches.keys){
+        const ks=await caches.keys();
+        await Promise.all(ks.map(k=>caches.delete(k)));
+      }
+    }catch(e){}
+    const u=location.pathname+'?v='+Date.now();
+    location.replace(u);
+  };
+  // 载入时静默探测线上是否有更新：重新抓取自身（带时间戳绕过缓存），比对 BUILD
+  setTimeout(async()=>{
+    try{
+      const r=await fetch(location.pathname+'?probe='+Date.now(),{cache:'no-store'});
+      if(!r.ok) return;
+      const t=await r.text();
+      const m=t.match(/const BUILD='([^']+)'/);
+      if(m&&m[1]&&m[1]!==BUILD){
+        btn.classList.add('newver');
+        btn.title='有新版本 '+m[1]+'，点击更新';
+        if(vt) vt.textContent=BUILD+' → '+m[1];
+      }
+    }catch(e){/* 离线或本地打开，忽略 */}
+  },1500);
+})();
 
 const KEY='kg-flags-v1';
 let store=null;
