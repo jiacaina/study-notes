@@ -2,7 +2,7 @@
 // 结构校验：解析 SUB 数据，检查完整性与常见错误
 const fs = require('fs');
 
-const FILE = '知识图谱汇总.html';
+const FILE = 'index.html';
 const src = fs.readFileSync(FILE, 'utf8');
 
 const m = src.match(/const SUB=(\[[\s\S]*?\n\]);/);
