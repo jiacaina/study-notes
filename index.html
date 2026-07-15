@@ -288,7 +288,7 @@ const SUB=[
  M:[
  {t:"函数与极限",sub:"全书地基：后续每个概念都是某种极限",
   map:[["函数","定义域·奇偶·周期·有界；反函数、复合函数、初等函数"],["极限定义","ε-N / ε-δ；四则运算、夹逼准则、单调有界准则"],["无穷小","阶的比较；等价无穷小替换（求极限主力）"],["连续性","间断点分类；闭区间上的有界、最值、介值、零点定理"]],
-  fig:"calcline",
+  fig:["calcline","taylor"],
   spine:"极限是全书唯一的地基——导数、积分、级数都是它的变体。",
   g:[
   {g:"两个重要极限",r:[
@@ -763,7 +763,7 @@ const SUB=[
 
  {t:"数字特征",sub:"用几个数概括一个分布",
   map:[["期望","线性性：E(aX+bY) = aEX + bEY（无需独立）"],["方差","$DX=EX^{2}-(EX)^{2}$"],["协方差与相关系数","$\\mathrm{Cov}(X,Y)=EXY-EX\\cdot EY$；$|\\rho|\\le1$"],["独立与不相关","独立 ⇒ 不相关；反之不成立（正态除外）"]],
-  fig:"indep",
+  fig:["indep","normal"],
   spine:"E(X+Y) 永远成立，D(X+Y) = DX + DY 只在不相关时成立——这个区别每年都考。",
   g:[
   {g:"期望与方差",r:[
@@ -1254,6 +1254,7 @@ const SUB=[
  {t:"马原：哲学",sub:"最抽象也最拉分：唯物论、辩证法、认识论、唯物史观",
   map:[["唯物论","物质与意识的辩证关系；实践是人类能动地改造世界的活动"],["辩证法","两大特征：联系与发展；三大规律：对立统一、质量互变、否定之否定；五对范畴"],["认识论","实践与认识的辩证关系；认识的两次飞跃；真理的绝对性与相对性；真理与价值"],["唯物史观","社会存在与社会意识；生产力与生产关系；经济基础与上层建筑；人民群众是历史创造者"]],
   spine:"对立统一规律是辩证法的实质与核心——分析题里凡是让你「用辩证法分析」，先想矛盾。",
+  fig:"maodun",
   g:[
   {g:"唯物论",r:[
    ["物质的唯一特性","列宁定义","客观实在性。物质是标志客观实在的哲学范畴，不依赖于人的意识而存在，为意识所反映"],
@@ -1534,6 +1535,7 @@ const SUB=[
  {t:"藏象：五脏",sub:"全书的核心：五脏是中医人体模型的中心",
   map:[["心","主血脉，主藏神；在体合脉，其华在面，开窍于舌，在志为喜，在液为汗"],["肺","主气司呼吸，主宣发肃降，通调水道，朝百脉主治节；在体合皮，开窍于鼻，在志为悲忧，在液为涕"],["脾","主运化，主统血，主升清；在体合肉，开窍于口，在志为思，在液为涎"],["肝","主疏泄，主藏血；在体合筋，其华在爪，开窍于目，在志为怒，在液为泪"],["肾","藏精，主水，主纳气；在体合骨，其华在发，开窍于耳及二阴，在志为恐，在液为唾"]],
   spine:"藏象的「象」比「藏」更重要——中医的五脏是功能系统，不等同于解剖器官。学的是它「表现出什么」，不是它「长什么样」。",
+  fig:"wuzang",
   g:[
   {g:"心",r:[
    ["主血脉","","心气推动血液在脉中运行，濡养全身。心气充沛则面色红润、脉象和缓有力"],
@@ -1600,6 +1602,7 @@ const SUB=[
  {t:"精 · 气 · 血 · 津液 · 神",sub:"人体的基本物质与功能：藏象的「内容物」",
   map:[["气","元气、宗气、营气、卫气；六大功能：推动、温煦、防御、固摄、气化、营养"],["血","化生于水谷精微，行于脉中，濡养全身"],["津液","津清稀而卫外，液稠厚而濡养内脏骨节"],["气血津液的关系","气为血之帅，血为气之母；津血同源"]],
   spine:"气是功能，血津是物质——「气为血之帅，血为气之母」这八个字，能解释气血关系的一切病机与治则。",
+  fig:"qixue",
   g:[
   {g:"气",r:[
    ["元气（原气）","最根本","根于肾，由先天之精化生，赖后天之精充养。推动人体生长发育、激发脏腑功能"],
@@ -1657,6 +1660,7 @@ const SUB=[
  {t:"病因",sub:"审证求因：中医的病因是从症状反推出来的",
   map:[["外感病因","六淫（风寒暑湿燥火）、疠气"],["内伤病因","七情内伤、饮食失宜、劳逸失度"],["病理产物","痰饮、瘀血、结石——既是病理产物，又是致病因素"],["其他","外伤、寄生虫、药邪、医过、先天因素"]],
   spine:"中医的病因不是「查出来的」，而是「审证求因」推出来的——症状表现像风，就说它是风邪。所以六淫的「致病特点」比六淫本身更重要。",
+  fig:"liuyin",
   g:[
   {g:"六淫的共同特点",r:[
    ["外感性","","多从肌表、口鼻侵入"],
@@ -1983,6 +1987,7 @@ const SUB=[
  {t:"补虚药",sub:"分值最重的一类：补气、补阳、补血、补阴",
   map:[["补气药","人参、党参、黄芪、白术、山药、甘草"],["补阳药","鹿茸、淫羊藿、巴戟天、杜仲、续断、菟丝子、补骨脂"],["补血药","当归、熟地黄、白芍、阿胶、何首乌"],["补阴药","北沙参、麦冬、天冬、石斛、玉竹、枸杞子、女贞子"]],
   spine:"补虚药最忌「见虚就补」——补气须防壅滞（配理气药），补血须防滋腻（配健脾药），补阴须防碍胃，补阳须防助火。补法之妙，全在配伍。",
+  fig:"buxu",
   g:[
   {g:"补气药",r:[
    ["人参","大补元气第一品","大补元气、复脉固脱、补脾益肺、生津养血、安神益智。反藜芦，畏五灵脂，恶莱菔子。宜另煎"],
@@ -4041,6 +4046,168 @@ function edge(a,b,ra,rb,color,dash){
   return `<line x1="${x1.toFixed(1)}" y1="${y1.toFixed(1)}" x2="${x2.toFixed(1)}" y2="${y2.toFixed(1)}" stroke="${color}" stroke-width="1.2"${dash?' stroke-dasharray="5 4"':''} marker-end="url(#ah)"/>`;
 }
 const FIG={
+wuzang(){
+  // 五脏关系网：五脏(五行位) + 相生相克 + 各自表里六腑
+  const cx=290,cy=200,rad=125,r=34;
+  const z=[['心','小肠','#B4472C'],['脾','胃','#8A6212'],['肺','大肠','#8494A3'],['肾','膀胱','#2E4A7D'],['肝','胆','#4F6B3A']];
+  // 按五行相生环排列：肝(木)→心(火)→脾(土)→肺(金)→肾(水)→肝  ；这里顺时针放 心脾肺肾肝
+  const order=[4,0,1,2,3]; // 顶端起顺时针：肝 心 脾 肺 肾  —— 用相生序
+  const seq=[4,0,1,2,3]; // 肝→心→脾→肺→肾（相生）
+  const P=seq.map((_,i)=>{const a=(-90+i*72)*Math.PI/180;return [cx+rad*Math.cos(a),cy+rad*Math.sin(a)];});
+  let sheng='',ke='';
+  for(let i=0;i<5;i++) sheng+=edge(P[i],P[(i+1)%5],r,r,'#4F6B3A',false);
+  for(let i=0;i<5;i++) ke+=edge(P[i],P[(i+2)%5],r,r,'#B4472C',true);
+  let nodes='';
+  seq.forEach((zi,i)=>{
+    const [x,y]=P[i], Z=z[zi];
+    nodes+=`<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${r}" fill="${C}" stroke="${Z[2]}" stroke-width="1.6"/>`;
+    nodes+=`<text class="ft" x="${x.toFixed(1)}" y="${(y-3).toFixed(1)}" text-anchor="middle" fill="${Z[2]}" font-size="17">${Z[0]}</text>`;
+    nodes+=`<text class="fs" x="${x.toFixed(1)}" y="${(y+13).toFixed(1)}" text-anchor="middle" fill="${I3}" font-size="10">表里·${Z[1]}</text>`;
+  });
+  return `<svg viewBox="0 0 580 400">${arrowDefs}${ke}${sheng}${nodes}
+    <g transform="translate(20,354)">
+      <line x1="0" y1="0" x2="26" y2="0" stroke="#4F6B3A" stroke-width="1.2" marker-end="url(#ah)"/>
+      <text class="fs" x="32" y="4" fill="${I2}">相生（外环）：肝→心→脾→肺→肾→肝</text>
+      <line x1="330" y1="0" x2="356" y2="0" stroke="#B4472C" stroke-width="1.2" stroke-dasharray="5 4" marker-end="url(#ah)"/>
+      <text class="fs" x="362" y="4" fill="${I2}">相克（内五角）</text>
+    </g></svg><figcaption>五脏关系网：以五行生克联系五脏，各脏又与一腑相表里——藏象学说的核心结构</figcaption>`;
+},
+liuyin(){
+  const data=[
+   ['风','百病之长','善行数变·主动·轻扬开泄·常兼他邪','#4F6B3A'],
+   ['寒','阴邪','伤阳·凝滞（痛）·收引（拘急）','#2E4A7D'],
+   ['暑','纯阳·仅外感','炎热·升散（耗气伤津）·多夹湿','#B4472C'],
+   ['湿','阴邪','重浊·黏滞（缠绵）·趋下·阻遏气机','#2E6B6B'],
+   ['燥','','干涩伤津·易伤肺','#8A6212'],
+   ['火','阳邪','燔灼趋上·伤津耗气·生风动血·致肿疡','#9E2B25']
+  ];
+  let g='';
+  data.forEach((d,i)=>{
+    const y=20+i*60;
+    g+=`<rect x="16" y="${y}" width="548" height="52" rx="8" fill="${C}" stroke="${d[3]}" stroke-width="1.2"/>`;
+    g+=`<circle cx="52" cy="${y+26}" r="20" fill="${d[3]}"/>`;
+    g+=`<text x="52" y="${y+32}" text-anchor="middle" fill="#fff" font-size="18" font-weight="500">${d[0]}</text>`;
+    if(d[1]) g+=`<text class="fs" x="90" y="${y+22}" fill="${d[3]}" font-size="12" font-weight="500">${d[1]}</text>`;
+    g+=`<text class="fs" x="90" y="${y+(d[1]?40:30)}" fill="${I2}" font-size="12.5">${d[2]}</text>`;
+  });
+  return `<svg viewBox="0 0 580 385">${g}</svg><figcaption>六淫致病特点：中医病因靠「审证求因」——症状像什么邪，就是什么邪。故特点比邪本身更要紧</figcaption>`;
+},
+buxu(){
+  // 补虚药四象限：横轴 阴↔阳，纵轴 无形之气↔有形之血  →  气/血/阴/阳四类
+  const q=(x,y,w,h,t,sub,drugs,col)=>`<g>
+    <rect x="${x}" y="${y}" width="${w}" height="${h}" rx="9" fill="${C}" stroke="${col}" stroke-width="1.3"/>
+    <text class="ft" x="${x+16}" y="${y+26}" fill="${col}" font-size="15">${t}</text>
+    <text class="fs" x="${x+16}" y="${y+45}" fill="${I3}" font-size="11">${sub}</text>
+    <text class="fs" x="${x+16}" y="${y+70}" fill="${I}" font-size="12">${drugs}</text></g>`;
+  return `<svg viewBox="0 0 580 340">
+    ${q(30,20,255,130,'补气药','脾肺气虚·倦怠气短','人参·黄芪·白术·党参·山药·甘草','#8A6212')}
+    ${q(295,20,255,130,'补阳药','肾阳虚·畏寒肢冷','鹿茸·杜仲·菟丝子·补骨脂·淫羊藿','#B4472C')}
+    ${q(30,158,255,130,'补血药','血虚·面白眩晕','当归·熟地·白芍·阿胶·何首乌','#9E2B25')}
+    ${q(295,158,255,130,'补阴药','阴虚·潮热盗汗','麦冬·沙参·石斛·枸杞·女贞子','#2E6B6B')}
+    <text class="fs" x="290" y="315" text-anchor="middle" fill="${I2}">补气防壅滞·补血防滋腻·补阴防碍胃·补阳防助火——补法之妙全在配伍</text>
+    <text class="fs" x="290" y="333" text-anchor="middle" fill="${I3}" font-size="10">左阴右阳 · 上主功能(气阳) 下主物质(血阴)</text>
+    </svg><figcaption>补虚药四分：按气·血·阴·阳定位，每类记住代表药与配伍禁忌，不必逐味死背</figcaption>`;
+},
+taylor(){
+  // sin x 及其 1/3/5 阶泰勒逼近
+  const x0=40,y0=150,sc=42,W=560;
+  const f=x=>Math.sin(x), p1=x=>x, p3=x=>x-x**3/6, p5=x=>x-x**3/6+x**5/120;
+  const path=(fn,xmin,xmax)=>{
+    let d='',first=true;
+    for(let px=x0;px<=W;px+=3){
+      const xv=(px-x0)/sc;
+      const yv=fn(xv);
+      if(yv<-3.2||yv>3.2){first=true;continue;}
+      const py=y0-yv*sc;
+      d+=(first?'M':'L')+px.toFixed(1)+' '+py.toFixed(1)+' ';first=false;
+    }
+    return d;
+  };
+  const axis=`<line x1="${x0}" y1="${y0}" x2="${W}" y2="${y0}" stroke="${RU}" stroke-width="1"/>
+    <line x1="${x0}" y1="20" x2="${x0}" y2="280" stroke="${RU}" stroke-width="1"/>`;
+  // π 刻度
+  let ticks='';
+  for(let k=1;k<=3;k++){const px=x0+k*Math.PI*sc;if(px<W){ticks+=`<line x1="${px.toFixed(1)}" y1="${y0-4}" x2="${px.toFixed(1)}" y2="${y0+4}" stroke="${I3}"/><text class="fs" x="${px.toFixed(1)}" y="${y0+18}" text-anchor="middle" fill="${I3}" font-size="10">${k}π</text>`;}}
+  return `<svg viewBox="0 0 580 300">${axis}${ticks}
+    <path d="${path(p1)}" fill="none" stroke="#8494A3" stroke-width="1.3" stroke-dasharray="4 3"/>
+    <path d="${path(p3)}" fill="none" stroke="#2E6B6B" stroke-width="1.4" stroke-dasharray="6 3"/>
+    <path d="${path(p5)}" fill="none" stroke="#8A6212" stroke-width="1.6"/>
+    <path d="${path(f)}" fill="none" stroke="#9E2B25" stroke-width="2.2"/>
+    <g font-size="11">
+      <line x1="400" y1="34" x2="424" y2="34" stroke="#9E2B25" stroke-width="2.2"/><text x="430" y="38" fill="${I}">sin x（真值）</text>
+      <line x1="400" y1="52" x2="424" y2="52" stroke="#8A6212" stroke-width="1.6"/><text x="430" y="56" fill="${I2}">5 阶逼近</text>
+      <line x1="400" y1="70" x2="424" y2="70" stroke="#2E6B6B" stroke-width="1.4" stroke-dasharray="6 3"/><text x="430" y="74" fill="${I2}">3 阶：x−x³/6</text>
+      <line x1="400" y1="88" x2="424" y2="88" stroke="#8494A3" stroke-width="1.3" stroke-dasharray="4 3"/><text x="430" y="92" fill="${I2}">1 阶：x</text>
+    </g></svg><figcaption>泰勒逼近：阶数越高，多项式在越大范围内贴合 sin x。这就是「用多项式局部逼近函数」的直观含义</figcaption>`;
+},
+normal(){
+  const x0=40,W=560,base=250,cx=300,sc=62,amp=200;
+  const f=z=>Math.exp(-z*z/2);
+  let d='M';
+  for(let px=x0;px<=W;px+=2){const z=(px-cx)/sc;const py=base-f(z)*amp;d+=px.toFixed(1)+' '+py.toFixed(1)+' L';}
+  d=d.slice(0,-1);
+  // 分区着色（±1σ ±2σ ±3σ）—— 用竖线标注
+  let seg='';
+  const bands=[[-1,1,'68.2%','#6B5B95'],[-2,-1,'13.6%','#2E6B6B'],[1,2,'13.6%','#2E6B6B'],[-3,-2,'2.1%','#8494A3'],[2,3,'2.1%','#8494A3']];
+  for(let k=-3;k<=3;k++){const px=cx+k*sc;seg+=`<line x1="${px.toFixed(1)}" y1="${base}" x2="${px.toFixed(1)}" y2="${(base-f(k)*amp).toFixed(1)}" stroke="${RU}" stroke-width="${k===0?1.2:0.8}" stroke-dasharray="${k===0?'':'3 3'}"/>`;
+    if(k!==0)seg+=`<text class="fs" x="${px.toFixed(1)}" y="${base+16}" text-anchor="middle" fill="${I3}" font-size="10">${k>0?'+':''}${k}σ</text>`;
+    else seg+=`<text class="fs" x="${px.toFixed(1)}" y="${base+16}" text-anchor="middle" fill="${I2}" font-size="10">μ</text>`;
+  }
+  // 概率标注
+  const lab=(z1,z2,t,col)=>{const mx=cx+(z1+z2)/2*sc;return `<text class="fs" x="${mx.toFixed(1)}" y="${base-30}" text-anchor="middle" fill="${col}" font-size="11" font-weight="500">${t}</text>`;};
+  return `<svg viewBox="0 0 580 290">
+    <line x1="${x0}" y1="${base}" x2="${W}" y2="${base}" stroke="${RU}" stroke-width="1"/>
+    ${seg}
+    <path d="${d}" fill="none" stroke="#6B5B95" stroke-width="2.2"/>
+    ${lab(-1,1,'68.2%','#6B5B95')}
+    <text class="fs" x="${(cx-1.5*sc).toFixed(1)}" y="${base-6}" text-anchor="middle" fill="#2E6B6B" font-size="10">13.6%</text>
+    <text class="fs" x="${(cx+1.5*sc).toFixed(1)}" y="${base-6}" text-anchor="middle" fill="#2E6B6B" font-size="10">13.6%</text>
+    <text class="fs" x="290" y="282" text-anchor="middle" fill="${I2}">经验法则 68–95–99.7：落在 ±1σ 约 68%，±2σ 约 95%，±3σ 约 99.7%</text>
+    </svg><figcaption>正态分布 N(μ,σ²)：钟形对称，标准差 σ 决定胖瘦。这条「68-95-99.7」是区间估计与假设检验的基石</figcaption>`;
+},
+maodun(){
+  const b=(x,y,w,t,s,col)=>`<g><rect x="${x}" y="${y}" width="${w}" height="52" rx="8" fill="${C}" stroke="${col}" stroke-width="1.3"/>
+    <text class="ft" x="${x+w/2}" y="${y+22}" text-anchor="middle" fill="${col}" font-size="13">${t}</text>
+    <text class="fs" x="${x+w/2}" y="${y+40}" text-anchor="middle" fill="${I3}" font-size="10.5">${s}</text></g>`;
+  const arrow=(x1,y1,x2,y2,t)=>`<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="${A}" stroke-width="1.3" marker-end="url(#ah)"/>${t?`<text class="fs" x="${(x1+x2)/2+8}" y="${(y1+y2)/2-4}" fill="${A}" font-size="10">${t}</text>`:''}`;
+  return `<svg viewBox="0 0 580 340">${arrowDefs}
+    <text class="fs" x="150" y="18" text-anchor="middle" fill="${I3}">第一对基本矛盾</text>
+    ${b(40,28,220,'生产力','最活跃、最革命的因素','#9E2B25')}
+    ${arrow(150,80,150,110,'决定')}
+    ${b(40,110,220,'生产关系','要适合生产力状况','#8A6212')}
+    <text class="fs" x="430" y="18" text-anchor="middle" fill="${I3}">第二对基本矛盾</text>
+    ${b(320,28,220,'经济基础','由生产关系总和构成','#2E4A7D')}
+    ${arrow(430,80,430,110,'决定')}
+    ${b(320,110,220,'上层建筑','要适合经济基础','#2E6B6B')}
+    <line x1="260" y1="54" x2="320" y2="54" stroke="${RU}" stroke-width="1" stroke-dasharray="4 4"/>
+    <text class="fs" x="290" y="50" text-anchor="middle" fill="${I3}" font-size="10">生产关系=经济基础</text>
+    <path d="M150 162 V196 H430 V162" fill="none" stroke="${R}" stroke-width="1" marker-end="url(#ah)"/>
+    ${b(190,196,200,'社会基本矛盾运动','推动社会形态更替','#6B5B95')}
+    ${arrow(290,248,290,272)}
+    <rect x="120" y="272" width="340" height="46" rx="8" fill="#F1EFF5" stroke="${A}" stroke-width="1"/>
+    <text class="fs" x="290" y="292" text-anchor="middle" fill="${I}" font-size="12" font-weight="500">生产力 → 生产关系 → 上层建筑</text>
+    <text class="fs" x="290" y="308" text-anchor="middle" fill="${I2}" font-size="10.5">「归根到底」的决定力量是生产力</text>
+    </svg><figcaption>唯物史观两对基本矛盾：生产力决定生产关系，经济基础决定上层建筑——社会发展的根本动力</figcaption>`;
+},
+qixue(){
+  const box=(x,y,t,col)=>`<rect x="${x-42}" y="${y-20}" width="84" height="40" rx="8" fill="${C}" stroke="${col}" stroke-width="1.4"/><text class="ft" x="${x}" y="${y+5}" text-anchor="middle" fill="${col}" font-size="15">${t}</text>`;
+  const qx=150,bx=430,my=120;
+  let g=box(qx,my,'气','#B4472C')+box(bx,my,'血','#2E4A7D');
+  // 气为血之帅（气→血，3条）
+  g+=`<path d="M192 105 Q290 70 388 105" fill="none" stroke="#B4472C" stroke-width="1.3" marker-end="url(#ah)"/>`;
+  g+=`<text class="fs" x="290" y="72" text-anchor="middle" fill="#B4472C" font-size="11">气为血之帅</text>`;
+  g+=`<text class="fs" x="290" y="90" text-anchor="middle" fill="${I3}" font-size="10">生血 · 行血 · 摄血</text>`;
+  // 血为气之母（血→气，2条）
+  g+=`<path d="M388 135 Q290 172 192 135" fill="none" stroke="#2E4A7D" stroke-width="1.3" marker-end="url(#ah)"/>`;
+  g+=`<text class="fs" x="290" y="162" text-anchor="middle" fill="#2E4A7D" font-size="11">血为气之母</text>`;
+  g+=`<text class="fs" x="290" y="180" text-anchor="middle" fill="${I3}" font-size="10">载气 · 养气</text>`;
+  // 病理推论
+  g+=`<rect x="40" y="212" width="500" height="66" rx="8" fill="${C}" stroke="${RU}"/>`;
+  g+=`<text class="fs" x="60" y="234" fill="${I2}" font-size="12">气虚 → 血虚 / 血瘀（气不生血、不行血）　气脱 → 血脱</text>`;
+  g+=`<text class="fs" x="60" y="256" fill="${I2}" font-size="12">气不摄血 → 出血　　大出血 → 气随血脱（血脱则气无所附）</text>`;
+  g+=`<text class="fs" x="60" y="272" fill="${I3}" font-size="10.5">治法：补气生血、益气摄血、补血养气——气血同治</text>`;
+  return `<svg viewBox="0 0 580 300">${arrowDefs}${g}</svg><figcaption>气血关系：「气为血之帅，血为气之母」——八个字统摄气血的全部生理关系与病理传变</figcaption>`;
+},
 liushisi(){
   // 8×8 六十四卦方阵：行=上卦，列=下卦。King Wen 卦名按 上×下 排。
   // 八卦顺序（先天次序，便于爻线规律）：乾 兑 离 震 巽 坎 艮 坤
