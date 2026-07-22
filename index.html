@@ -4581,17 +4581,40 @@ limbLines(){
 },
 jingluo(){
   const names=['肺','大肠','胃','脾','心','小肠','膀胱','肾','心包','三焦','胆','肝'];
-  const cx=290,cy=185,rad=140,r=22;
+  // 每经阴阳：1=阴经(脏) 0=阳经(腑)
+  const yy=[1,0,0,1,1,0,0,1,1,0,0,1];
+  const cx=290,cy=190,rad=140,r=22;
   const P=names.map((_,i)=>{const a=(-90+i*30)*Math.PI/180;return [cx+rad*Math.cos(a),cy+rad*Math.sin(a)];});
   let arcs='';
   for(let i=0;i<12;i++) arcs+=edge(P[i],P[(i+1)%12],r,r,i===11?'#B4472C':A,false);
-  const nodes=names.map((n,i)=>`<g><circle cx="${P[i][0].toFixed(1)}" cy="${P[i][1].toFixed(1)}" r="${r}" fill="${C}" stroke="${i===0?'#B4472C':R}" stroke-width="${i===0?1.8:1}"/>
+  // 交接标注：相邻两经阴阳组合决定交接部位
+  //   阴→阳 或 阳→阴（异性）→ 四肢末端；阳→阳 → 头面；阴→阴 → 胸中
+  const jieColor={'末':'#8A6212','头':'#B4472C','胸':'#2E4A7D'};
+  let joints='';
+  for(let i=0;i<12;i++){
+    const a=yy[i], b=yy[(i+1)%12];
+    let type;
+    if(a!==b) type='末'; else if(a===0) type='头'; else type='胸';
+    // 交接点位于两节点连线中点、略微外移
+    const mid=[(P[i][0]+P[(i+1)%12][0])/2,(P[i][1]+P[(i+1)%12][1])/2];
+    const ang=Math.atan2(mid[1]-cy,mid[0]-cx);
+    const jx=cx+(rad+28)*Math.cos(ang), jy=cy+(rad+28)*Math.sin(ang);
+    const label={'末':'四肢末端','头':'头面','胸':'胸中'}[type];
+    joints+=`<circle cx="${mid[0].toFixed(1)}" cy="${mid[1].toFixed(1)}" r="3.5" fill="${jieColor[type]}"/>`;
+    joints+=`<text class="fs" x="${jx.toFixed(1)}" y="${(jy+3).toFixed(1)}" text-anchor="middle" fill="${jieColor[type]}" font-size="9.5">${label}</text>`;
+  }
+  const nodes=names.map((n,i)=>`<g><circle cx="${P[i][0].toFixed(1)}" cy="${P[i][1].toFixed(1)}" r="${r}" fill="${yy[i]?'#F4F6FA':'#FBF2EF'}" stroke="${i===0?'#B4472C':(yy[i]?'#2E4A7D':'#B4472C')}" stroke-width="${i===0?2:1}"/>
     <text class="ft" x="${P[i][0].toFixed(1)}" y="${(P[i][1]+5).toFixed(1)}" text-anchor="middle" fill="${i===0?'#B4472C':I}">${n}</text></g>`).join('');
-  return `<svg viewBox="0 0 580 380">${arrowDefs}${arcs}${nodes}
-    <text class="fs" x="290" y="180" text-anchor="middle" fill="${I3}">如环无端</text>
-    <text class="fs" x="290" y="196" text-anchor="middle" fill="${I3}">起于肺，终于肝，复回于肺</text>
-    <text class="fs" x="290" y="360" text-anchor="middle" fill="${I2}">红色为起点（手太阴肺经）与闭环处（足厥阴肝经 → 肺经）</text>
-    </svg><figcaption>十二经脉流注次序：气血循此环流不休</figcaption>`;
+  return `<svg viewBox="0 0 580 428">${arrowDefs}${arcs}${joints}${nodes}
+    <text class="fs" x="290" y="184" text-anchor="middle" fill="${I3}">如环无端</text>
+    <text class="fs" x="290" y="200" text-anchor="middle" fill="${I3}">起于肺，终于肝，复回于肺</text>
+    <g transform="translate(74,388)">
+      <circle cx="0" cy="-3" r="4" fill="#8A6212"/><text class="fs" x="10" y="0" fill="${I2}" font-size="10.5">四肢末端：阴经↔阳经交接</text>
+      <circle cx="180" cy="-3" r="4" fill="#B4472C"/><text class="fs" x="190" y="0" fill="${I2}" font-size="10.5">头面：阳经↔阳经</text>
+      <circle cx="330" cy="-3" r="4" fill="#2E4A7D"/><text class="fs" x="340" y="0" fill="${I2}" font-size="10.5">胸中：阴经↔阴经</text>
+    </g>
+    <text class="fs" x="290" y="414" text-anchor="middle" fill="${I3}" font-size="10">蓝底为阴经（脏）·红底为阳经（腑）；红圈=起点肺经与闭环处</text>
+    </svg><figcaption>十二经脉流注：气血按序环流不休，并在四肢末端·头面·胸中三处完成交接接力</figcaption>`;
 },
 yinyang4(){
   const box=(x,y,t,s,d,col)=>`<g><rect x="${x}" y="${y}" width="235" height="86" rx="8" fill="${C}" stroke="${col}" stroke-width="1.3"/>
