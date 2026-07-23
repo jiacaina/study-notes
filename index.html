@@ -50,7 +50,20 @@ nav a.on .n{color:var(--rust)}
 kbd{font-family:var(--mono);font-size:10px;background:#EEF1F4;border:1px solid var(--rule-2);border-bottom-width:2px;border-radius:3px;padding:1px 4px}
 
 main{padding:28px 40px 90px;min-width:0}
-.top{display:flex;gap:10px;align-items:center;position:sticky;top:0;background:linear-gradient(var(--paper) 76%,transparent);padding:6px 0 14px;z-index:5;flex-wrap:wrap}
+.top{display:flex;gap:10px 10px;align-items:center;position:sticky;top:0;background:var(--paper);padding:10px 0 12px;z-index:20;flex-wrap:wrap;border-bottom:1px solid var(--rule)}
+.crumb{flex:0 0 100%;display:flex;align-items:baseline;gap:9px;margin-bottom:2px;position:relative}
+.crumb-btn{font-family:var(--serif);font-size:19px;font-weight:600;color:var(--accent);letter-spacing:.01em;background:none;border:none;padding:2px 4px 2px 0;cursor:pointer;display:inline-flex;align-items:center;gap:6px;border-radius:6px}
+.crumb-btn:hover{background:var(--card)}
+.crumb-btn i{font-style:normal;font-size:11px;color:var(--ink-3);transition:transform .15s}
+.crumb-btn.open i{transform:rotate(180deg)}
+.crumb span{font-family:var(--sans);font-size:12px;color:var(--ink-3)}
+.crumb span::before{content:"·";margin-right:9px;color:var(--rule-2)}
+.subpop{position:absolute;top:100%;left:0;margin-top:4px;background:var(--card);border:1px solid var(--rule-2);border-radius:10px;box-shadow:0 8px 28px rgba(20,26,32,.14);padding:6px;z-index:60;display:grid;grid-template-columns:repeat(2,minmax(150px,1fr));gap:2px;max-height:62vh;overflow-y:auto}
+.subpop button{font-family:var(--sans);font-size:13px;color:var(--ink);background:none;border:none;border-radius:7px;padding:9px 12px;cursor:pointer;text-align:left;display:flex;align-items:baseline;gap:7px;white-space:nowrap}
+.subpop button:hover{background:var(--paper)}
+.subpop button.on{background:var(--paper);color:var(--accent);font-weight:500}
+.subpop button em{font-style:normal;font-family:var(--mono);font-size:10px;color:var(--ink-3);min-width:9px}
+.subpop button small{font-family:var(--mono);font-size:9.5px;color:var(--ink-3);letter-spacing:.04em}
 .seg{display:flex;background:var(--card);border:1px solid var(--rule-2);border-radius:7px;overflow:hidden;flex:none}
 .seg button{font-family:var(--sans);font-size:12.5px;color:var(--ink-2);background:none;border:none;padding:8px 14px;cursor:pointer}
 .seg button.on{background:var(--accent);color:#fff}
@@ -68,7 +81,7 @@ main{padding:28px 40px 90px;min-width:0}
 .lede{font-family:var(--serif);font-size:14.5px;color:var(--ink-2);line-height:1.75;max-width:66ch;margin-bottom:26px;padding-bottom:20px;border-bottom:1px solid var(--rule)}
 .lede strong{color:var(--ink);font-weight:600}
 
-section{margin-bottom:42px;scroll-margin-top:66px}
+section{margin-bottom:42px;scroll-margin-top:calc(var(--toph, 96px) + 12px)}
 .sec-h{display:flex;align-items:baseline;gap:11px}
 .sec-h .n{font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--rust)}
 .sec-h h2{font-family:var(--serif);font-size:20px;font-weight:600}
@@ -161,10 +174,17 @@ body[data-sub="yj"] .spine{color:#6B5B95;background:#F1EFF5}
   nav{display:flex;flex-wrap:wrap;gap:0 14px}
   .side-foot{display:none}
   main{padding:18px 16px 60px}
+  .top{padding:8px 0 10px}
+  .crumb-btn{font-size:16.5px}
+  .subpop{grid-template-columns:1fr;min-width:200px}
+  .crumb{margin-bottom:0}
+  #q{flex:1 1 100%;order:5}
   .row{grid-template-columns:1fr 22px}
   .name{grid-column:1}.eq{grid-column:1/-1}.mark{grid-row:1;grid-column:2}
 }
-@media print{aside,.top,.mark{display:none}body{background:#fff}main{padding:0}.row,.br{break-inside:avoid}}
+@media print{aside,.seg,#q,.btn,.tally,.ver,.mark,.cross{display:none!important}body{background:#fff}main{padding:0}.row,.br{break-inside:avoid}
+  .top{position:static;border-bottom:1px solid #ccc;padding:0 0 10px;margin-bottom:16px}
+  .crumb b{color:#000}}
 </style>
 </head>
 <body data-sub="gm">
@@ -177,6 +197,11 @@ body[data-sub="yj"] .spine{color:#6B5B95;background:#F1EFF5}
 </aside>
 <main>
   <div class="top">
+    <div class="crumb">
+      <button id="curname" class="crumb-btn">—<i>▾</i></button>
+      <span id="curview">思维导图</span>
+      <div id="subpop" class="subpop hide"></div>
+    </div>
     <div class="seg" id="view">
       <button data-v="map" class="on">思维导图</button>
       <button data-v="eq">公式速查</button>
@@ -6490,6 +6515,12 @@ function render(){
   ledeEl.innerHTML=S.lede;
   document.querySelector('[data-v="eq"]').textContent=S.eqLabel||'公式速查';
   document.querySelector('[data-v="fl"]').textContent=S.flLabel||'解题流程';
+  // sticky 头部：学科名 + 当前视图名
+  const vn={map:'知识图谱',eq:S.eqLabel||'公式速查',fl:S.flLabel||'解题流程'};
+  document.getElementById('curname').innerHTML=(S.no?S.no+'　':'')+S.name+'<i>▾</i>';
+  document.getElementById('curview').textContent=vn[curView]||'';
+  document.getElementById('subpop').innerHTML=SUB.map((x,i)=>
+    `<button data-i="${i}" class="${i===curSub?'on':''}"><em>${x.no||''}</em>${x.name}<small>${x.en}</small></button>`).join('');
   const PH={en:'搜索考点：定语从句 / 态度题 / 倒装…',po:'搜索考点：矛盾 / 剩余价值 / 遵义会议…',
     ov:'搜索：分值 / 时间分配 / 复习时间线…',
     tcm:'搜索：阴阳 / 五行 / 经络 / 气血…',tcy:'搜索：麻黄 / 四气五味 / 十八反…',
@@ -6553,7 +6584,7 @@ function render(){
     else{flags.add(id);row.classList.add('flag');b.textContent='●';}
     cnt.textContent=flags.size;saveFlags();filter();
   });
-  observe();filter();
+  syncTopH();observe();filter();
 }
 
 // 跨学科搜索：统计各学科在三个视图下的匹配条数
@@ -6640,14 +6671,42 @@ function filter(){
   }
 }
 
+// 测量 sticky 头部高度 → 供锚点偏移与滚动监听使用
+function syncTopH(){
+  const t=document.querySelector('.top');
+  if(t) document.documentElement.style.setProperty('--toph', t.offsetHeight+'px');
+}
+window.addEventListener('resize',syncTopH);
+
 let io;
 function observe(){
   if(io)io.disconnect();
+  const h=(document.querySelector('.top')||{offsetHeight:96}).offsetHeight;
   io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)
     navEl.querySelectorAll('a').forEach(a=>a.classList.toggle('on',a.dataset.id===e.target.id));
-  }),{rootMargin:'-8% 0px -78% 0px'});
+  }),{rootMargin:`-${h+16}px 0px -72% 0px`});
   bodyEl.querySelectorAll('section').forEach(s=>io.observe(s));
 }
+
+// 顶部学科下拉：点击展开，选择后切换，点外部或 Esc 关闭
+const nameBtn=document.getElementById('curname'), subPop=document.getElementById('subpop');
+function closePop(){ subPop.classList.add('hide'); nameBtn.classList.remove('open'); }
+nameBtn.onclick=e=>{
+  e.stopPropagation();
+  const willOpen=subPop.classList.contains('hide');
+  subPop.classList.toggle('hide',!willOpen);
+  nameBtn.classList.toggle('open',willOpen);
+};
+subPop.onclick=e=>{
+  const b=e.target.closest('button'); if(!b) return;
+  e.stopPropagation();
+  curSub=+b.dataset.i;
+  subsEl.querySelectorAll('.sub-b').forEach((x,i)=>x.classList.toggle('on',i===curSub));
+  closePop();
+  window.scrollTo(0,0);
+  render();
+};
+document.addEventListener('click',()=>{ if(!subPop.classList.contains('hide')) closePop(); });
 
 document.getElementById('cross').onclick=e=>{
   const b=e.target.closest('.cbtn'); if(!b) return;
@@ -6706,7 +6765,10 @@ q.oninput=filter;
 onlyBtn.onclick=()=>{onlyFlag=!onlyFlag;onlyBtn.classList.toggle('act',onlyFlag);onlyBtn.textContent=onlyFlag?'显示全部':'只看标记';filter();};
 document.addEventListener('keydown',e=>{
   if(e.key==='/'&&document.activeElement!==q){e.preventDefault();q.focus();}
-  if(e.key==='Escape'&&document.activeElement===q){q.value='';filter();q.blur();}
+  if(e.key==='Escape'){
+    if(!subPop.classList.contains('hide')){closePop();return;}
+    if(document.activeElement===q){q.value='';filter();q.blur();}
+  }
 });
 render();
 </script>
