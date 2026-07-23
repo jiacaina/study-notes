@@ -600,6 +600,7 @@ const SUB=[
  {t:"向量组与线性相关性",sub:"用秩刻画「有没有多余的向量」",
   map:[["线性表示","β 可由向量组表示 ⟺ 方程组 Ax = β 有解"],["线性相关性","相关 ⟺ 齐次方程组有非零解 ⟺ r < 向量个数"],["极大无关组与秩","向量组的秩 = 矩阵的秩"],["向量空间","基、维数、坐标；施密特正交化"]],
   spine:"「线性相关」的所有判定，最后都翻译成一句话：秩 < 向量个数。",
+  fig:"xiangguan",
   g:[
   {g:"相关性判定",r:[
    ["线性相关","","$\\alpha_1,\\dots,\\alpha_m$ 相关 $\\iff r(\\alpha_1,\\dots,\\alpha_m)<m\\iff Ax=0$ 有非零解"],
@@ -790,6 +791,7 @@ const SUB=[
  {t:"大数定律与中心极限定理",sub:"从随机到确定：正态分布为何无处不在",
   map:[["切比雪夫不等式","$P(|X-EX|\\ge\\varepsilon)\\le DX/\\varepsilon^2$"],["大数定律","样本均值依概率收敛于总体均值"],["中心极限定理","独立同分布之和近似服从正态"]],
   spine:"中心极限定理是整个数理统计的合法性来源：正因为它，才敢用正态来做估计与检验。",
+  fig:"zhongxin",
   g:[
   {g:"极限定理",r:[
    ["切比雪夫不等式","","$P\\{|X-EX|\\ge\\varepsilon\\}\\le\\dfrac{DX}{\\varepsilon^{2}}$"],
@@ -4429,6 +4431,71 @@ yaoxing(){
     ${quad(20,174,265,142,'升降浮沉','定趋向——往哪个方向走',['升浮属阳：向上向外（解表·升阳）','沉降属阴：向下向内（泻下·潜阳）','花叶质轻多升浮，子实矿石多沉降','炮制影响：酒升·姜散·醋收·盐下行'],'#4F6B3A')}
     ${quad(295,174,265,142,'归经','定部位——作用在哪里',['以脏腑经络理论为基础','从疗效反推：朱砂归心能安神','同归肺经：黄芩清肺热·干姜温肺寒','须与四气五味结合，不可孤立看'],'#2E4A7D')}
     </svg><figcaption>药性四维：四气定寒热·五味定功能·升降浮沉定趋向·归经定部位。四把尺子一量，药的性能就完整了</figcaption>`;
+},
+xiangguan(){
+  // 向量组线性相关性的几何直观：二维/三维
+  const p=(ox,oy,title,sub,vecs,note,col,extra)=>{
+    let g=`<text class="ft" x="${ox+70}" y="${oy-64}" text-anchor="middle" fill="${col}" font-size="12.5">${title}</text>`;
+    g+=`<text class="fs" x="${ox+70}" y="${oy-50}" text-anchor="middle" fill="${I3}" font-size="9.5">${sub}</text>`;
+    g+=`<line x1="${ox-52}" y1="${oy}" x2="${ox+74}" y2="${oy}" stroke="${R}" stroke-width="0.8"/>`;
+    g+=`<line x1="${ox}" y1="${oy+40}" x2="${ox}" y2="${oy-42}" stroke="${R}" stroke-width="0.8"/>`;
+    if(extra) g+=extra;
+    vecs.forEach(v=>{
+      g+=`<line x1="${ox}" y1="${oy}" x2="${ox+v[0]}" y2="${oy-v[1]}" stroke="${v[2]}" stroke-width="2.2" marker-end="url(#ah)"/>`;
+      g+=`<text class="fs" x="${ox+v[0]+(v[0]<0?-12:8)}" y="${oy-v[1]-4}" fill="${v[2]}" font-size="10">${v[3]}</text>`;
+    });
+    g+=`<text class="fs" x="${ox+70}" y="${oy+62}" text-anchor="middle" fill="${I2}" font-size="10">${note}</text>`;
+    return g;
+  };
+  // 共线阴影（相关）
+  const shade=`<line x1="80" y1="176" x2="212" y2="110" stroke="#B4472C" stroke-width="7" opacity="0.13" stroke-linecap="round"/>`;
+  // 共面阴影
+  const plane=`<ellipse cx="410" cy="146" rx="62" ry="22" fill="#B4472C" opacity="0.1" transform="rotate(-16 410 146)"/>`;
+  return `<svg viewBox="0 0 580 330">${arrowDefs}
+    ${p(120,146,'线性相关（二维）','一个可由另一个线性表示',[[52,26,'#B4472C','α₁'],[-40,-20,'#C15A44','α₂']],'两向量共线 → 相关','#B4472C',shade)}
+    ${p(410,146,'线性无关（二维）','谁也表示不了谁',[[52,26,'#2E4A7D','α₁'],[-30,44,'#4F6B3A','α₂']],'两向量不共线 → 无关','#2E4A7D')}
+    <rect x="20" y="220" width="540" height="96" rx="8" fill="${C}" stroke="${RU}"/>
+    <text class="fs" x="38" y="242" fill="${I2}" font-size="11">几何判据：二维中两向量共线即相关；三维中三向量共面即相关</text>
+    <text class="fs" x="38" y="262" fill="${I2}" font-size="11">代数判据：r(α₁…α_s) &lt; s 相关　｜　r(α₁…α_s) = s 无关</text>
+    <text class="fs" x="38" y="282" fill="#9E2B25" font-size="11">向量个数 &gt; 维数 ⇒ 必相关（如三维空间中任意 4 个向量必线性相关）</text>
+    <text class="fs" x="38" y="302" fill="${I3}" font-size="10">含零向量的向量组必相关；部分相关则整体相关，整体无关则部分无关</text>
+    </svg><figcaption>线性相关性的几何直观：相关＝“挤在低维里”（共线、共面），无关＝“撑得开”，能张成更高维空间</figcaption>`;
+},
+zhongxin(){
+  // 中心极限定理：样本均值分布随 n 增大趋于正态
+  const panel=(ox,n,label,col)=>{
+    const base=190,W=150,H=96;
+    let g=`<text class="fs" x="${ox+W/2}" y="${base+22}" text-anchor="middle" fill="${col}" font-size="11">${label}</text>`;
+    g+=`<line x1="${ox}" y1="${base}" x2="${ox+W}" y2="${base}" stroke="${R}" stroke-width="0.9"/>`;
+    // n=1 均匀分布(矩形)；n=2 三角；n≥30 钟形
+    if(n===1){
+      g+=`<rect x="${ox+28}" y="${base-52}" width="${W-56}" height="52" fill="${col}" opacity="0.2" stroke="${col}" stroke-width="1.8"/>`;
+    }else if(n===2){
+      g+=`<path d="M${ox+22} ${base} L${ox+W/2} ${base-76} L${ox+W-22} ${base} Z" fill="${col}" opacity="0.2" stroke="${col}" stroke-width="1.8"/>`;
+    }else{
+      let d='M';
+      for(let i=0;i<=60;i++){
+        const t=i/60, x=ox+t*W, z=(t-0.5)*6;
+        const y=base-Math.exp(-z*z/2)*88;
+        d+=(i===0?'':' L')+x.toFixed(1)+' '+y.toFixed(1);
+      }
+      g+=`<path d="${d} L${ox+W} ${base} L${ox} ${base} Z" fill="${col}" opacity="0.18"/>`;
+      g+=`<path d="${d}" fill="none" stroke="${col}" stroke-width="2.2"/>`;
+    }
+    return g;
+  };
+  return `<svg viewBox="0 0 580 320">
+    <text class="fs" x="290" y="26" text-anchor="middle" fill="${I3}" font-size="10.5">无论总体是什么分布，样本均值的分布都随 n 增大而趋于正态</text>
+    ${panel(30,1,'n = 1（总体：均匀分布）','#8494A3')}
+    ${panel(215,2,'n = 2（两次平均）','#4F6B3A')}
+    ${panel(400,30,'n ≥ 30（趋于正态）','#6B5B95')}
+    <text class="fs" x="196" y="140" fill="${I3}" font-size="16">→</text>
+    <text class="fs" x="381" y="140" fill="${I3}" font-size="16">→</text>
+    <rect x="30" y="228" width="520" height="78" rx="8" fill="${C}" stroke="${RU}"/>
+    <text class="fs" x="48" y="250" fill="${I2}" font-size="11">中心极限定理：X̄ 近似服从 N(μ, σ²/n)，标准化后 (X̄−μ)/(σ/√n) → N(0,1)</text>
+    <text class="fs" x="48" y="270" fill="${I2}" font-size="11">大数定律：n→∞ 时 X̄ 依概率收敛于 μ——说的是「均值稳定到哪」</text>
+    <text class="fs" x="48" y="290" fill="#9E2B25" font-size="11">两者分工：大数定律管「收敛到什么」，中心极限定理管「怎么波动（分布形态）」</text>
+    </svg><figcaption>中心极限定理：样本量越大，样本均值越接近正态分布——这是全部区间估计与假设检验的理论根基</figcaption>`;
 },
 tezheng(){
   // 特征值与特征向量的几何意义：矩阵作用下方向不变、只伸缩
