@@ -387,7 +387,16 @@ const SUB=[
  {t:"向量与空间解析几何",sub:"为多元微积分搭好舞台",
   map:[["向量代数","数量积、向量积、混合积及其几何意义"],["平面与直线","点法式、一般式、对称式；夹角与距离"],["曲面与曲线","旋转面、柱面、二次曲面；空间曲线的参数式与投影"]],
   spine:"这一章不产生新思想，只提供多元微积分要用的坐标语言。",
+  fig:"xiangliang",
   g:[
+  {g:"入门：两种乘法的几何意义",r:[
+   ["为什么向量有两种乘法","先建立区分","点积结果是<strong>数</strong>，叉积结果是<strong>向量</strong>——用途完全不同"],
+   ["数量积（点积）","判垂直","$\\mathbf{a}\\cdot\\mathbf{b}=|\\mathbf{a}||\\mathbf{b}|\\cos\\theta$。几何意义是「一个向量的长 × 另一个在它上面的投影长」"],
+   ["点积的核心用途","","求夹角、判垂直（$\\mathbf{a}\\perp\\mathbf{b}\\iff\\mathbf{a}\\cdot\\mathbf{b}=0$）、求投影"],
+   ["向量积（叉积）","判平行","$|\\mathbf{a}\\times\\mathbf{b}|=|\\mathbf{a}||\\mathbf{b}|\\sin\\theta$，方向按右手法则，垂直于 a、b 所在平面"],
+   ["叉积的核心用途","","求法向量（求平面方程必用）、求平行四边形面积、判平行（$\\mathbf{a}\\parallel\\mathbf{b}\\iff\\mathbf{a}\\times\\mathbf{b}=\\mathbf{0}$）"],
+   ["混合积","判共面","$(\\mathbf{a}\\times\\mathbf{b})\\cdot\\mathbf{c}$ 的绝对值 = 平行六面体体积；为 0 则三向量共面"],
+   ["一句话记忆","","点积判垂直、叉积判平行、混合积判共面"]]},
   {g:"向量运算",r:[
    ["数量积","投影 / 判垂直","$\\vec a\\cdot\\vec b=|\\vec a||\\vec b|\\cos\\theta=a_1b_1+a_2b_2+a_3b_3;\\quad\\vec a\\perp\\vec b\\iff\\vec a\\cdot\\vec b=0$"],
    ["向量积","法向量 / 面积","$\\vec a\\times\\vec b=\\begin{vmatrix}\\vec i&\\vec j&\\vec k\\\\a_1&a_2&a_3\\\\b_1&b_2&b_3\\end{vmatrix}$，模 = 平行四边形面积"],
@@ -842,7 +851,17 @@ const SUB=[
  {t:"参数估计与假设检验",sub:"由样本反推总体：最后一站",
   map:[["矩估计","样本矩 = 总体矩，解方程"],["最大似然估计","写似然函数 → 取对数 → 求导 = 0"],["估计量评价","无偏性、有效性、一致性"],["区间估计","置信区间：估计量 ± 分位数 × 标准误"],["假设检验","两类错误；u 检验、t 检验、χ² 检验"]],
   spine:"假设检验的逻辑是反证法：先假定 H₀ 成立，若样本落入小概率区域，就拒绝它。",
+  fig:"lianglei",
   g:[
+  {g:"入门：为什么会犯两类错误",r:[
+   ["检验的本质","先理解这点","用<strong>样本</strong>推断<strong>总体</strong>，样本有随机性，所以结论可能出错"],
+   ["第一类错误 α","弃真","H₀ 本来是真的，却被我们拒绝了。也叫「假阳性」"],
+   ["第二类错误 β","取伪","H₀ 本来是假的，我们却没能拒绝它（漏掉了真实差异）。也叫「假阴性」"],
+   ["为什么不能同时避免","核心矛盾","样本量固定时，把拒绝的门槛调严（减小 α），就更容易漏判（增大 β）；反之亦然"],
+   ["唯一的解法","","<strong>增大样本量 n</strong>——信息多了，两类错误可以同时减小"],
+   ["实践中的做法","","先控制 α（通常取 0.05 或 0.01），在此前提下尽量减小 β"],
+   ["检验功效","","$1-\\beta$，即「H₀ 为假时正确拒绝它」的概率，越大越好"],
+   ["措辞陷阱","常考","结论只能说「拒绝 H₀」或「没有充分理由拒绝 H₀」，不能说「H₀ 成立」"]]},
   {g:"点估计",r:[
    ["矩估计","","令 $\\dfrac1n\\sum X_i^{k}=EX^{k}$，解出参数"],
    ["最大似然","三步走","$L(\\theta)=\\prod f(x_i;\\theta)\\ \\Rightarrow\\ \\ln L\\ \\Rightarrow\\ \\dfrac{d\\ln L}{d\\theta}=0$","若 L 关于 θ 单调（如均匀分布），不能求导，须直接讨论边界。"],
@@ -1517,7 +1536,15 @@ const SUB=[
  {t:"绪论与基本特点",sub:"先理解中医「怎么看问题」，再学具体内容",
   map:[["整体观念","人是一个有机整体；人与自然、社会环境相统一（天人相应）"],["辨证论治","病、证、症三者的区别；同病异治与异病同治"],["理论体系的形成","《黄帝内经》《难经》《伤寒杂病论》《神农本草经》四大经典"],["主要学派","金元四大家：刘完素（寒凉）、张从正（攻邪）、李杲（补土）、朱震亨（滋阴）"]],
   spine:"整体观念决定了中医「看联系」，辨证论治决定了中医「看当下」——这两条贯穿全书每一章。",
+  fig:"tongbing",
   g:[
+  {g:"入门：为什么说中医治的是「证」",r:[
+   ["症·证·病三者的区别","先分清","症＝单个症状（发热、头痛）；证＝疾病某阶段的病理概括（含病因病位病性邪正关系）；病＝疾病全过程的总称"],
+   ["同病异治","一个病，多种治法","同是感冒：风寒证用辛温解表（荆防败毒散），风热证用辛凉解表（银翘散）"],
+   ["异病同治","多个病，同一治法","久泻、脱肛、子宫脱垂——病名不同，但同属中气下陷证，都用补中益气汤"],
+   ["这两条说明什么","关键结论","中医的治疗依据是<strong>证</strong>，不是病名。病名相同不代表治法相同"],
+   ["为什么这样更灵活","","同一个病在不同人、不同阶段表现不同。抓住当下的证，才能对症下药"],
+   ["与辨病的关系","不是对立","现代中医主张<strong>病证结合</strong>：既辨病把握全程规律，又辨证把握当前本质"]]},
   {g:"两大基本特点",r:[
    ["整体观念","两个层面","① 人体自身是一个有机整体（以五脏为中心，通过经络联系）；② 人与自然、社会环境相统一（天人相应）"],
    ["辨证论治","中医的诊疗特色","辨证 = 分析四诊资料，判断为何证；论治 = 根据证确定治法方药"],
@@ -2505,6 +2532,7 @@ const SUB=[
  {t:"其他辨证方法",sub:"外感病的专用辨证体系：了解适用范围即可",
   map:[["六经辨证","《伤寒论》：太阳、阳明、少阳、太阴、少阴、厥阴——用于外感风寒"],["卫气营血辨证","叶天士：卫分、气分、营分、血分——用于温热病，辨浅深层次"],["三焦辨证","吴鞠通：上焦、中焦、下焦——用于温病，辨病位与传变"],["经络辨证","按十二经脉与奇经八脉的循行及病候辨证"]],
   spine:"三套外感辨证体系不是竞争关系，而是分工：六经用于伤寒（寒邪），卫气营血与三焦用于温病（热邪），各自描述了不同邪气的传变规律。",
+  fig:"weiqi",
   g:[
   {g:"六经辨证（伤寒）",r:[
    ["太阳病","表证","恶寒发热、头项强痛、脉浮。分中风（有汗、脉浮缓）与伤寒（无汗、脉浮紧）"],
@@ -4726,6 +4754,123 @@ sheliucheng(){
     ${node(190,276,200,'③ 两半合参 → 得出证型','舌淡胖+苔白腻＝脾肾阳虚水湿内停','#4F6B3A','#F1F5EC')}
     <text class="fs" x="290" y="334" text-anchor="middle" fill="${I3}" font-size="9.5">注意排除染苔（牛奶·咖啡·药物）；本图为教材知识梳理，不构成诊断依据</text>
     </svg><figcaption>看舌的标准动作：先分舌质与舌苔，各自读出结论，再合起来得证型——分开看是不出错的关键</figcaption>`;
+},
+xiangliang(){
+  // 向量数量积与向量积的几何意义
+  const ox=100,oy=150;
+  const V=(x,y)=>[ox+x,oy-y];
+  const a=[86,20], b=[42,66];
+  let g='';
+  g+=`<line x1="${ox-60}" y1="${oy}" x2="${ox+120}" y2="${oy}" stroke="${R}" stroke-width="0.8"/>`;
+  g+=`<line x1="${ox}" y1="${oy+50}" x2="${ox}" y2="${oy-110}" stroke="${R}" stroke-width="0.8"/>`;
+  // 平行四边形（叉积＝其面积）
+  g+=`<path d="M${ox} ${oy} L${ox+a[0]} ${oy-a[1]} L${ox+a[0]+b[0]} ${oy-a[1]-b[1]} L${ox+b[0]} ${oy-b[1]} Z" fill="#6B5B95" opacity="0.14" stroke="#6B5B95" stroke-width="1" stroke-dasharray="4 3"/>`;
+  // 投影（点积）
+  const dot=(a[0]*b[0]+a[1]*b[1]), la=Math.hypot(a[0],a[1]);
+  const px=a[0]*dot/(la*la), py=a[1]*dot/(la*la);
+  g+=`<line x1="${ox+b[0]}" y1="${oy-b[1]}" x2="${(ox+px).toFixed(1)}" y2="${(oy-py).toFixed(1)}" stroke="#8494A3" stroke-width="1" stroke-dasharray="3 3"/>`;
+  g+=`<line x1="${ox}" y1="${oy}" x2="${(ox+px).toFixed(1)}" y2="${(oy-py).toFixed(1)}" stroke="#4F6B3A" stroke-width="4" opacity="0.55"/>`;
+  // 向量
+  g+=`<line x1="${ox}" y1="${oy}" x2="${ox+a[0]}" y2="${oy-a[1]}" stroke="#2E4A7D" stroke-width="2.4" marker-end="url(#ah)"/>`;
+  g+=`<text class="fs" x="${ox+a[0]+8}" y="${oy-a[1]+4}" fill="#2E4A7D" font-size="12">a</text>`;
+  g+=`<line x1="${ox}" y1="${oy}" x2="${ox+b[0]}" y2="${oy-b[1]}" stroke="#B4472C" stroke-width="2.4" marker-end="url(#ah)"/>`;
+  g+=`<text class="fs" x="${ox+b[0]-14}" y="${oy-b[1]-6}" fill="#B4472C" font-size="12">b</text>`;
+  g+=`<text class="fs" x="${(ox+px/2).toFixed(1)}" y="${oy+18}" text-anchor="middle" fill="#4F6B3A" font-size="9.5">b 在 a 上的投影</text>`;
+  g+=`<text class="fs" x="${ox+70}" y="${oy-88}" fill="#6B5B95" font-size="9.5">平行四边形面积 = |a×b|</text>`;
+  return `<svg viewBox="0 0 580 320">${arrowDefs}${g}
+    <rect x="264" y="26" width="300" height="112" rx="8" fill="${C}" stroke="#4F6B3A" stroke-width="1.3"/>
+    <text class="ft" x="282" y="48" fill="#4F6B3A" font-size="12.5">数量积（点积）a·b —— 结果是数</text>
+    <text class="fs" x="282" y="70" fill="${I}" font-size="10.5">a·b = |a||b|cosθ = a₁b₁+a₂b₂+a₃b₃</text>
+    <text class="fs" x="282" y="90" fill="${I2}" font-size="10.5">几何意义：|a| × （b 在 a 上的投影长）</text>
+    <text class="fs" x="282" y="110" fill="#9E2B25" font-size="10.5">a⊥b ⟺ a·b = 0　（判垂直用点积）</text>
+    <text class="fs" x="282" y="128" fill="${I3}" font-size="9.5">用途：求夹角、判垂直、求投影</text>
+    <rect x="264" y="150" width="300" height="112" rx="8" fill="${C}" stroke="#6B5B95" stroke-width="1.3"/>
+    <text class="ft" x="282" y="172" fill="#6B5B95" font-size="12.5">向量积（叉积）a×b —— 结果是向量</text>
+    <text class="fs" x="282" y="194" fill="${I}" font-size="10.5">|a×b| = |a||b|sinθ，方向按右手法则</text>
+    <text class="fs" x="282" y="214" fill="${I2}" font-size="10.5">几何意义：模长 = 两向量张成的平行四边形面积</text>
+    <text class="fs" x="282" y="234" fill="#9E2B25" font-size="10.5">a∥b ⟺ a×b = 0　（判平行用叉积）</text>
+    <text class="fs" x="282" y="252" fill="${I3}" font-size="9.5">用途：求法向量、求面积、判平行</text>
+    <text class="fs" x="290" y="290" text-anchor="middle" fill="${I2}" font-size="11">记忆抓手：点积判垂直（结果是数）· 叉积判平行（结果是向量，垂直于两者）</text>
+    <text class="fs" x="290" y="310" text-anchor="middle" fill="${I3}" font-size="10">混合积 (a×b)·c 的绝对值 = 三向量张成的平行六面体体积；为 0 则三向量共面</text>
+    </svg><figcaption>向量运算的几何意义：点积算投影（判垂直），叉积算面积（判平行），混合积算体积（判共面）</figcaption>`;
+},
+lianglei(){
+  // 假设检验的两类错误
+  const cell=(x,y,w,h,t,s,col,fill)=>`<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="7" fill="${fill||C}" stroke="${col}" stroke-width="1.3"/>
+    <text class="ft" x="${x+w/2}" y="${y+26}" text-anchor="middle" fill="${col}" font-size="12.5">${t}</text>
+    <text class="fs" x="${x+w/2}" y="${y+46}" text-anchor="middle" fill="${I2}" font-size="10">${s}</text>`;
+  return `<svg viewBox="0 0 580 330">
+    <text class="fs" x="290" y="22" text-anchor="middle" fill="${I2}" font-size="11">检验的结论可能对，也可能错——错有两种，且不能同时避免</text>
+    <text class="fs" x="176" y="56" text-anchor="middle" fill="${I3}" font-size="10">H₀ 实际为真</text>
+    <text class="fs" x="400" y="56" text-anchor="middle" fill="${I3}" font-size="10">H₀ 实际为假</text>
+    <text class="fs" x="52" y="96" text-anchor="middle" fill="${I3}" font-size="10">接受 H₀</text>
+    <text class="fs" x="52" y="176" text-anchor="middle" fill="${I3}" font-size="10">拒绝 H₀</text>
+    ${cell(90,66,172,64,'判断正确','1 − α','#4F6B3A','#F1F5EC')}
+    ${cell(314,66,172,64,'第二类错误 β','取伪：漏掉了真实差异','#8A6212','#FBF7EC')}
+    ${cell(90,146,172,64,'第一类错误 α','弃真：把对的当错的','#B4472C','#FBF1EE')}
+    ${cell(314,146,172,64,'判断正确','1 − β（检验功效）','#4F6B3A','#F1F5EC')}
+    <rect x="30" y="230" width="520" height="86" rx="8" fill="${C}" stroke="${RU}"/>
+    <text class="fs" x="48" y="252" fill="#9E2B25" font-size="11">核心矛盾：样本量固定时，减小 α 必然增大 β——两类错误不能同时降低</text>
+    <text class="fs" x="48" y="272" fill="${I}" font-size="10.5">要同时减小两者，唯一办法是<tspan font-weight="500">增大样本量 n</tspan></text>
+    <text class="fs" x="48" y="292" fill="${I}" font-size="10.5">实践中通常先控制 α（如取 0.05），再尽量减小 β</text>
+    <text class="fs" x="48" y="310" fill="${I3}" font-size="9.5">措辞陷阱：结论只能说「拒绝 H₀」或「没有充分理由拒绝 H₀」，不能说「H₀ 成立」</text>
+    </svg><figcaption>假设检验的两类错误：α 弃真、β 取伪。二者此消彼长，只有增大样本量才能同时改善</figcaption>`;
+},
+weiqi(){
+  // 卫气营血传变
+  const layer=(y,t,s,d,col,depth)=>`<rect x="${20+depth*14}" y="${y}" width="${520-depth*28}" height="54" rx="8" fill="${C}" stroke="${col}" stroke-width="1.4"/>
+    <text class="ft" x="${38+depth*14}" y="${y+22}" fill="${col}" font-size="13">${t}</text>
+    <text class="fs" x="${96+depth*14}" y="${y+21}" fill="${I3}" font-size="9.5">${s}</text>
+    <text class="fs" x="${38+depth*14}" y="${y+42}" fill="${I2}" font-size="10">${d}</text>`;
+  const dn=(y1,y2)=>`<line x1="290" y1="${y1}" x2="290" y2="${y2}" stroke="${A}" stroke-width="1.4" marker-end="url(#ah)"/>`;
+  return `<svg viewBox="0 0 580 340">${arrowDefs}
+    <text class="fs" x="290" y="22" text-anchor="middle" fill="${I2}" font-size="11">温病由浅入深的四个层次——「卫之后方言气，营之后方言血」</text>
+    ${layer(34,'卫分','病位最浅·肺卫','发热微恶风寒·头痛咳嗽·口微渴·苔薄白·脉浮数','#4F6B3A',0)}
+    ${dn(88,100)}
+    ${layer(100,'气分','邪入脏腑·正邪剧争','壮热不恶寒反恶热·口渴喜冷饮·汗多·苔黄·脉洪数','#8A6212',1)}
+    ${dn(154,166)}
+    ${layer(166,'营分','热灼营阴·扰神','身热夜甚·心烦不寐·时有谵语·斑疹隐隐·舌质红绛','#B4472C',2)}
+    ${dn(220,232)}
+    ${layer(232,'血分','最深重·耗血动血','躁扰不安或神昏谵狂·吐衄便血·斑疹显露·舌深绛','#9E2B25',3)}
+    <rect x="30" y="296" width="520" height="38" rx="8" fill="#F9F2F1" stroke="#9E2B25" stroke-width="1.1"/>
+    <text class="fs" x="48" y="316" fill="#9E2B25" font-size="10.5">一般由浅入深顺传，但也可「逆传心包」——卫分之邪不经气分，直入心包（起病急骤、神昏）</text>
+    <text class="fs" x="48" y="330" fill="${I3}" font-size="9">治则：在卫汗之可也，到气才可清气，入营犹可透热转气，入血直须凉血散血</text>
+    </svg><figcaption>卫气营血辨证：温病的四个深浅层次。层次越深，病情越重，治法也随之从透表转向清营凉血</figcaption>`;
+},
+tongbing(){
+  // 同病异治与异病同治
+  const box=(x,y,w,h,t,col,fill)=>`<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="7" fill="${fill||C}" stroke="${col}" stroke-width="1.2"/>
+    <text class="fs" x="${x+w/2}" y="${y+h/2+4}" text-anchor="middle" fill="${col}" font-size="11">${t}</text>`;
+  const ar=(x1,y1,x2,y2,col)=>`<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="${col||R}" stroke-width="1.2" marker-end="url(#ah)"/>`;
+  return `<svg viewBox="0 0 580 340">${arrowDefs}
+    <text class="ft" x="150" y="26" text-anchor="middle" fill="#B4472C" font-size="13">同病异治</text>
+    <text class="fs" x="150" y="42" text-anchor="middle" fill="${I3}" font-size="9.5">同一个病，证不同则治不同</text>
+    ${box(90,54,120,34,'感冒','#B4472C','#FBF1EE')}
+    ${ar(150,88,90,110)}${ar(150,88,210,110)}
+    ${box(30,110,116,34,'风寒证','#B4472C')}
+    ${box(154,110,116,34,'风热证','#B4472C')}
+    ${ar(88,144,88,166)}${ar(212,144,212,166)}
+    ${box(30,166,116,34,'辛温解表','#8A6212')}
+    ${box(154,166,116,34,'辛凉解表','#8A6212')}
+    ${ar(88,200,88,222)}${ar(212,200,212,222)}
+    ${box(30,222,116,34,'荆防败毒散','#4F6B3A')}
+    ${box(154,222,116,34,'银翘散','#4F6B3A')}
+    <line x1="290" y1="40" x2="290" y2="270" stroke="${RU}" stroke-width="1" stroke-dasharray="4 4"/>
+    <text class="ft" x="430" y="26" text-anchor="middle" fill="#2E4A7D" font-size="13">异病同治</text>
+    <text class="fs" x="430" y="42" text-anchor="middle" fill="${I3}" font-size="9.5">不同的病，证相同则治相同</text>
+    ${box(312,54,110,34,'久泻','#2E4A7D','#EDF1F5')}
+    ${box(436,54,110,34,'脱肛','#2E4A7D','#EDF1F5')}
+    ${box(374,98,110,34,'子宫脱垂','#2E4A7D','#EDF1F5')}
+    ${ar(367,88,410,140)}${ar(491,88,450,140)}${ar(429,132,429,140)}
+    ${box(370,140,120,34,'中气下陷证','#2E4A7D')}
+    ${ar(430,174,430,196)}
+    ${box(370,196,120,34,'补中益气','#8A6212')}
+    ${ar(430,230,430,252)}
+    ${box(370,252,120,34,'补中益气汤','#4F6B3A')}
+    <rect x="30" y="294" width="520" height="40" rx="8" fill="#F1EFF5" stroke="${A}" stroke-width="1.1"/>
+    <text class="fs" x="290" y="314" text-anchor="middle" fill="${A}" font-size="11">这两条共同说明：中医治的是「证」而不是「病」</text>
+    <text class="fs" x="290" y="330" text-anchor="middle" fill="${I3}" font-size="9.5">辨证论治的精髓所在——病名相同不代表治法相同，病名不同也可能治法一致</text>
+    </svg><figcaption>同病异治与异病同治：证相同则治相同，证不同则治不同。中医的治疗依据是证，不是病名</figcaption>`;
 },
 jishu(){
   // 级数为什么会收敛：部分和数列的极限
