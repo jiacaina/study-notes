@@ -292,9 +292,17 @@ const SUB=[
  M:[
  {t:"函数与极限",sub:"全书地基：后续每个概念都是某种极限",
   map:[["函数","定义域·奇偶·周期·有界；反函数、复合函数、初等函数"],["极限定义","ε-N / ε-δ；四则运算、夹逼准则、单调有界准则"],["无穷小","阶的比较；等价无穷小替换（求极限主力）"],["连续性","间断点分类；闭区间上的有界、最值、介值、零点定理"]],
-  fig:["calcline","taylor"],
+  fig:["calcline","jixian","wuqiongxiao","taylor"],
   spine:"极限是全书唯一的地基——导数、积分、级数都是它的变体。",
   g:[
+  {g:"入门：最容易卡住的几个点",r:[
+   ["极限是「趋势」不是「到达」","最核心的一句","x 无限接近 x₀ 但永远不等于它。所以 $f(x_0)$ 有没有定义、等于几，都不影响极限"],
+   ["为什么要分左右极限","","从左边靠近和从右边靠近，趋势可能不同。$\\lim$ 存在 ⟺ 左极限 = 右极限。分段函数、绝对值、$\\arctan\\frac1x$ 必须分开讨论"],
+   ["无穷小不是「很小的数」","常见误解","它是<strong>趋于 0 的变量</strong>。0 是唯一可以作为无穷小的常数"],
+   ["无穷大也不是数","","是绝对值无限增大的变量。所以不能参与四则运算，$\\infty-\\infty$ 才成为未定式"],
+   ["为什么有「未定式」","","$\\frac00$ 型：分子分母都趋于 0，谁快谁慢决定结果，所以「未定」。七种：$\\frac00,\\frac\\infty\\infty,0\\cdot\\infty,\\infty-\\infty,1^\\infty,\\infty^0,0^0$"],
+   ["连续到底是什么","一句话","极限值 = 函数值，即 $\\lim_{x\\to x_0}f(x)=f(x_0)$。图像上就是「笔不离纸」"],
+   ["间断点怎么分","","第一类（左右极限都存在）：可去间断点、跳跃间断点；第二类（至少一个不存在）：无穷间断点、振荡间断点"]]},
   {g:"两个重要极限",r:[
    ["重要极限 I","x→0","$\\displaystyle\\lim_{x\\to0}\\frac{\\sin x}{x}=1$"],
    ["重要极限 II","1<sup>∞</sup> 型母型","$\\displaystyle\\lim_{x\\to\\infty}\\Big(1+\\frac1x\\Big)^{x}=e,\\qquad\\lim_{u\\to0}(1+u)^{1/u}=e$"],
@@ -313,7 +321,7 @@ const SUB=[
  {t:"一元微分学",sub:"局部线性化：用直线逼近曲线",
   map:[["导数与微分","定义与几何意义；四则、复合、反函数、隐函数、参数式、对数求导；高阶导数"],["中值定理","费马 → 罗尔 → 拉格朗日 → 柯西 → 泰勒公式"],["导数应用","洛必达；单调与极值；凹凸与拐点；渐近线；曲率；最值"]],
   spine:"中值定理是「从局部导数推全局性质」的唯一桥梁，证明题几乎都靠它。",
-  fig:"zhongzhi",
+  fig:["qiexian","zhongzhi"],
   g:[
   {g:"求导法则",r:[
    ["四则","","$(uv)'=u'v+uv',\\qquad\\Big(\\dfrac uv\\Big)'=\\dfrac{u'v-uv'}{v^{2}}$"],
@@ -1516,9 +1524,16 @@ const SUB=[
 
  {t:"哲学基础：精气 · 阴阳 · 五行",sub:"中医的思维工具箱：全书的方法论",
   map:[["精气学说","气是构成世界的本原；气的运动（气机）推动一切变化"],["阴阳学说","对立制约、互根互用、消长平衡、相互转化"],["五行学说","相生相克为常；相乘相侮为变；母子相及为传变"],["应用","说明生理、解释病理、指导诊断与治疗"]],
-  fig:"wuxing",
+  fig:["yinyangpan","wuxing"],
   spine:"阴阳讲的是「一分为二」，五行讲的是「相互关联」——前者用来判断寒热虚实，后者用来推演脏腑传变。",
   g:[
+  {g:"入门：怎么判断一个事物的阴阳属性",r:[
+   ["四问法","实用","① 动还是静？② 向上向外还是向下向内？③ 温热明亮还是寒冷晦暗？④ 功能无形还是物质有形？前者属阳，后者属阴"],
+   ["阴阳是相对的","最关键","不存在绝对的阴或阳。胸背相对，背为阳；上下相对，上为阳。同一事物换个参照，属性可能翻转"],
+   ["阴阳可以无限再分","","白天属阳，但上午为阳中之阳、下午为阳中之阴。这叫「阴阳之中复有阴阳」"],
+   ["所以不必背属性表","","掌握四问法，任何新事物都能自行判断。死背表格反而僵化"],
+   ["人体的阴阳划分","举例","上部/下部、体表/体内、背/腹、六腑/五脏、功能/物质——前者阳后者阴"],
+   ["为什么这套划分有用","","一旦判定阴阳，就能接上后面的全部理论：阴阳失调四型、治法补泻、药性寒热——都建立在这一步之上"]]},
   {g:"阴阳学说",r:[
    ["阴阳的属性","划分标准","凡运动的、外向的、上升的、温热的、明亮的、功能的属阳；相对静止的、内守的、下降的、寒冷的、晦暗的、物质的属阴"],
    ["对立制约","","阴阳双方相互斗争、相互制约。制约失常则「阳胜则热，阴胜则寒」"],
@@ -1613,8 +1628,15 @@ const SUB=[
  {t:"精 · 气 · 血 · 津液 · 神",sub:"人体的基本物质与功能：藏象的「内容物」",
   map:[["气","元气、宗气、营气、卫气；六大功能：推动、温煦、防御、固摄、气化、营养"],["血","化生于水谷精微，行于脉中，濡养全身"],["津液","津清稀而卫外，液稠厚而濡养内脏骨节"],["气血津液的关系","气为血之帅，血为气之母；津血同源"]],
   spine:"气是功能，血津是物质——「气为血之帅，血为气之母」这八个字，能解释气血关系的一切病机与治则。",
-  fig:"qixue",
+  fig:["qigongneng","qixue"],
   g:[
+  {g:"入门：中医的「气」到底是什么",r:[
+   ["先破除玄学感","关键","气不是虚无缥缈的概念，而是指<strong>人体内活动力很强、不断运动的精微物质</strong>。它看不见，但通过功能被认识——就像不用看见电，也能通过灯亮判断有电"],
+   ["气的存在靠什么证明","","靠六大功能：推动、温煦、防御、固摄、气化、营养。哪一项减退，就说明气在哪方面不足"],
+   ["气与现代概念的关系","别硬套","气不等于能量、不等于神经内分泌，也不等于氧气。它是中医独立的功能模型，不必也不宜与现代医学概念一一对应"],
+   ["为什么气虚会自汗","理解范例","固摄功能减退 → 汗液不受约束而外泄。同理，气虚会遗尿、出血、滑精——都是「固摄」这一项出了问题"],
+   ["为什么气虚会怕冷","","温煦功能减退。注意与阳虚区分：阳虚的畏寒更重、更持久，且必兼见气虚表现（阳虚是气虚的进一步发展）"],
+   ["气与血的一句话关系","必记","气为血之帅（生血·行血·摄血），血为气之母（载气·养气）"]]},
   {g:"气",r:[
    ["元气（原气）","最根本","根于肾，由先天之精化生，赖后天之精充养。推动人体生长发育、激发脏腑功能"],
    ["宗气","积于胸中（膻中）","由肺吸入的清气与脾运化的水谷精气结合而成。走息道以司呼吸，贯心脉以行气血"],
@@ -2190,7 +2212,7 @@ const SUB=[
 
  {t:"舌诊",sub:"中医最具特色的诊法：舌象是内脏的一面镜子",
   map:[["舌质（舌体）","反映脏腑虚实、气血盛衰；看神、色、形、态"],["舌苔","反映病邪性质、深浅及胃气存亡；看苔色、苔质"],["舌面分部","舌尖属心肺；舌中属脾胃；舌根属肾；舌两边属肝胆"],["正常舌象","淡红舌、薄白苔"]],
-  fig:"tongue",
+  fig:["tongue","sheliucheng"],
   spine:"一句口诀分工明确：**舌质辨正气（虚实寒热），舌苔辨邪气（性质深浅）**。看到舌象先分两半看，思路立刻清晰。",
   g:[
   {g:"舌色（舌质）",r:[
@@ -4554,6 +4576,177 @@ sanfenbu(){
     </svg><figcaption>三大抽样分布同出一源：都由标准正态构造而来，故统计推断的骨架是正态理论</figcaption>`;
 },
 
+qigongneng(){
+  // 气的六大功能：中医的"气"到底指什么
+  const fn=[
+    ['推动','促进生长发育、脏腑功能、血与津液的运行','气虚 → 生长迟缓、脏腑功能减退、血行不畅','#B4472C'],
+    ['温煦','维持体温，温养脏腑经络','气虚 → 畏寒肢冷、体温偏低','#C15A44'],
+    ['防御','护卫肌表，抵御外邪','气虚 → 易感冒、反复生病','#4F6B3A'],
+    ['固摄','统摄血液、汗液、尿液、精液不致外泄','气虚 → 出血、自汗、遗尿、滑精','#2E4A7D'],
+    ['气化','物质与能量的相互转化（如水谷化精微）','气化失常 → 水液代谢障碍、二便异常','#6B5B95'],
+    ['营养','为脏腑经络提供营养（主要靠营气）','气虚 → 面色无华、形体消瘦','#8A6212']
+  ];
+  let g='';
+  fn.forEach((f,i)=>{
+    const y=44+i*44;
+    g+=`<rect x="20" y="${y}" width="540" height="38" rx="7" fill="${C}" stroke="${f[3]}" stroke-width="1.1"/>`;
+    g+=`<rect x="20" y="${y}" width="8" height="38" rx="4" fill="${f[3]}"/>`;
+    g+=`<text class="ft" x="42" y="${y+24}" fill="${f[3]}" font-size="13">${f[0]}</text>`;
+    g+=`<text class="fs" x="88" y="${y+16}" fill="${I2}" font-size="10.5">${f[1]}</text>`;
+    g+=`<text class="fs" x="88" y="${y+32}" fill="${I3}" font-size="9.5">${f[2]}</text>`;
+  });
+  return `<svg viewBox="0 0 580 330">
+    <text class="fs" x="290" y="26" text-anchor="middle" fill="${I2}" font-size="11">中医的「气」不玄：它指人体内活动力很强、不断运动的精微物质，其存在通过六大功能体现</text>
+    ${g}
+    <text class="fs" x="290" y="322" text-anchor="middle" fill="${I3}" font-size="10">判断「气虚」不是凭感觉，而是看这六项功能哪里出了问题</text>
+    </svg><figcaption>气的六大功能：推动·温煦·防御·固摄·气化·营养。反过来，气虚的表现就是这六项的减退</figcaption>`;
+},
+yinyangpan(){
+  // 阴阳属性判断四步法
+  const step=(x,y,n,t,yang,yin,col)=>`<rect x="${x}" y="${y}" width="256" height="86" rx="8" fill="${C}" stroke="${col}" stroke-width="1.3"/>
+    <circle cx="${x+24}" cy="${y+24}" r="13" fill="${col}"/>
+    <text class="ft" x="${x+24}" y="${y+29}" text-anchor="middle" fill="#fff" font-size="12">${n}</text>
+    <text class="ft" x="${x+46}" y="${y+29}" fill="${col}" font-size="12.5">${t}</text>
+    <text class="fs" x="${x+16}" y="${y+52}" fill="#B4472C" font-size="10.5">阳：${yang}</text>
+    <text class="fs" x="${x+16}" y="${y+72}" fill="#2E4A7D" font-size="10.5">阴：${yin}</text>`;
+  return `<svg viewBox="0 0 580 330">
+    <text class="fs" x="290" y="24" text-anchor="middle" fill="${I3}" font-size="10.5">遇到一个新事物，按这四问依次判断，阴阳属性自然浮现</text>
+    ${step(24,36,'1','看动静','运动的、活跃的','相对静止的','#9E2B25')}
+    ${step(300,36,'2','看方向','向上、向外、升发','向下、向内、收敛','#8A6212')}
+    ${step(24,140,'3','看温度明暗','温热的、明亮的','寒冷的、晦暗的','#4F6B3A')}
+    ${step(300,140,'4','看功能物质','功能、无形、亢进','物质、有形、抑制','#2E4A7D')}
+    <rect x="24" y="244" width="532" height="72" rx="8" fill="${C}" stroke="${RU}"/>
+    <text class="fs" x="42" y="266" fill="${I2}" font-size="11">举例：白天属阳、夜晚属阴；夏属阳、冬属阴；背属阳、腹属阴；六腑属阳、五脏属阴</text>
+    <text class="fs" x="42" y="286" fill="#9E2B25" font-size="11">关键：阴阳是相对的、可分的——胸背相对，背为阳；上下相对，上为阳。同一事物在不同参照下可阴可阳</text>
+    <text class="fs" x="42" y="306" fill="${I3}" font-size="10">故不必死背属性表，掌握这四问，任何事物都能自行判断</text>
+    </svg><figcaption>阴阳判断四步法：看动静、看方向、看温度明暗、看功能物质。阴阳是相对的，须在具体参照下判断</figcaption>`;
+},
+sheliucheng(){
+  // 舌象 → 证型的决策流程
+  const node=(x,y,w,t,s,col,fill)=>`<rect x="${x}" y="${y}" width="${w}" height="46" rx="8" fill="${fill||C}" stroke="${col}" stroke-width="1.3"/>
+    <text class="ft" x="${x+w/2}" y="${y+20}" text-anchor="middle" fill="${col}" font-size="12">${t}</text>
+    <text class="fs" x="${x+w/2}" y="${y+36}" text-anchor="middle" fill="${I3}" font-size="9.5">${s}</text>`;
+  const ln=(x1,y1,x2,y2)=>`<path d="M${x1} ${y1} V${(y1+y2)/2} H${x2} V${y2}" fill="none" stroke="${R}" stroke-width="1" marker-end="url(#ah)"/>`;
+  return `<svg viewBox="0 0 580 340">${arrowDefs}
+    ${node(210,14,160,'看到一个舌象','先劈成两半看','#6B5B95','#F1EFF5')}
+    ${ln(290,60,150,86)}${ln(290,60,430,86)}
+    ${node(50,86,200,'① 看舌质（辨正气）','虚实寒热、气血盛衰','#2E4A7D')}
+    ${node(330,86,200,'② 看舌苔（辨邪气）','邪的性质与深浅','#B4472C')}
+    <text class="fs" x="60" y="150" fill="${I2}" font-size="10.5">淡白 → 虚证·寒证（气血虚/阳虚）</text>
+    <text class="fs" x="60" y="168" fill="${I2}" font-size="10.5">淡红 → 正常</text>
+    <text class="fs" x="60" y="186" fill="${I2}" font-size="10.5">红 → 热证（有苔实热·少苔阴虚）</text>
+    <text class="fs" x="60" y="204" fill="${I2}" font-size="10.5">绛 → 热盛（营血分/阴虚火旺）</text>
+    <text class="fs" x="60" y="222" fill="${I2}" font-size="10.5">紫暗·瘀斑 → 血瘀</text>
+    <text class="fs" x="340" y="150" fill="${I2}" font-size="10.5">白苔 → 表证·寒证（厚腻则痰湿）</text>
+    <text class="fs" x="340" y="168" fill="${I2}" font-size="10.5">黄苔 → 里证·热证（黄腻则湿热）</text>
+    <text class="fs" x="340" y="186" fill="${I2}" font-size="10.5">灰黑 → 重证（润为寒·燥为热极）</text>
+    <text class="fs" x="340" y="204" fill="${I2}" font-size="10.5">厚薄 → 邪气深浅　腻腐 → 湿浊食积</text>
+    <text class="fs" x="340" y="222" fill="${I2}" font-size="10.5">剥落·镜面 → 胃气阴大伤（危候）</text>
+    <path d="M150 232 V256 H290 V276" fill="none" stroke="${A}" stroke-width="1.2" marker-end="url(#ah)"/>
+    <path d="M430 232 V256 H290" fill="none" stroke="${A}" stroke-width="1.2"/>
+    ${node(190,276,200,'③ 两半合参 → 得出证型','舌淡胖+苔白腻＝脾肾阳虚水湿内停','#4F6B3A','#F1F5EC')}
+    <text class="fs" x="290" y="334" text-anchor="middle" fill="${I3}" font-size="9.5">注意排除染苔（牛奶·咖啡·药物）；本图为教材知识梳理，不构成诊断依据</text>
+    </svg><figcaption>看舌的标准动作：先分舌质与舌苔，各自读出结论，再合起来得证型——分开看是不出错的关键</figcaption>`;
+},
+jixian(){
+  // 极限的直观：函数趋近 + 左右极限
+  const ox=60,oy=170,S=200;
+  let g='';
+  g+=`<line x1="${ox-16}" y1="${oy}" x2="${ox+S+40}" y2="${oy}" stroke="${R}" stroke-width="0.9"/>`;
+  g+=`<line x1="${ox}" y1="${oy+50}" x2="${ox}" y2="${oy-118}" stroke="${R}" stroke-width="0.9"/>`;
+  // 曲线 y = f(x)，在 x0 处有洞
+  const x0=ox+120, y0=oy-78;
+  let d='M';
+  for(let px=ox+10;px<=ox+S+20;px+=3){
+    const t=(px-ox)/S;
+    const py=oy-(30+70*Math.sin(t*2.2));
+    d+=(px===ox+10?'':' L')+px.toFixed(1)+' '+py.toFixed(1);
+  }
+  g+=`<path d="${d}" fill="none" stroke="#6B5B95" stroke-width="2.2"/>`;
+  // 空心点表示该点无定义
+  g+=`<circle cx="${x0}" cy="${y0}" r="4.5" fill="#fff" stroke="#6B5B95" stroke-width="2"/>`;
+  // 虚线指示
+  g+=`<line x1="${x0}" y1="${oy}" x2="${x0}" y2="${y0}" stroke="${R}" stroke-width="0.9" stroke-dasharray="3 3"/>`;
+  g+=`<line x1="${ox}" y1="${y0}" x2="${x0}" y2="${y0}" stroke="${R}" stroke-width="0.9" stroke-dasharray="3 3"/>`;
+  g+=`<text class="fs" x="${x0}" y="${oy+16}" text-anchor="middle" fill="${I2}" font-size="10">x₀</text>`;
+  g+=`<text class="fs" x="${ox-10}" y="${y0+4}" text-anchor="end" fill="${I2}" font-size="10">A</text>`;
+  // 左右趋近箭头
+  g+=`<line x1="${x0-56}" y1="${oy+26}" x2="${x0-10}" y2="${oy+26}" stroke="#4F6B3A" stroke-width="1.6" marker-end="url(#ah)"/>`;
+  g+=`<text class="fs" x="${x0-62}" y="${oy+30}" text-anchor="end" fill="#4F6B3A" font-size="9.5">左极限 x→x₀⁻</text>`;
+  g+=`<line x1="${x0+56}" y1="${oy+44}" x2="${x0+10}" y2="${oy+44}" stroke="#B4472C" stroke-width="1.6" marker-end="url(#ah)"/>`;
+  g+=`<text class="fs" x="${x0+62}" y="${oy+48}" fill="#B4472C" font-size="9.5">右极限 x→x₀⁺</text>`;
+  return `<svg viewBox="0 0 580 320">${arrowDefs}${g}
+    <rect x="316" y="30" width="248" height="176" rx="8" fill="${C}" stroke="${RU}"/>
+    <text class="ft" x="332" y="52" fill="${A}" font-size="12.5">极限说的是「趋势」，不是「到达」</text>
+    <text class="fs" x="332" y="76" fill="${I}" font-size="10.5">• x 无限接近 x₀，但永远不等于 x₀</text>
+    <text class="fs" x="332" y="96" fill="${I}" font-size="10.5">• 所以 f(x₀) 是否有定义、等于多少，</text>
+    <text class="fs" x="342" y="112" fill="${I}" font-size="10.5">都不影响极限（图中该点是空心）</text>
+    <text class="fs" x="332" y="136" fill="#9E2B25" font-size="10.5">• 极限存在 ⟺ 左极限 = 右极限 = A</text>
+    <text class="fs" x="332" y="156" fill="${I3}" font-size="9.5">两边趋近的高度必须一致，否则极限不存在</text>
+    <text class="fs" x="332" y="180" fill="${I2}" font-size="10.5">ε-δ 语言：给多小的 ε，都能找到 δ，</text>
+    <text class="fs" x="342" y="196" fill="${I2}" font-size="10.5">使 0&lt;|x−x₀|&lt;δ 时 |f(x)−A|&lt;ε</text>
+    <text class="fs" x="290" y="248" text-anchor="middle" fill="${I2}" font-size="11">常见误解：极限 ≠ 函数值。f(x₀) 可以无定义、可以不等于 A，极限照样是 A</text>
+    <text class="fs" x="290" y="272" text-anchor="middle" fill="${I2}" font-size="11">分段函数、绝对值、arctan(1/x) 这类题，必须分左右极限讨论</text>
+    <text class="fs" x="290" y="296" text-anchor="middle" fill="${I3}" font-size="10">连续的定义正是「极限值 = 函数值」：lim f(x) = f(x₀)</text>
+    </svg><figcaption>极限的直观：x 无限趋近 x₀ 时 f(x) 趋近的那个值。左右极限相等才叫极限存在</figcaption>`;
+},
+qiexian(){
+  // 割线 → 切线：导数的定义
+  const ox=50,oy=210,S=190;
+  const f=t=>0.85*t*t;   // 抛物线（归一化）
+  const X=t=>ox+t*S, Y=t=>oy-f(t)*S;
+  let curve='M';
+  for(let t=0;t<=1.02;t+=0.03) curve+=(t===0?'':' L')+X(t).toFixed(1)+' '+Y(t).toFixed(1);
+  const t0=0.5;
+  let g=`<line x1="${ox-14}" y1="${oy}" x2="${ox+S+30}" y2="${oy}" stroke="${R}" stroke-width="0.9"/>`;
+  g+=`<line x1="${ox}" y1="${oy+16}" x2="${ox}" y2="${oy-S-16}" stroke="${R}" stroke-width="0.9"/>`;
+  g+=`<path d="${curve}" fill="none" stroke="#6B5B95" stroke-width="2.2"/>`;
+  // 三条割线：Δx 依次变小
+  [[0.46,'#8494A3'],[0.28,'#4F6B3A'],[0.12,'#B4472C']].forEach(([dx,col])=>{
+    const t1=t0+dx;
+    const x1=X(t0),y1=Y(t0),x2=X(t1),y2=Y(t1);
+    const k=(y2-y1)/(x2-x1);
+    const ext=52;
+    g+=`<line x1="${(x1-ext).toFixed(1)}" y1="${(y1-k*ext).toFixed(1)}" x2="${(x2+22).toFixed(1)}" y2="${(y2+k*22).toFixed(1)}" stroke="${col}" stroke-width="1.4" opacity="0.85"/>`;
+    g+=`<circle cx="${x2.toFixed(1)}" cy="${y2.toFixed(1)}" r="3.4" fill="${col}"/>`;
+  });
+  // 切线（Δx→0）
+  const kt=2*0.85*t0;
+  const xt=X(t0),yt=Y(t0),ex=70;
+  g+=`<line x1="${(xt-ex).toFixed(1)}" y1="${(yt+kt*ex).toFixed(1)}" x2="${(xt+ex).toFixed(1)}" y2="${(yt-kt*ex).toFixed(1)}" stroke="#9E2B25" stroke-width="2.4"/>`;
+  g+=`<circle cx="${xt.toFixed(1)}" cy="${yt.toFixed(1)}" r="4.5" fill="#fff" stroke="#9E2B25" stroke-width="2.2"/>`;
+  g+=`<text class="fs" x="${xt}" y="${oy+16}" text-anchor="middle" fill="${I2}" font-size="10">x₀</text>`;
+  return `<svg viewBox="0 0 580 320">${g}
+    <rect x="300" y="26" width="264" height="184" rx="8" fill="${C}" stroke="${RU}"/>
+    <text class="ft" x="316" y="48" fill="${A}" font-size="12.5">导数 = 割线斜率的极限</text>
+    <text class="fs" x="316" y="74" fill="${I}" font-size="10.5">取两点连线（割线），斜率为</text>
+    <text class="fs" x="316" y="94" fill="${I}" font-size="11">　[f(x₀+Δx) − f(x₀)] / Δx</text>
+    <text class="fs" x="316" y="118" fill="#B4472C" font-size="10.5">让 Δx 越来越小 → 第二点靠近第一点</text>
+    <text class="fs" x="316" y="138" fill="#9E2B25" font-size="11">Δx → 0 时，割线变成切线</text>
+    <text class="fs" x="316" y="158" fill="${I}" font-size="11">　f′(x₀) = lim_{Δx→0} Δy/Δx</text>
+    <text class="fs" x="316" y="182" fill="${I3}" font-size="9.5">灰→绿→红：Δx 依次减小，割线逐渐</text>
+    <text class="fs" x="316" y="198" fill="${I3}" font-size="9.5">贴近深红色的切线</text>
+    <text class="fs" x="290" y="252" text-anchor="middle" fill="${I2}" font-size="11">导数的三重含义：几何上是切线斜率 · 物理上是瞬时变化率 · 代数上是极限</text>
+    <text class="fs" x="290" y="276" text-anchor="middle" fill="${I2}" font-size="11">可导 ⇒ 连续；连续 ⇏ 可导（如 y=|x| 在 0 点：左右切线斜率不同）</text>
+    <text class="fs" x="290" y="300" text-anchor="middle" fill="${I3}" font-size="10">「求导」求的就是这个极限，只是后来总结出了公式，不必每次都算极限</text>
+    </svg><figcaption>割线变切线：导数的本质是「当两点无限靠近时，割线斜率趋于的那个值」</figcaption>`;
+},
+wuqiongxiao(){
+  const row=(y,t,def,eg,col)=>`<rect x="24" y="${y}" width="532" height="52" rx="8" fill="${C}" stroke="${col}" stroke-width="1.2"/>
+    <text class="ft" x="42" y="${y+22}" fill="${col}" font-size="12.5">${t}</text>
+    <text class="fs" x="42" y="${y+40}" fill="${I2}" font-size="10.5">${def}</text>
+    <text class="fs" x="330" y="${y+31}" fill="${I3}" font-size="10">${eg}</text>`;
+  return `<svg viewBox="0 0 580 330">
+    <text class="fs" x="290" y="24" text-anchor="middle" fill="${I3}" font-size="10.5">设 α、β 都是同一过程中的无穷小（即极限为 0 的变量），考察 lim β/α</text>
+    ${row(36,'高阶无穷小　β = o(α)','lim β/α = 0　（β 比 α 更快趋于 0）','x² 是 x 的高阶无穷小','#2E4A7D')}
+    ${row(96,'同阶无穷小','lim β/α = c ≠ 0','2x 与 x 同阶','#4F6B3A')}
+    ${row(156,'等价无穷小　β ~ α','lim β/α = 1　（特殊的同阶）','sin x ~ x（x→0）','#9E2B25')}
+    ${row(216,'低阶无穷小','lim β/α = ∞　（β 比 α 更慢趋于 0）','√x 是 x 的低阶无穷小','#8A6212')}
+    <rect x="24" y="276" width="532" height="46" rx="8" fill="#F9F2F1" stroke="#9E2B25" stroke-width="1.1"/>
+    <text class="fs" x="42" y="296" fill="#9E2B25" font-size="11">等价无穷小替换：只能用于乘除，不能用于加减！</text>
+    <text class="fs" x="42" y="314" fill="${I2}" font-size="10.5">反例：lim(tan x − sin x)/x³，若都换成 x 得 0，正确答案是 1/2</text>
+    </svg><figcaption>无穷小的比较：无穷小不是「很小的数」，而是趋于 0 的变量。比较的是它们趋于 0 的「快慢」</figcaption>`;
+},
 zhongzhi(){
   // 中值定理三兄弟：罗尔 / 拉格朗日 / 柯西的几何意义
   const panel=(ox,title,sub,col,mode)=>{
