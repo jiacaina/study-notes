@@ -421,7 +421,15 @@ const SUB=[
  {t:"多元微分学",sub:"导数升维：偏导、梯度、条件极值",
   map:[["极限与连续","二重极限的路径任意性"],["偏导与全微分","偏导 → 全微分 → 连续 的关系链；链式法则；隐函数求导"],["几何应用","曲线切线/法平面；曲面切平面/法线"],["方向导数与梯度","梯度指向增长最快的方向"],["极值","AC−B² 判别；拉格朗日乘数法"]],
   spine:"「可微 ⇒ 偏导存在且连续」是单向箭头，反向不成立——这是本章最大的考点。",
+  fig:"piandao",
   g:[
+  {g:"入门：偏导与全微分的区别",r:[
+   ["偏导数","只看坐标轴方向","$\\partial z/\\partial x$ 是固定 y、只让 x 变的变化率。它只知道沿 x 轴这一条线上的信息"],
+   ["全微分","要看所有方向","要求 x、y <strong>同时</strong>变化时，函数增量能被线性主部逼近——相当于曲面在该点有切平面"],
+   ["为什么偏导存在推不出可微","核心","知道两条线上的情况，说明不了整个平面的情况"],
+   ["经典反例","记牢","$f=\\frac{xy}{x^2+y^2}$（原点补 0）：两个偏导都存在，但在原点连<strong>连续</strong>都不满足"],
+   ["正确的推导链","必背","偏导连续 ⇒ 可微 ⇒ 偏导存在；可微 ⇒ 连续。反向都不成立"],
+   ["与一元的最大差异","","一元函数「可导 ⟺ 可微」，这个直觉在多元里完全失效——这是最大的认知陷阱"]]},
   {g:"核心关系",r:[
    ["可微 → 偏导 / 连续","单向箭头","可微 ⇒ 偏导存在 且 连续；反之均不成立。偏导连续 ⇒ 可微（充分非必要）"],
    ["全微分","","$dz=\\dfrac{\\partial z}{\\partial x}dx+\\dfrac{\\partial z}{\\partial y}dy$"],
@@ -787,7 +795,16 @@ const SUB=[
  {t:"随机事件与概率",sub:"从样本空间到条件概率",
   map:[["事件关系","并、交、差、互斥、对立；德摩根律"],["概率性质","加法公式；条件概率；乘法公式"],["全概率与贝叶斯","由因求果 / 由果溯因"],["独立性","P(AB) = P(A)P(B)；注意与互斥的区别"]],
   spine:"互斥 ≠ 独立：互斥是「不能同时发生」，独立是「互不影响」，两个非零概率的互斥事件必不独立。",
+  fig:"beiyesi",
   g:[
+  {g:"入门：条件概率与贝叶斯",r:[
+   ["条件概率的本质","一句话","<strong>缩小样本空间</strong>。$P(A|B)=\\frac{P(AB)}{P(B)}$——已知 B 发生，就只在 B 这块区域里算比例"],
+   ["为什么分母是 P(B)","","因为参照系变了：原来分母是整个样本空间，现在只剩 B 这一块"],
+   ["全概率公式","由因求果","把复杂事件按完备事件组拆开：$P(B)=\\sum P(A_i)P(B|A_i)$"],
+   ["贝叶斯公式","由果溯因","已知结果反推原因：$P(A_i|B)=\\frac{P(A_i)P(B|A_i)}{P(B)}$"],
+   ["最反直觉的例子","必看","患病率 1%、准确率 99% 的检测，阳性者真患病的概率只有约 50%——不是 99%"],
+   ["为什么","理解关键","健康人基数太大（99%），即使误诊率只有 1%，假阳性人数也与真阳性相当"],
+   ["启示","","先验概率（基础比率）对结果影响极大，不能只盯着检测准确率"]]},
   {g:"基本公式",r:[
    ["加法公式","","$P(A\\cup B)=P(A)+P(B)-P(AB)$"],
    ["条件概率","","$P(B\\mid A)=\\dfrac{P(AB)}{P(A)}\\quad(P(A)>0)$"],
@@ -1048,7 +1065,16 @@ const SUB=[
  {t:"阅读理解 Part A",sub:"40 分的大头：得阅读者得考研",
   map:[["五大题型","主旨题；细节题；推断题；态度题；词句义题"],["定位原则","题目顺序 = 文章顺序；靠专有名词、数字、大写词回原文"],["干扰项特征","偷换概念、扩大范围、无中生有、正反混淆、答非所问"],["正确项特征","是原文的同义改写，不是原词照搬"]],
   spine:"永远从原文找答案，不要用常识或自己的观点做题——「看起来很有道理」的选项通常是错的。",
+  fig:"yuedu",
   g:[
+  {g:"入门：先判题型，再定解法",r:[
+   ["不要逐句翻译","方法论","读懂每个词≠做对题。先判断这道题问什么类型，再用对应方法去原文找依据"],
+   ["细节题","题量最多","回原文定位关键词，找<strong>同义替换</strong>。原词照抄的选项多是干扰项"],
+   ["主旨题","","看首段尾段 + 各段首句。答案要不宽不窄——过于宽泛或只覆盖一段的都错"],
+   ["推理题","最难","必须基于原文合理引申。跳跃太远、无中生有、常识推断都是错误选项的特征"],
+   ["词义题","有技巧","回原句看上下文推断，不用背词典义。考的往往是熟词僻义或特定语境义"],
+   ["态度题","有套路","找情感词与转折词。绝对化的态度（完全否定、强烈反对）通常不是答案"],
+   ["通用铁律","最重要","<strong>答案一定在原文里有依据</strong>。凭常识、凭感觉选的，多半是出题人设的坑"]]},
   {g:"五大题型识别",r:[
    ["主旨题","问 main idea / best title / mainly about","答案 = 首段末句 + 各段首句的综合；范围过大或过小都错"],
    ["细节题","问具体的 what / why / how","必须回原文定位到具体句子，逐词比对"],
@@ -1616,7 +1642,7 @@ const SUB=[
 
  {t:"哲学基础：精气 · 阴阳 · 五行",sub:"中医的思维工具箱：全书的方法论",
   map:[["精气学说","气是构成世界的本原；气的运动（气机）推动一切变化"],["阴阳学说","对立制约、互根互用、消长平衡、相互转化"],["五行学说","相生相克为常；相乘相侮为变；母子相及为传变"],["应用","说明生理、解释病理、指导诊断与治疗"]],
-  fig:["yinyangpan","wuxingqu","wuxing"],
+  fig:["yinyangpan","wuxingqu","wuxing","wuxingbiao"],
   spine:"阴阳讲的是「一分为二」，五行讲的是「相互关联」——前者用来判断寒热虚实，后者用来推演脏腑传变。",
   g:[
   {g:"入门：怎么判断一个事物的阴阳属性",r:[
@@ -4778,6 +4804,133 @@ sheliucheng(){
     ${node(190,276,200,'③ 两半合参 → 得出证型','舌淡胖+苔白腻＝脾肾阳虚水湿内停','#4F6B3A','#F1F5EC')}
     <text class="fs" x="290" y="334" text-anchor="middle" fill="${I3}" font-size="9.5">注意排除染苔（牛奶·咖啡·药物）；本图为教材知识梳理，不构成诊断依据</text>
     </svg><figcaption>看舌的标准动作：先分舌质与舌苔，各自读出结论，再合起来得证型——分开看是不出错的关键</figcaption>`;
+},
+beiyesi(){
+  // 条件概率与贝叶斯：用面积直观解释
+  const ox=40,oy=60,W=230,H=150;
+  let g='';
+  // 全集
+  g+=`<rect x="${ox}" y="${oy}" width="${W}" height="${H}" rx="6" fill="none" stroke="${R}" stroke-width="1.2"/>`;
+  g+=`<text class="fs" x="${ox+W-6}" y="${oy-8}" text-anchor="end" fill="${I3}" font-size="9.5">样本空间 Ω</text>`;
+  // A（病）与 B（检测阳性）
+  g+=`<rect x="${ox}" y="${oy}" width="60" height="${H}" fill="#B4472C" opacity="0.16"/>`;
+  g+=`<text class="fs" x="${ox+30}" y="${oy+H+16}" text-anchor="middle" fill="#B4472C" font-size="10">A 患病 (1%)</text>`;
+  g+=`<rect x="${ox}" y="${oy+40}" width="${W}" height="52" fill="#2E4A7D" opacity="0.16"/>`;
+  g+=`<text class="fs" x="${ox+W+8}" y="${oy+70}" fill="#2E4A7D" font-size="10">B 检测阳性</text>`;
+  // 交集
+  g+=`<rect x="${ox}" y="${oy+40}" width="60" height="52" fill="#6B5B95" opacity="0.5"/>`;
+  g+=`<text class="fs" x="${ox+30}" y="${oy+70}" text-anchor="middle" fill="#fff" font-size="10">AB</text>`;
+  return `<svg viewBox="0 0 580 330">${g}
+    <rect x="300" y="26" width="262" height="94" rx="8" fill="${C}" stroke="#4F6B3A" stroke-width="1.3"/>
+    <text class="ft" x="318" y="48" fill="#4F6B3A" font-size="12.5">条件概率 = 缩小样本空间</text>
+    <text class="fs" x="318" y="70" fill="${I}" font-size="11">P(A|B) = P(AB) / P(B)</text>
+    <text class="fs" x="318" y="90" fill="${I2}" font-size="10.5">已知 B 发生 → 只在 B 这块区域里看</text>
+    <text class="fs" x="318" y="110" fill="${I3}" font-size="9.5">分母从「整个 Ω」变成了「B 的面积」</text>
+    <rect x="300" y="132" width="262" height="82" rx="8" fill="${C}" stroke="#6B5B95" stroke-width="1.3"/>
+    <text class="ft" x="318" y="154" fill="#6B5B95" font-size="12.5">贝叶斯公式 = 由果溯因</text>
+    <text class="fs" x="318" y="176" fill="${I}" font-size="10.5">P(A|B) = P(A)P(B|A) / P(B)</text>
+    <text class="fs" x="318" y="196" fill="${I2}" font-size="10.5">已知结果 B，反推原因 A 的概率</text>
+    <text class="fs" x="318" y="210" fill="${I3}" font-size="9">全概率公式算分母 P(B)</text>
+    <rect x="40" y="238" width="522" height="82" rx="8" fill="#F9F2F1" stroke="#9E2B25" stroke-width="1.1"/>
+    <text class="fs" x="58" y="260" fill="#9E2B25" font-size="11">最反直觉的例子：某病患病率 1%，检测准确率 99%。若检测阳性，真患病的概率是多少？</text>
+    <text class="fs" x="58" y="280" fill="${I}" font-size="10.5">答案不是 99%，而是约 50%——因为健康人基数太大，即使误诊率只有 1%，假阳性人数也与真阳性相当</text>
+    <text class="fs" x="58" y="300" fill="${I2}" font-size="10.5">P(病|阳) = 0.01×0.99 / (0.01×0.99 + 0.99×0.01) = 0.5</text>
+    <text class="fs" x="58" y="316" fill="${I3}" font-size="9.5">启示：先验概率（患病率）对结果影响极大，不能只看检测准确率</text>
+    </svg><figcaption>条件概率与贝叶斯：条件概率是缩小样本空间，贝叶斯是由果溯因。先验概率的影响常被严重低估</figcaption>`;
+},
+piandao(){
+  // 偏导与全微分的区别
+  const ox=110,oy=160;
+  let g='';
+  // 曲面示意（网格）
+  g+=`<path d="M${ox-70} ${oy} L${ox+10} ${oy-46} L${ox+90} ${oy} L${ox+10} ${oy+46} Z" fill="#6B5B95" opacity="0.1" stroke="#8494A3" stroke-width="0.9"/>`;
+  g+=`<text class="fs" x="${ox+10}" y="${oy+70}" text-anchor="middle" fill="${I3}" font-size="9.5">曲面 z = f(x,y) 在点 P 附近</text>`;
+  // 两个方向的切线
+  g+=`<line x1="${ox-56}" y1="${oy-8}" x2="${ox+76}" y2="${oy-8}" stroke="#B4472C" stroke-width="2.2"/>`;
+  g+=`<text class="fs" x="${ox+80}" y="${oy-10}" fill="#B4472C" font-size="10">∂z/∂x</text>`;
+  g+=`<line x1="${ox-16}" y1="${oy-40}" x2="${ox+36}" y2="${oy+34}" stroke="#2E4A7D" stroke-width="2.2"/>`;
+  g+=`<text class="fs" x="${ox+40}" y="${oy+40}" fill="#2E4A7D" font-size="10">∂z/∂y</text>`;
+  g+=`<circle cx="${ox+10}" cy="${oy-8}" r="4" fill="#fff" stroke="${I}" stroke-width="2"/>`;
+  g+=`<text class="fs" x="${ox+10}" y="${oy-20}" text-anchor="middle" fill="${I}" font-size="10">P</text>`;
+  return `<svg viewBox="0 0 580 320">${g}
+    <rect x="256" y="24" width="306" height="86" rx="8" fill="${C}" stroke="#B4472C" stroke-width="1.3"/>
+    <text class="ft" x="274" y="46" fill="#B4472C" font-size="12.5">偏导数：只看两个方向</text>
+    <text class="fs" x="274" y="68" fill="${I2}" font-size="10.5">∂z/∂x：固定 y，只让 x 变 → 沿 x 轴方向的变化率</text>
+    <text class="fs" x="274" y="86" fill="${I2}" font-size="10.5">∂z/∂y：固定 x，只让 y 变</text>
+    <text class="fs" x="274" y="102" fill="${I3}" font-size="9.5">只反映沿坐标轴方向的信息，其余方向一无所知</text>
+    <rect x="256" y="122" width="306" height="86" rx="8" fill="${C}" stroke="#4F6B3A" stroke-width="1.3"/>
+    <text class="ft" x="274" y="144" fill="#4F6B3A" font-size="12.5">全微分：所有方向一起看</text>
+    <text class="fs" x="274" y="166" fill="${I}" font-size="10.5">dz = (∂z/∂x)dx + (∂z/∂y)dy</text>
+    <text class="fs" x="274" y="184" fill="${I2}" font-size="10.5">要求 x、y <tspan font-weight="500">同时</tspan>变化时，增量能被线性主部逼近</text>
+    <text class="fs" x="274" y="200" fill="${I3}" font-size="9.5">相当于曲面在该点有一个切平面</text>
+    <rect x="20" y="226" width="542" height="86" rx="8" fill="#F9F2F1" stroke="#9E2B25" stroke-width="1.1"/>
+    <text class="fs" x="38" y="248" fill="#9E2B25" font-size="11">这就是为什么「偏导存在 ⇏ 可微」——只知道两条线上的信息，说明不了整个平面</text>
+    <text class="fs" x="38" y="270" fill="${I}" font-size="10.5">反例：f = xy/(x²+y²)（原点补 0）。两个偏导都存在，但在原点连<tspan font-weight="500">连续都不满足</tspan>，更谈不上可微</text>
+    <text class="fs" x="38" y="290" fill="${I}" font-size="10.5">正确的链条：偏导连续 ⇒ 可微 ⇒ 偏导存在；可微 ⇒ 连续</text>
+    <text class="fs" x="38" y="308" fill="${I3}" font-size="9.5">一元函数「可导 ⟺ 可微」的直觉，在多元函数里完全失效</text>
+    </svg><figcaption>偏导与全微分：偏导只管坐标轴方向，全微分管所有方向。这是多元微分学最大的认知陷阱</figcaption>`;
+},
+wuxingbiao(){
+  // 五行归类表
+  const cols=['五行','五脏','六腑','五官','五体','五志','五味','五色','五时'];
+  const data=[
+    ['木','肝','胆','目','筋','怒','酸','青','春','#4F6B3A'],
+    ['火','心','小肠','舌','脉','喜','苦','赤','夏','#B4472C'],
+    ['土','脾','胃','口','肉','思','甘','黄','长夏','#8A6212'],
+    ['金','肺','大肠','鼻','皮','悲','辛','白','秋','#8494A3'],
+    ['水','肾','膀胱','耳','骨','恐','咸','黑','冬','#2E4A7D']
+  ];
+  const heads=['五行','五脏','六腑','五官','五体','五志','五味','五色','五时'];
+  const cw=[52,52,58,46,46,46,46,46,58];
+  let x0=22,g='';
+  heads.forEach((h,c)=>{
+    const x=x0+cw.slice(0,c).reduce((a,b)=>a+b,0);
+    g+=`<text class="fs" x="${x+cw[c]/2}" y="36" text-anchor="middle" fill="${I3}" font-size="10.5">${h}</text>`;
+  });
+  data.forEach((r,i)=>{
+    const y=48+i*46;
+    g+=`<rect x="${x0}" y="${y}" width="${cw.reduce((a,b)=>a+b,0)}" height="40" rx="6" fill="${r[9]}" opacity="0.07"/>`;
+    for(let c=0;c<9;c++){
+      const x=x0+cw.slice(0,c).reduce((a,b)=>a+b,0);
+      const cx=x+cw[c]/2;
+      if(c===0){
+        g+=`<circle cx="${cx}" cy="${y+20}" r="15" fill="${r[9]}"/>`;
+        g+=`<text class="ft" x="${cx}" y="${y+26}" text-anchor="middle" fill="#fff" font-size="14">${r[c]}</text>`;
+      }else{
+        const bold=c===1;
+        g+=`<text class="${bold?'ft':'fs'}" x="${cx}" y="${y+26}" text-anchor="middle" fill="${bold?r[9]:I2}" font-size="${bold?13:11.5}">${r[c]}</text>`;
+      }
+    }
+  });
+  return `<svg viewBox="0 0 580 300">${g}
+    <text class="fs" x="290" y="20" text-anchor="middle" fill="${I2}" font-size="11">同一行的事物，被认为具有同一类功能属性——这是五行归类的全部含义</text>
+    <text class="fs" x="290" y="292" text-anchor="middle" fill="${I3}" font-size="10">用法举例：目赤（木）多与肝火有关；思虑过度（土）易伤脾；恐则气下（水）易伤肾</text>
+    </svg><figcaption>五行归类表：把人体与自然的事物按五类功能属性对号入座，从而可以用生克规律推演相互影响</figcaption>`;
+},
+yuedu(){
+  // 阅读五种题型的解题差异
+  const t=[
+    ['细节题','最多·送分','回原文定位，找同义替换','原词照抄的多是干扰项','#4F6B3A'],
+    ['主旨题','难度中','看首尾段 + 各段首句','过于宽泛或过于具体都错','#2E4A7D'],
+    ['推理题','最难','基于原文合理引申','跳跃太远、无中生有即错','#B4472C'],
+    ['词义题','有技巧','回原句看上下文，不用背义','考的是熟词僻义或语境义','#8A6212'],
+    ['态度题','有套路','找情感词与转折','绝对化态度（完全否定）通常错','#6B5B95']
+  ];
+  let g='';
+  t.forEach((r,i)=>{
+    const y=44+i*50;
+    g+=`<rect x="20" y="${y}" width="540" height="42" rx="7" fill="${C}" stroke="${r[4]}" stroke-width="1.2"/>`;
+    g+=`<rect x="20" y="${y}" width="7" height="42" rx="3.5" fill="${r[4]}"/>`;
+    g+=`<text class="ft" x="40" y="${y+18}" fill="${r[4]}" font-size="12.5">${r[0]}</text>`;
+    g+=`<text class="fs" x="40" y="${y+34}" fill="${I3}" font-size="9">${r[1]}</text>`;
+    g+=`<text class="fs" x="112" y="${y+18}" fill="${I}" font-size="10.5">解法：${r[2]}</text>`;
+    g+=`<text class="fs" x="112" y="${y+34}" fill="#9E2B25" font-size="9.5">陷阱：${r[3]}</text>`;
+  });
+  return `<svg viewBox="0 0 580 320">
+    <text class="fs" x="290" y="24" text-anchor="middle" fill="${I2}" font-size="11">阅读不是通读全文碰运气——五种题型各有各的解法与陷阱</text>
+    ${g}
+    <text class="fs" x="290" y="310" text-anchor="middle" fill="${I3}" font-size="10">通用铁律：答案一定在原文里有依据。凭常识、凭感觉选的，多半是出题人设的干扰项</text>
+    </svg><figcaption>阅读五种题型：细节·主旨·推理·词义·态度。先判题型再定解法，比逐句翻译高效得多</figcaption>`;
 },
 weifen(){
   // 微分方程为什么分类型解
