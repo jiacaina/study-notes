@@ -442,7 +442,15 @@ const SUB=[
  {t:"无穷级数",sub:"离散的极限：判敛 → 求和 → 展开",
   map:[["常数项级数","正项：比较/比值/根值/积分判别；交错：莱布尼茨；绝对与条件收敛"],["幂级数","收敛半径与收敛域；逐项求导与积分求和函数；泰勒级数"],["傅里叶级数","狄利克雷收敛定理；正弦/余弦级数与周期延拓"]],
   spine:"判敛的第一步永远是找基准：几何级数和 p 级数，其余判别法都是在跟它们比。",
+  fig:"jishu",
   g:[
+  {g:"入门：级数为什么会收敛",r:[
+   ["先看对象是什么","关键","级数收敛与否，看的是<strong>部分和数列</strong> $S_n=a_1+\\cdots+a_n$ 有没有极限，不是看单独某一项"],
+   ["收敛的直观含义","","后面的项要「小得足够快」——快到加上无穷多项，总和也不会涨到无穷"],
+   ["最经典的反例","必须记牢","调和级数 $\\sum\\frac1n$：每一项都趋于 0，但部分和无上界，仍然发散"],
+   ["单向箭头","","收敛 ⇒ 通项趋于 0（成立）；通项趋于 0 ⇏ 收敛（不成立）"],
+   ["实用推论","","若通项不趋于 0，可<strong>直接判发散</strong>——这是最快的一招"],
+   ["为什么等比级数好判断","","$\\sum aq^{n}$ 当 $|q|<1$ 收敛于 $\\frac{a}{1-q}$，$|q|\\ge1$ 发散。部分和有现成公式，一看便知"]]},
   {g:"常数项级数",r:[
    ["必要条件","","$\\sum u_n$ 收敛 $\\Rightarrow u_n\\to0$（逆否可判发散，不能判收敛）"],
    ["几何级数","基准 1","$\\sum aq^{n}$：$|q|<1$ 收敛于 $\\dfrac{a}{1-q}$；$|q|\\ge1$ 发散"],
@@ -1333,7 +1341,16 @@ const SUB=[
  {t:"马原：政治经济学与科社",sub:"资本主义的运行逻辑与社会主义的必然性",
   map:[["商品二因素","使用价值与价值；劳动二重性：具体劳动与抽象劳动"],["价值规律","商品按价值量交换，价格围绕价值上下波动"],["剩余价值","资本主义生产的绝对规律；绝对剩余价值与相对剩余价值"],["资本主义基本矛盾","生产社会化与生产资料资本主义私人占有之间的矛盾"],["科学社会主义","从空想到科学的飞跃；共产主义的基本特征"]],
   spine:"劳动二重性是理解政治经济学全部内容的枢纽——马克思称之为「理解政治经济学的枢纽」。",
+  fig:"shengyu",
   g:[
+  {g:"入门：剩余价值是怎么来的",r:[
+   ["先问一个问题","切入点","资本家的利润从哪来？不是从流通中来（等价交换不产生新价值），而是从生产中来"],
+   ["劳动力商品的特殊性","核心","它的<strong>使用价值</strong>能创造出比自身价值更大的价值——这是剩余价值的唯一来源"],
+   ["工作日被分成两段","理解关键","必要劳动时间（创造相当于工资的价值 v）+ 剩余劳动时间（创造剩余价值 m，被无偿占有）"],
+   ["绝对剩余价值","","工作日总长延长（8→10 小时），必要劳动不变，剩余劳动直接变长"],
+   ["相对剩余价值","","工作日不变，靠提高社会劳动生产率<strong>缩短必要劳动时间</strong>，从而相对延长剩余劳动"],
+   ["不变资本与可变资本","为何这样划分","c（生产资料）只转移价值；v（劳动力）才带来增值。这一划分揭示了剩余价值的真正来源"],
+   ["剩余价值率","","$m'=m/v$，反映资本家对工人的剥削程度"]]},
   {g:"商品与价值",r:[
    ["商品二因素","","使用价值（自然属性）与价值（社会属性）。二者对立统一"],
    ["劳动二重性","枢纽","具体劳动创造使用价值；抽象劳动形成价值"],
@@ -1980,7 +1997,16 @@ const SUB=[
  {t:"总论：配伍与禁忌",sub:"药物相互作用的规律：七情与禁忌",
   map:[["七情","单行、相须、相使、相畏、相杀、相恶、相反"],["用药禁忌","配伍禁忌（十八反、十九畏）、证候禁忌、妊娠禁忌、服药食忌"],["剂量与用法","煎法（先煎、后下、包煎、另煎、烊化、冲服）；服法"]],
   spine:"七情里，相须相使是「要用的」，相畏相杀是「可用的」，相恶相反是「要避的」——分成三类记，比逐条背清楚得多。",
+  fig:"paozhi",
   g:[
+  {g:"入门：炮制为什么能改变药性",r:[
+   ["炮制不只是加工","核心机理","辅料本身有性味，会「带着」药力走向特定方向——从而改变药性、归经甚至功效"],
+   ["口诀","好记","酒制升提·姜制发散·醋制收敛入肝·盐制下行入肾·炒炭止血"],
+   ["酒炙","","酒性升散，能引药上行。大黄酒制则上清头目之热，当归酒炙增强活血"],
+   ["醋炙","","醋味酸入肝，能收敛止痛。延胡索醋制增强止痛，柴胡醋炙增强疏肝"],
+   ["盐炙","","盐味咸入肾，能引药下行。杜仲盐炙增强补肝肾，知母盐炙增强滋阴降火"],
+   ["减毒是另一大目的","","附子、半夏、川乌等有毒之品，必须经规范炮制方可内服"],
+   ["生制功效可能相反","举例","生首乌解毒润肠通便，制首乌补益精血固肾乌须——不可混用"]]},
   {g:"配伍七情（必背）",r:[
    ["单行","","单用一味药即能奏效，如独参汤"],
    ["相须","增效，应用","性能功效相类似的药合用，可增强疗效。如石膏配知母、大黄配芒硝"],
@@ -2564,7 +2590,7 @@ const SUB=[
   map:[["方剂与治法","法随证立，方从法出；八法：汗、吐、下、和、温、清、消、补"],["君臣佐使","君药主攻；臣药辅助；佐药制约或反佐；使药引经或调和"],["组成变化","药味增减、药量增减、剂型更换"],["剂型","汤、丸、散、膏、丹、酒、露、锭"]],
   fig:"junchen",
   spine:"「法随证立，方从法出」——方剂不是药物的堆砌，而是治法的物化。看一首方，先问它体现的是哪一「法」。",
-  fig:["junchen","bafa","peiwu"],
+  fig:["junchen","bafa","peiwu","jixing"],
   g:[
   {g:"治法：八法",r:[
    ["汗法","解表","开泄腠理、发汗解表。适用于表证（麻黄汤、桂枝汤、银翘散）"],
@@ -4700,6 +4726,132 @@ sheliucheng(){
     ${node(190,276,200,'③ 两半合参 → 得出证型','舌淡胖+苔白腻＝脾肾阳虚水湿内停','#4F6B3A','#F1F5EC')}
     <text class="fs" x="290" y="334" text-anchor="middle" fill="${I3}" font-size="9.5">注意排除染苔（牛奶·咖啡·药物）；本图为教材知识梳理，不构成诊断依据</text>
     </svg><figcaption>看舌的标准动作：先分舌质与舌苔，各自读出结论，再合起来得证型——分开看是不出错的关键</figcaption>`;
+},
+jishu(){
+  // 级数为什么会收敛：部分和数列的极限
+  const base=150,ox=40,W=210;
+  // 收敛例：1/2+1/4+1/8... → 1
+  let bars='',sum=0,d1='M';
+  for(let i=0;i<9;i++){
+    const term=Math.pow(0.5,i+1);
+    const x=ox+i*(W/9);
+    sum+=term;
+    bars+=`<rect x="${x.toFixed(1)}" y="${(base-term*90).toFixed(1)}" width="${(W/9-3).toFixed(1)}" height="${(term*90).toFixed(1)}" fill="#4F6B3A" opacity="0.3" stroke="#4F6B3A" stroke-width="0.7"/>`;
+    d1+=(i===0?'':' L')+(x+W/18).toFixed(1)+' '+(base-sum*90).toFixed(1);
+  }
+  // 发散例：调和级数 1+1/2+1/3... 缓慢增长不封顶
+  const ox2=330;
+  let bars2='',sum2=0,d2='M';
+  for(let i=0;i<9;i++){
+    const term=1/(i+1);
+    const x=ox2+i*(W/9);
+    sum2+=term;
+    bars2+=`<rect x="${x.toFixed(1)}" y="${(base-term*40).toFixed(1)}" width="${(W/9-3).toFixed(1)}" height="${(term*40).toFixed(1)}" fill="#B4472C" opacity="0.3" stroke="#B4472C" stroke-width="0.7"/>`;
+    d2+=(i===0?'':' L')+(x+W/18).toFixed(1)+' '+(base-sum2*32).toFixed(1);
+  }
+  return `<svg viewBox="0 0 580 330">
+    <text class="fs" x="290" y="22" text-anchor="middle" fill="${I2}" font-size="11">级数收敛与否，看的是「部分和数列 Sₙ」有没有极限——不是看每一项</text>
+    <line x1="${ox-8}" y1="${base}" x2="${ox+W+10}" y2="${base}" stroke="${R}" stroke-width="0.9"/>
+    ${bars}
+    <line x1="${ox-8}" y1="${(base-90).toFixed(1)}" x2="${ox+W+10}" y2="${(base-90).toFixed(1)}" stroke="#4F6B3A" stroke-width="1" stroke-dasharray="4 3"/>
+    <text class="fs" x="${ox+W+14}" y="${(base-88).toFixed(1)}" fill="#4F6B3A" font-size="9.5">S=1</text>
+    <path d="${d1}" fill="none" stroke="#4F6B3A" stroke-width="2.2"/>
+    <text class="ft" x="${ox+W/2}" y="46" text-anchor="middle" fill="#4F6B3A" font-size="12">收敛：Σ 1/2ⁿ</text>
+    <text class="fs" x="${ox+W/2}" y="${base+22}" text-anchor="middle" fill="${I2}" font-size="10">部分和逼近 1，有极限 → 收敛</text>
+    <line x1="${ox2-8}" y1="${base}" x2="${ox2+W+10}" y2="${base}" stroke="${R}" stroke-width="0.9"/>
+    ${bars2}
+    <path d="${d2}" fill="none" stroke="#B4472C" stroke-width="2.2"/>
+    <text class="ft" x="${ox2+W/2}" y="46" text-anchor="middle" fill="#B4472C" font-size="12">发散：Σ 1/n（调和级数）</text>
+    <text class="fs" x="${ox2+W/2}" y="${base+22}" text-anchor="middle" fill="${I2}" font-size="10">部分和无上界，一直涨 → 发散</text>
+    <rect x="30" y="196" width="520" height="118" rx="8" fill="${C}" stroke="${RU}"/>
+    <text class="ft" x="48" y="218" fill="${A}" font-size="12.5">关键理解</text>
+    <text class="fs" x="48" y="240" fill="#9E2B25" font-size="10.5">通项趋于 0 ⇏ 收敛！调和级数每项都趋于 0，但和是无穷大——这是最经典的反例</text>
+    <text class="fs" x="48" y="260" fill="${I}" font-size="10.5">反过来成立：收敛 ⇒ 通项趋于 0。所以通项不趋于 0，可直接判发散</text>
+    <text class="fs" x="48" y="280" fill="${I}" font-size="10.5">收敛的本质：部分和 Sₙ = a₁+a₂+…+aₙ 这个数列有极限</text>
+    <text class="fs" x="48" y="300" fill="${I3}" font-size="10">直观上：后面的项要「小得足够快」，快到加无穷多项也不会涨到无穷</text>
+    </svg><figcaption>级数收敛的本质：部分和数列有没有极限。项趋于 0 只是必要条件，还得「趋于 0 得足够快」</figcaption>`;
+},
+shengyu(){
+  // 剩余价值怎么来的
+  const bar=(x,y,w,h,col,label,sub)=>`<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="4" fill="${col}" opacity="0.85"/>
+    <text class="fs" x="${x+w/2}" y="${y+h/2+2}" text-anchor="middle" fill="#fff" font-size="11">${label}</text>
+    ${sub?`<text class="fs" x="${x+w/2}" y="${y+h+16}" text-anchor="middle" fill="${I3}" font-size="9.5">${sub}</text>`:''}`;
+  return `<svg viewBox="0 0 580 340">
+    <text class="fs" x="290" y="22" text-anchor="middle" fill="${I2}" font-size="11">工人一天的劳动，被分成两段：一段还自己的工资，一段白给资本家</text>
+    <text class="fs" x="40" y="60" fill="${I2}" font-size="11">工作日（8 小时）</text>
+    ${bar(40,72,180,44,'#4F6B3A','必要劳动时间','创造相当于工资的价值 v')}
+    ${bar(226,72,300,44,'#B4472C','剩余劳动时间','创造剩余价值 m，被无偿占有')}
+    <line x1="40" y1="130" x2="40" y2="140" stroke="${R}"/>
+    <line x1="220" y1="130" x2="220" y2="140" stroke="${R}"/>
+    <line x1="526" y1="130" x2="526" y2="140" stroke="${R}"/>
+    <text class="fs" x="130" y="152" text-anchor="middle" fill="#4F6B3A" font-size="10">4 小时</text>
+    <text class="fs" x="373" y="152" text-anchor="middle" fill="#B4472C" font-size="10">4 小时</text>
+    <rect x="40" y="172" width="238" height="76" rx="8" fill="${C}" stroke="#8A6212" stroke-width="1.2"/>
+    <text class="ft" x="56" y="194" fill="#8A6212" font-size="12">绝对剩余价值</text>
+    <text class="fs" x="56" y="214" fill="${I2}" font-size="10">延长工作日（8→10 小时）</text>
+    <text class="fs" x="56" y="232" fill="${I3}" font-size="9.5">必要劳动不变，剩余劳动直接变长</text>
+    <rect x="292" y="172" width="238" height="76" rx="8" fill="${C}" stroke="#2E4A7D" stroke-width="1.2"/>
+    <text class="ft" x="308" y="194" fill="#2E4A7D" font-size="12">相对剩余价值</text>
+    <text class="fs" x="308" y="214" fill="${I2}" font-size="10">工作日不变，缩短必要劳动时间</text>
+    <text class="fs" x="308" y="232" fill="${I3}" font-size="9.5">靠提高社会劳动生产率实现</text>
+    <rect x="40" y="264" width="490" height="64" rx="8" fill="#F9F2F1" stroke="#9E2B25" stroke-width="1.1"/>
+    <text class="fs" x="58" y="286" fill="#9E2B25" font-size="10.5">为什么劳动力商品特殊：它的<tspan font-weight="500">使用价值</tspan>能创造出比自身价值更大的价值</text>
+    <text class="fs" x="58" y="306" fill="${I}" font-size="10.5">不变资本 c（生产资料）只转移价值；可变资本 v（劳动力）才带来增值</text>
+    <text class="fs" x="58" y="322" fill="${I2}" font-size="10">剩余价值率 m′ = m/v，反映剥削程度</text>
+    </svg><figcaption>剩余价值的来源：工人的劳动时间被分为必要劳动与剩余劳动，后者创造的价值被无偿占有</figcaption>`;
+},
+paozhi(){
+  // 炮制为什么能改变药性
+  const rows=[
+    ['生用 → 制用','降低毒性','附子有毒 → 炮制后减毒　半夏生用戟人咽喉 → 制半夏可内服','#B4472C'],
+    ['酒炙','升提·活血','酒性升散：大黄酒制则上行清上焦热　当归酒炙增强活血','#9E2B25'],
+    ['醋炙','收敛·入肝·止痛','醋味酸入肝：延胡索醋制增强止痛　柴胡醋炙增强疏肝','#8A6212'],
+    ['盐炙','下行·入肾','盐味咸入肾：杜仲盐炙增强补肝肾　知母盐炙增强滋阴降火','#2E4A7D'],
+    ['姜炙','温中·止呕','姜性温散：竹茹姜炙增强止呕　厚朴姜制减其刺激性','#4F6B3A'],
+    ['炒炭','止血','炒炭存性：地榆炭、艾叶炭增强收敛止血之效','#3D4650']
+  ];
+  let g='';
+  rows.forEach((r,i)=>{
+    const y=58+i*44;
+    g+=`<rect x="20" y="${y}" width="540" height="38" rx="7" fill="${C}" stroke="${r[3]}" stroke-width="1.1"/>`;
+    g+=`<rect x="20" y="${y}" width="7" height="38" rx="3.5" fill="${r[3]}"/>`;
+    g+=`<text class="ft" x="40" y="${y+17}" fill="${r[3]}" font-size="11.5">${r[0]}</text>`;
+    g+=`<text class="fs" x="40" y="${y+32}" fill="${r[3]}" font-size="9.5">${r[1]}</text>`;
+    g+=`<text class="fs" x="160" y="${y+24}" fill="${I2}" font-size="10.5">${r[2]}</text>`;
+  });
+  return `<svg viewBox="0 0 580 340">
+    <text class="fs" x="290" y="24" text-anchor="middle" fill="${I2}" font-size="11">炮制不是简单加工——辅料的性味会「带着」药走，从而改变药性与归经</text>
+    <text class="fs" x="290" y="42" text-anchor="middle" fill="${I3}" font-size="9.5">口诀：酒制升提·姜制发散·醋制收敛入肝·盐制下行入肾·炒炭止血</text>
+    ${g}
+    <text class="fs" x="290" y="330" text-anchor="middle" fill="${I3}" font-size="10">同一味药，生用与制用可能功效迥异——如生首乌解毒润肠，制首乌补益精血</text>
+    </svg><figcaption>炮制改变药性的机理：借辅料之性味引导药力方向，或减毒、或增效、或改变归经</figcaption>`;
+},
+jixing(){
+  // 剂型为什么影响效果
+  const items=[
+    ['汤剂','吸收快·作用强·易加减','急症·重症·需随证变化者','#B4472C',96],
+    ['丸剂','吸收慢·药力持久·便于携带','慢性病·需长期调理　「丸者缓也」','#4F6B3A',62],
+    ['散剂','制备简便·吸收较快·节省药材','内服外用皆可','#8A6212',78],
+    ['膏剂','滋润补益·便于久服','虚证调补（膏方）','#2E4A7D',52],
+    ['丹剂','药力峻猛·用量小','急救·外用','#6B5B95',88]
+  ];
+  let g='';
+  items.forEach((it,i)=>{
+    const y=64+i*50;
+    g+=`<rect x="20" y="${y}" width="360" height="40" rx="7" fill="${C}" stroke="${it[3]}" stroke-width="1.2"/>`;
+    g+=`<text class="ft" x="38" y="${y+18}" fill="${it[3]}" font-size="12.5">${it[0]}</text>`;
+    g+=`<text class="fs" x="86" y="${y+17}" fill="${I2}" font-size="10">${it[1]}</text>`;
+    g+=`<text class="fs" x="86" y="${y+32}" fill="${I3}" font-size="9.5">${it[2]}</text>`;
+    // 起效速度条
+    g+=`<rect x="392" y="${y+12}" width="${it[4]*1.5}" height="14" rx="7" fill="${it[3]}" opacity="0.75"/>`;
+  });
+  return `<svg viewBox="0 0 580 340">
+    <text class="fs" x="290" y="24" text-anchor="middle" fill="${I2}" font-size="11">同样的药、同样的量，剂型不同，作用的快慢缓急就不同</text>
+    <text class="fs" x="470" y="52" text-anchor="middle" fill="${I3}" font-size="9.5">← 起效快慢示意 →</text>
+    ${g}
+    <rect x="20" y="316" width="540" height="0" fill="none"/>
+    <text class="fs" x="290" y="326" text-anchor="middle" fill="${I3}" font-size="10">经典对比：理中丸 vs 人参汤——药味用量相同，丸剂力缓治慢证，汤剂力峻治急证</text>
+    </svg><figcaption>剂型影响疗效：汤剂力峻走而不守，丸剂力缓守而不走。「汤者荡也，丸者缓也」</figcaption>`;
 },
 jifenyuanli(){
   // 积分为什么能算面积：分割-近似-求和-取极限
