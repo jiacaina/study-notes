@@ -353,8 +353,15 @@ const SUB=[
  {t:"一元积分学",sub:"累积：微分的逆运算，也是黎曼和的极限",
   map:[["不定积分","基本积分表；两类换元；分部积分；有理函数与三角有理式"],["定积分","黎曼和定义；积分中值定理；变限积分求导；牛顿-莱布尼茨公式"],["反常积分","无穷限与无界函数；敛散判别；Γ 函数"],["应用","面积、体积、弧长、旋转面积；功、压力、质心"]],
   spine:"牛顿-莱布尼茨公式是全书第一个「内部导数 = 边界值」，后面三大公式都是它的升维版。",
-  fig:"dingjifen",
+  fig:["jifenyuanli","dingjifen"],
   g:[
+  {g:"入门：积分为什么能算面积",r:[
+   ["核心思想","以直代曲","曲边梯形的面积没有公式，但矩形有。用无数个小矩形去逼近，就能求出曲边的面积"],
+   ["四步法","定积分的定义","分割（切成 n 份）→ 近似（每份用矩形代替）→ 求和（$\\sum f(\\xi_i)\\Delta x_i$）→ 取极限（$n\\to\\infty$）"],
+   ["为什么分得越细越准","","矩形与曲边之间的误差随宽度减小而减小。当每份宽度趋于 0，误差也趋于 0"],
+   ["定积分的本质","记住这句","是<strong>和式的极限</strong>，是一个数（不是函数）。能算面积只是它最直观的应用"],
+   ["定积分与不定积分的区别","易混","定积分是一个数；不定积分是一族函数（原函数全体）。二者靠牛顿-莱布尼茨公式联系起来"],
+   ["为什么能用原函数算","","这正是微积分基本定理的功劳：$\\int_a^b f(x)dx=F(b)-F(a)$，把「求和取极限」变成了「求原函数再相减」"]]},
   {g:"基本积分表",r:[
    ["幂 / 对数","","$\\displaystyle\\int x^{a}dx=\\frac{x^{a+1}}{a+1}+C\\,(a\\ne-1),\\qquad\\int\\frac{dx}{x}=\\ln|x|+C$"],
    ["三角","","$\\displaystyle\\int\\tan x\\,dx=-\\ln|\\cos x|+C,\\qquad\\int\\sec x\\,dx=\\ln|\\sec x+\\tan x|+C$"],
@@ -928,7 +935,16 @@ const SUB=[
  {t:"长难句与语法",sub:"阅读与翻译的共同底层：先找主干，再挂修饰",
   map:[["句子主干","主谓宾/主系表；先划掉所有修饰成分，剩下的就是骨架"],["三大从句","定语从句（which/that/whose）；名词性从句（主语/宾语/表语/同位语）；状语从句（时间/条件/让步/结果）"],["非谓语动词","不定式 to do 表目的/将来；现在分词 -ing 表主动/进行；过去分词 -ed 表被动/完成"],["特殊结构","倒装、强调句 it is…that；插入语；省略；it 形式主语"],["并列与平行","and/or/but 连接的成分结构对称，找到一个就能推出另一个"]],
   spine:"读长难句只有一个动作：找出谓语动词的个数——有 n 个谓语，就有 n−1 个连接词，句子结构立刻清晰。",
+  fig:"changnanju",
   g:[
+  {g:"入门：长难句四步拆解法",r:[
+   ["长难句难在结构不在词","先建立这个认识","很多句子每个词都认识，连起来读不懂——问题出在没找到主干"],
+   ["第一步：找谓语动词","定分句数量","有几个谓语动词，就有几个分句。这是拆句的起点"],
+   ["第二步：划掉从句与插入语","用括号圈起","看到 that / which / who / where / when 引导的部分，先圈起来放一边"],
+   ["第三步：剩下的就是主干","先译通主干","主语 + 谓语 + 宾语。这句译通了，整句的意思就有了骨架"],
+   ["第四步：把修饰逐层加回","按中文调整语序","定语从句、状语、同位语依次补充。英语后置定语，中文习惯前置"],
+   ["标点也是信号","","逗号常隔开插入语与非限定定语从句；破折号引出补充说明；分号连接并列分句"],
+   ["练习方法","","每天精读一个长句：先拆主干、再补修饰、最后对照译文。翻译和阅读都靠这个功夫"]]},
   {g:"识别句子主干",r:[
    ["找谓语动词","第一步永远是这个","数出所有带时态的动词。主句谓语只有一个，其余必被从句或非谓语「包住」"],
    ["划掉修饰成分","主干瞬间浮现","介词短语（in/of/with…）、分词短语、定语从句、插入语——全部先用括号括起来"],
@@ -1776,8 +1792,14 @@ const SUB=[
  {t:"病因",sub:"审证求因：中医的病因是从症状反推出来的",
   map:[["外感病因","六淫（风寒暑湿燥火）、疠气"],["内伤病因","七情内伤、饮食失宜、劳逸失度"],["病理产物","痰饮、瘀血、结石——既是病理产物，又是致病因素"],["其他","外伤、寄生虫、药邪、医过、先天因素"]],
   spine:"中医的病因不是「查出来的」，而是「审证求因」推出来的——症状表现像风，就说它是风邪。所以六淫的「致病特点」比六淫本身更重要。",
-  fig:"liuyin",
+  fig:["liuyinshi","liuyin"],
   g:[
+  {g:"入门：六淫为什么按季节分",r:[
+   ["先理解「淫」字","","淫＝太过。六气（风寒暑湿燥火）本是正常气候，太过或不当其时，才成为致病的「六淫」"],
+   ["季节性从哪来","观察归纳","什么季节多什么气候，就多什么病。春多风、夏多暑、长夏多湿、秋多燥、冬多寒——不是规定，是总结"],
+   ["为什么记「特性」比记「邪」重要","关键","中医病因靠「审证求因」：看到游走不定、起病急 → 判为风邪。所以特性才是判断依据"],
+   ["火邪为什么不配季节","","火（热）邪四季均可见，且多由他邪化生（寒郁化火、湿郁化火、气郁化火）"],
+   ["内生五邪与外感六淫的区别","易混","外感有明确外邪侵袭史、多起病急；内生五邪是脏腑功能失调产生的类似状态，须落到脏腑上（内风多责肝、内湿多责脾）"]]},
   {g:"六淫的共同特点",r:[
    ["外感性","","多从肌表、口鼻侵入"],
    ["季节性","","春多风病、夏多暑病、长夏多湿病、秋多燥病、冬多寒病"],
@@ -2934,6 +2956,7 @@ const SUB=[
    ]
   ],
   "spine": "铁律：微似汗即可 · 汗血同源 · 发汗先看尺脉津液　｜　治太阴阴证一定要利小便；忌见腹满即攻",
+  "fig": "liujing",
   "g": [
    {
     "g": "方剂速查",
@@ -4677,6 +4700,124 @@ sheliucheng(){
     ${node(190,276,200,'③ 两半合参 → 得出证型','舌淡胖+苔白腻＝脾肾阳虚水湿内停','#4F6B3A','#F1F5EC')}
     <text class="fs" x="290" y="334" text-anchor="middle" fill="${I3}" font-size="9.5">注意排除染苔（牛奶·咖啡·药物）；本图为教材知识梳理，不构成诊断依据</text>
     </svg><figcaption>看舌的标准动作：先分舌质与舌苔，各自读出结论，再合起来得证型——分开看是不出错的关键</figcaption>`;
+},
+jifenyuanli(){
+  // 积分为什么能算面积：分割-近似-求和-取极限
+  const panel=(ox,n,label,col)=>{
+    const base=170,W=118,H=88;
+    const f=t=>H*(0.28+0.62*Math.sin(t*2.1+0.4));
+    let g=`<line x1="${ox}" y1="${base}" x2="${ox+W}" y2="${base}" stroke="${R}" stroke-width="0.9"/>`;
+    // 矩形
+    const dw=W/n;
+    for(let i=0;i<n;i++){
+      const px=ox+i*dw, h=f((i+0.5)/n);
+      g+=`<rect x="${px.toFixed(1)}" y="${(base-h).toFixed(1)}" width="${(dw-0.8).toFixed(1)}" height="${h.toFixed(1)}" fill="${col}" opacity="0.22" stroke="${col}" stroke-width="0.7"/>`;
+    }
+    // 曲线
+    let d='M';
+    for(let i=0;i<=40;i++){const t=i/40;d+=(i===0?'':' L')+(ox+t*W).toFixed(1)+' '+(base-f(t)).toFixed(1);}
+    g+=`<path d="${d}" fill="none" stroke="${col}" stroke-width="2"/>`;
+    g+=`<text class="fs" x="${ox+W/2}" y="${base+18}" text-anchor="middle" fill="${col}" font-size="10.5">${label}</text>`;
+    return g;
+  };
+  return `<svg viewBox="0 0 580 320">
+    <text class="fs" x="290" y="26" text-anchor="middle" fill="${I2}" font-size="11">曲边梯形的面积算不出来——但可以用无数个小矩形去逼近</text>
+    ${panel(28,4,'n = 4　误差很大','#8494A3')}
+    ${panel(168,10,'n = 10　误差变小','#4F6B3A')}
+    ${panel(308,30,'n = 30　几乎重合','#6B5B95')}
+    ${panel(448,80,'n → ∞　就是面积','#9E2B25')}
+    <rect x="28" y="210" width="524" height="98" rx="8" fill="${C}" stroke="${RU}"/>
+    <text class="ft" x="46" y="232" fill="${A}" font-size="12.5">四步法：分割 → 近似 → 求和 → 取极限</text>
+    <text class="fs" x="46" y="254" fill="${I}" font-size="10.5">① 分割：把 [a,b] 切成 n 份　② 近似：每份用矩形代替曲边（高取该段任一点函数值）</text>
+    <text class="fs" x="46" y="274" fill="${I}" font-size="10.5">③ 求和：Σ f(ξᵢ)·Δxᵢ　④ 取极限：n→∞（每份宽度→0）时的极限，就是定积分</text>
+    <text class="fs" x="46" y="296" fill="#9E2B25" font-size="10.5">所以定积分的本质是「和式的极限」，能算面积只是它最直观的一个应用</text>
+    </svg><figcaption>积分为什么能算面积：用矩形逼近，分得越细越准，取极限即得精确值。这就是「以直代曲」的思想</figcaption>`;
+},
+liuyinshi(){
+  // 六淫为什么按季节分：气候特点 → 邪气特性
+  const seg=[
+    ['春','风','#4F6B3A','气候多风、变化无常','善行数变、为百病之长'],
+    ['夏','暑','#B4472C','气候炎热','炎热升散、耗气伤津'],
+    ['长夏','湿','#2E6B6B','雨水多、潮湿闷热','重浊黏滞、缠绵难愈'],
+    ['秋','燥','#8A6212','气候干燥、雨水渐少','干涩伤津、易伤肺'],
+    ['冬','寒','#2E4A7D','气候寒冷','凝滞收引、易伤阳气']
+  ];
+  const cx=145,cy=170,rad=98;
+  let g='';
+  seg.forEach((s,i)=>{
+    const a=(-90+i*72)*Math.PI/180;
+    const x=cx+rad*Math.cos(a), y=cy+rad*Math.sin(a);
+    g+=`<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="30" fill="${C}" stroke="${s[2]}" stroke-width="1.6"/>`;
+    g+=`<text class="ft" x="${x.toFixed(1)}" y="${(y-4).toFixed(1)}" text-anchor="middle" fill="${s[2]}" font-size="13">${s[0]}</text>`;
+    g+=`<text class="ft" x="${x.toFixed(1)}" y="${(y+14).toFixed(1)}" text-anchor="middle" fill="${s[2]}" font-size="14">${s[1]}</text>`;
+    // 环向箭头
+    const a2=(-90+(i+1)*72)*Math.PI/180;
+    const x2=cx+rad*Math.cos(a2), y2=cy+rad*Math.sin(a2);
+    const dx=x2-x,dy=y2-y,L=Math.hypot(dx,dy),ux=dx/L,uy=dy/L;
+    g+=`<line x1="${(x+ux*32).toFixed(1)}" y1="${(y+uy*32).toFixed(1)}" x2="${(x2-ux*39).toFixed(1)}" y2="${(y2-uy*39).toFixed(1)}" stroke="${R}" stroke-width="1.2" marker-end="url(#ah)"/>`;
+  });
+  let list='';
+  seg.forEach((s,i)=>{
+    const y=48+i*50;
+    list+=`<rect x="288" y="${y}" width="272" height="42" rx="7" fill="${C}" stroke="${s[2]}" stroke-width="1.1"/>`;
+    list+=`<text class="ft" x="304" y="${y+18}" fill="${s[2]}" font-size="12">${s[1]}邪</text>`;
+    list+=`<text class="fs" x="342" y="${y+17}" fill="${I3}" font-size="9.5">${s[3]}</text>`;
+    list+=`<text class="fs" x="304" y="${y+34}" fill="${I2}" font-size="10">${s[4]}</text>`;
+  });
+  return `<svg viewBox="0 0 580 320">${arrowDefs}${g}${list}
+    <text class="fs" x="145" y="176" text-anchor="middle" fill="${I3}" font-size="10">五季</text>
+    <text class="fs" x="290" y="24" text-anchor="middle" fill="${I2}" font-size="11">六淫的季节性不是规定，而是观察归纳：什么季节多什么气候，就多什么病</text>
+    <text class="fs" x="145" y="300" text-anchor="middle" fill="${I3}" font-size="9.5">火（热）邪不专主一季</text>
+    <text class="fs" x="145" y="314" text-anchor="middle" fill="${I3}" font-size="9.5">四季均可见，多由他邪化生</text>
+    </svg><figcaption>六淫与季节：气候特点决定邪气特性。春多风、夏多暑、长夏多湿、秋多燥、冬多寒——审证求因的根据</figcaption>`;
+},
+liujing(){
+  // 伤寒六经传变
+  const st=(x,y,w,t,s,d,col,fill)=>`<rect x="${x}" y="${y}" width="${w}" height="52" rx="8" fill="${fill||C}" stroke="${col}" stroke-width="1.3"/>
+    <text class="ft" x="${x+12}" y="${y+21}" fill="${col}" font-size="13">${t}</text>
+    <text class="fs" x="${x+64}" y="${y+20}" fill="${I3}" font-size="9.5">${s}</text>
+    <text class="fs" x="${x+12}" y="${y+40}" fill="${I2}" font-size="10">${d}</text>`;
+  const dn=(x,y1,y2)=>`<line x1="${x}" y1="${y1}" x2="${x}" y2="${y2}" stroke="${A}" stroke-width="1.4" marker-end="url(#ah)"/>`;
+  return `<svg viewBox="0 0 580 360">${arrowDefs}
+    <text class="fs" x="150" y="20" text-anchor="middle" fill="#B4472C" font-size="11">三阳（正气未衰，抗邪有力）</text>
+    <text class="fs" x="430" y="20" text-anchor="middle" fill="#2E4A7D" font-size="11">三阴（正气已虚，抗邪无力）</text>
+    ${st(20,30,258,'太阳','表·最外层','恶寒发热·头项强痛·脉浮','#B4472C')}
+    ${dn(149,82,100)}
+    ${st(20,100,258,'阳明','里·热极','大热大汗大渴·脉洪大，或腹满谵语','#C15A44')}
+    ${dn(149,152,170)}
+    ${st(20,170,258,'少阳','半表半里','寒热往来·胸胁苦满·口苦咽干','#D68A6E')}
+    <path d="M278 196 H300 V56 H302" fill="none" stroke="${A}" stroke-width="1.2" stroke-dasharray="4 3" marker-end="url(#ah)"/>
+    ${st(302,30,258,'太阴','里虚寒·脾','腹满而吐·自利·食不下','#6E8BB5')}
+    ${dn(431,82,100)}
+    ${st(302,100,258,'少阴','心肾虚衰','脉微细·但欲寐·四肢厥冷','#3F6296')}
+    ${dn(431,152,170)}
+    ${st(302,170,258,'厥阴','寒热错杂·终末','消渴·气上撞心·厥热胜复','#2E4A7D')}
+    <rect x="20" y="238" width="540" height="112" rx="8" fill="${C}" stroke="${RU}"/>
+    <text class="ft" x="38" y="260" fill="${A}" font-size="12.5">传变规律</text>
+    <text class="fs" x="38" y="282" fill="${I}" font-size="10.5">循经传：太阳 → 阳明 → 少阳 → 太阴 → 少阴 → 厥阴（由表入里、由阳入阴）</text>
+    <text class="fs" x="38" y="302" fill="${I}" font-size="10.5">越经传：不按次序，隔一经或数经而传　｜　直中：外邪不经三阳，直接侵犯三阴（正气素虚）</text>
+    <text class="fs" x="38" y="322" fill="#9E2B25" font-size="10.5">合病：两经或三经同时发病　｜　并病：一经未罢，又见他经证候</text>
+    <text class="fs" x="38" y="342" fill="${I3}" font-size="9.5">传与不传，取决于正气强弱、邪气盛衰与治疗当否——不是必然按顺序走</text>
+    </svg><figcaption>六经传变：由表入里、由阳入阴的六个层次。三阳病正盛邪实，三阴病正虚邪衰，治法方向截然不同</figcaption>`;
+},
+changnanju(){
+  // 英语长难句拆解法
+  const layer=(y,n,t,s,eg,col)=>`<rect x="20" y="${y}" width="540" height="56" rx="8" fill="${C}" stroke="${col}" stroke-width="1.2"/>
+    <circle cx="46" cy="${y+28}" r="14" fill="${col}"/>
+    <text class="ft" x="46" y="${y+33}" text-anchor="middle" fill="#fff" font-size="12">${n}</text>
+    <text class="ft" x="70" y="${y+22}" fill="${col}" font-size="12">${t}</text>
+    <text class="fs" x="70" y="${y+40}" fill="${I2}" font-size="10">${s}</text>
+    <text class="fs" x="330" y="${y+33}" fill="${I3}" font-size="9.5">${eg}</text>`;
+  return `<svg viewBox="0 0 580 340">
+    <text class="fs" x="290" y="22" text-anchor="middle" fill="${I2}" font-size="11">长难句不是词汇问题，是结构问题——找到主干，其余都是修饰</text>
+    ${layer(34,'1','先找谓语动词','有几个谓语，就有几个分句','has become / which shows','#9E2B25')}
+    ${layer(98,'2','划掉从句与插入语','用括号圈起 that/which/who 引导的部分','(that …) , (however) ,','#8A6212')}
+    ${layer(162,'3','剩下的就是主干','主语 + 谓语 + 宾语，先把这句译通','The study shows the result.','#4F6B3A')}
+    ${layer(226,'4','再把修饰逐层加回','定语从句、状语、同位语依次补充','按中文习惯调整语序','#2E4A7D')}
+    <rect x="20" y="290" width="540" height="44" rx="8" fill="#F1EFF5" stroke="${A}" stroke-width="1.1"/>
+    <text class="fs" x="38" y="310" fill="${A}" font-size="10.5">五个信号词帮你快速定位从句边界：that · which · who · where · when</text>
+    <text class="fs" x="38" y="328" fill="${I2}" font-size="10.5">两个标点也是信号：逗号常隔开插入语与非限定定语从句；破折号引出补充说明</text>
+    </svg><figcaption>长难句四步拆解：找谓语 → 划从句 → 定主干 → 加修饰。翻译与阅读通用，练熟后长句不再可怕</figcaption>`;
 },
 wuxingqu(){
   // 五行为什么是这五个：取象比类的推演
