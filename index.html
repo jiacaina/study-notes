@@ -313,6 +313,7 @@ const SUB=[
  {t:"一元微分学",sub:"局部线性化：用直线逼近曲线",
   map:[["导数与微分","定义与几何意义；四则、复合、反函数、隐函数、参数式、对数求导；高阶导数"],["中值定理","费马 → 罗尔 → 拉格朗日 → 柯西 → 泰勒公式"],["导数应用","洛必达；单调与极值；凹凸与拐点；渐近线；曲率；最值"]],
   spine:"中值定理是「从局部导数推全局性质」的唯一桥梁，证明题几乎都靠它。",
+  fig:"zhongzhi",
   g:[
   {g:"求导法则",r:[
    ["四则","","$(uv)'=u'v+uv',\\qquad\\Big(\\dfrac uv\\Big)'=\\dfrac{u'v-uv'}{v^{2}}$"],
@@ -344,6 +345,7 @@ const SUB=[
  {t:"一元积分学",sub:"累积：微分的逆运算，也是黎曼和的极限",
   map:[["不定积分","基本积分表；两类换元；分部积分；有理函数与三角有理式"],["定积分","黎曼和定义；积分中值定理；变限积分求导；牛顿-莱布尼茨公式"],["反常积分","无穷限与无界函数；敛散判别；Γ 函数"],["应用","面积、体积、弧长、旋转面积；功、压力、质心"]],
   spine:"牛顿-莱布尼茨公式是全书第一个「内部导数 = 边界值」，后面三大公式都是它的升维版。",
+  fig:"dingjifen",
   g:[
   {g:"基本积分表",r:[
    ["幂 / 对数","","$\\displaystyle\\int x^{a}dx=\\frac{x^{a+1}}{a+1}+C\\,(a\\ne-1),\\qquad\\int\\frac{dx}{x}=\\ln|x|+C$"],
@@ -404,6 +406,7 @@ const SUB=[
  {t:"多元积分学",sub:"计算量最大的一章；三大公式统一了微积分基本定理",
   map:[["重积分","二重（直角/极坐标）；三重（柱面/球面坐标）；对称性简化"],["曲线积分","第一类对弧长、第二类对坐标；格林公式；路径无关"],["曲面积分","第一类对面积、第二类对坐标；高斯公式；斯托克斯公式"],["场论初步","梯度、散度、旋度；通量与环流量"]],
   spine:"格林、高斯、斯托克斯说的是同一句话：区域内部的导数之积分 = 边界上的值之积分。",
+  fig:"huanxu",
   g:[
   {g:"重积分",r:[
    ["极坐标（二重）","圆域首选","$\\displaystyle\\iint_D f\\,dxdy=\\int_\\alpha^\\beta\\!\\!\\int_{r_1(\\theta)}^{r_2(\\theta)}\\!f(r\\cos\\theta,r\\sin\\theta)\\,r\\,dr\\,d\\theta$","别漏了雅可比因子 r。"],
@@ -622,6 +625,7 @@ const SUB=[
  {t:"特征值与相似对角化",sub:"找到让矩阵变成对角阵的那组基",
   map:[["特征值与特征向量","$Ax=\\lambda x\\,(x\\ne0)$；由 $|\\lambda E-A|=0$ 求解"],["相似","$P^{-1}AP=B$；相似矩阵有相同的特征值、行列式、迹、秩"],["可对角化条件","n 个线性无关的特征向量 ⟺ 每个特征值的几何重数 = 代数重数"],["实对称矩阵","必可正交对角化；不同特征值的特征向量必正交"]],
   spine:"实对称矩阵是「一定能对角化」的，所以考题里的对角化十有八九是实对称。",
+  fig:"tezheng",
   g:[
   {g:"特征值",r:[
    ["定义","","$Ax=\\lambda x\\ (x\\ne0)$，由特征方程 $|\\lambda E-A|=0$ 求 λ"],
@@ -796,6 +800,7 @@ const SUB=[
  {t:"数理统计基础",sub:"三大抽样分布与正态总体的统计量",
   map:[["总体与样本","样本均值、样本方差 $S^2$"],["三大分布","$\\chi^2$、t、F 及其构造"],["正态总体抽样分布","$\\overline X$ 与 $S^2$ 独立；四个基本结论"]],
   spine:"χ²、t、F 都是由标准正态「拼」出来的——记住构造方式，就不必背性质。",
+  fig:"sanfenbu",
   g:[
   {g:"统计量",r:[
    ["样本均值 / 方差","","$\\overline X=\\dfrac1n\\sum X_i,\\qquad S^{2}=\\dfrac{1}{n-1}\\sum(X_i-\\overline X)^{2}$","分母是 n−1，为的是让 $ES^2=\\sigma^2$（无偏）。"],
@@ -1258,7 +1263,7 @@ const SUB=[
  {t:"马原：哲学",sub:"最抽象也最拉分：唯物论、辩证法、认识论、唯物史观",
   map:[["唯物论","物质与意识的辩证关系；实践是人类能动地改造世界的活动"],["辩证法","两大特征：联系与发展；三大规律：对立统一、质量互变、否定之否定；五对范畴"],["认识论","实践与认识的辩证关系；认识的两次飞跃；真理的绝对性与相对性；真理与价值"],["唯物史观","社会存在与社会意识；生产力与生产关系；经济基础与上层建筑；人民群众是历史创造者"]],
   spine:"对立统一规律是辩证法的实质与核心——分析题里凡是让你「用辩证法分析」，先想矛盾。",
-  fig:"maodun",
+  fig:["maodun","renshi"],
   g:[
   {g:"唯物论",r:[
    ["物质的唯一特性","列宁定义","客观实在性。物质是标志客观实在的哲学范畴，不依赖于人的意识而存在，为意识所反映"],
@@ -1881,6 +1886,7 @@ const SUB=[
  {t:"总论：药性理论",sub:"全书的地基：五条性能决定一味药能干什么",
   map:[["四气","寒热温凉；「疗寒以热药，疗热以寒药」"],["五味","辛散、酸收、甘补、苦泄、咸软；淡渗、涩敛为附"],["升降浮沉","药物作用的趋向性；受四气五味、质地、炮制、配伍影响"],["归经","药物作用的定位；以脏腑经络理论为基础"],["毒性","广义指偏性，狭义指毒副作用"]],
   spine:"四气定寒热（治什么性质的病），五味定功能（有什么作用），升降浮沉定趋向（往哪个方向走），归经定部位（作用在哪里）——四把尺子一量，一味药的性能就完整了。",
+  fig:"yaoxing",
   g:[
   {g:"四气（四性）",r:[
    ["含义","","寒、热、温、凉四种药性。另有「平性」，指寒热之性不明显者"],
@@ -2490,6 +2496,7 @@ const SUB=[
   map:[["方剂与治法","法随证立，方从法出；八法：汗、吐、下、和、温、清、消、补"],["君臣佐使","君药主攻；臣药辅助；佐药制约或反佐；使药引经或调和"],["组成变化","药味增减、药量增减、剂型更换"],["剂型","汤、丸、散、膏、丹、酒、露、锭"]],
   fig:"junchen",
   spine:"「法随证立，方从法出」——方剂不是药物的堆砌，而是治法的物化。看一首方，先问它体现的是哪一「法」。",
+  fig:["junchen","bafa"],
   g:[
   {g:"治法：八法",r:[
    ["汗法","解表","开泄腠理、发汗解表。适用于表证（麻黄汤、桂枝汤、银翘散）"],
@@ -2669,6 +2676,7 @@ const SUB=[
  {t:"总论：内科病证的辨治纲要",sub:"先掌握通用框架，再学具体病证",
   map:[["学习结构","每个病证都按：概念 → 病因病机 → 诊断与鉴别 → 辨证论治（分型 + 治法 + 主方）"],["辨证要点","辨病位（脏腑）、辨病性（虚实寒热）、辨标本缓急"],["治疗原则","治病求本、扶正祛邪、调整阴阳、三因制宜"],["病证分类","肺系、心系、脾胃、肝胆、肾系、气血津液、肢体经络"]],
   spine:"每个病证只需回答四个问题：病位在哪一脏？属虚还是实？分几个证型？每型用什么方？把这四问答完，一个病证就学完了。",
+  fig:"bianzheng",
   g:[
   {g:"通用辨证要点",r:[
    ["辨病位","定脏腑","咳喘在肺；心悸胸痹在心；胃痛泄泻在脾胃；胁痛眩晕在肝；水肿腰痛在肾"],
@@ -4305,6 +4313,300 @@ buxu(){
     <text class="fs" x="290" y="315" text-anchor="middle" fill="${I2}">补气防壅滞·补血防滋腻·补阴防碍胃·补阳防助火——补法之妙全在配伍</text>
     <text class="fs" x="290" y="333" text-anchor="middle" fill="${I3}" font-size="10">左阴右阳 · 上主功能(气阳) 下主物质(血阴)</text>
     </svg><figcaption>补虚药四分：按气·血·阴·阳定位，每类记住代表药与配伍禁忌，不必逐味死背</figcaption>`;
+},
+renshi(){
+  // 认识论：实践—认识—再实践的循环，两次飞跃
+  const cx=175,cy=170,rad=104;
+  const node=(a,t,s,col)=>{
+    const x=cx+rad*Math.cos(a*Math.PI/180), y=cy+rad*Math.sin(a*Math.PI/180);
+    return {x,y,html:`<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="42" fill="${C}" stroke="${col}" stroke-width="1.6"/>
+      <text class="ft" x="${x.toFixed(1)}" y="${(y-2).toFixed(1)}" text-anchor="middle" fill="${col}" font-size="13">${t}</text>
+      <text class="fs" x="${x.toFixed(1)}" y="${(y+14).toFixed(1)}" text-anchor="middle" fill="${I3}" font-size="9">${s}</text>`};
+  };
+  const n1=node(-90,'实践','认识的来源','#9E2B25');
+  const n2=node(30,'感性认识','生动直观','#8A6212');
+  const n3=node(150,'理性认识','抽象思维','#2E4A7D');
+  const arc=(from,to,col,label)=>{
+    const dx=to.x-from.x,dy=to.y-from.y,L=Math.hypot(dx,dy),ux=dx/L,uy=dy/L;
+    const x1=from.x+ux*46,y1=from.y+uy*46,x2=to.x-ux*52,y2=to.y-uy*52;
+    const mx=(x1+x2)/2+(y2-y1)*0.16, my=(y1+y2)/2-(x2-x1)*0.16;
+    return `<path d="M${x1.toFixed(1)} ${y1.toFixed(1)} Q${mx.toFixed(1)} ${my.toFixed(1)} ${x2.toFixed(1)} ${y2.toFixed(1)}" fill="none" stroke="${col}" stroke-width="1.8" marker-end="url(#ah)"/>
+      <text class="fs" x="${mx.toFixed(1)}" y="${my.toFixed(1)}" text-anchor="middle" fill="${col}" font-size="10" font-weight="500">${label}</text>`;
+  };
+  return `<svg viewBox="0 0 580 340">${arrowDefs}
+    ${arc(n1,n2,'#8A6212','')}${arc(n2,n3,'#4F6B3A','第一次飞跃')}${arc(n3,n1,'#9E2B25','第二次飞跃')}
+    ${n1.html}${n2.html}${n3.html}
+    <rect x="330" y="40" width="234" height="250" rx="8" fill="${C}" stroke="${RU}"/>
+    <text class="ft" x="348" y="64" fill="${A}" font-size="13">两次飞跃</text>
+    <text class="fs" x="348" y="88" fill="#4F6B3A" font-size="11">第一次：感性 → 理性</text>
+    <text class="fs" x="348" y="106" fill="${I3}" font-size="9.5">去粗取精、去伪存真、由此及彼、由表及里</text>
+    <text class="fs" x="348" y="130" fill="#9E2B25" font-size="11">第二次：理性 → 实践</text>
+    <text class="fs" x="348" y="148" fill="${I3}" font-size="9.5">更重要——理论只有回到实践才有意义，</text>
+    <text class="fs" x="348" y="162" fill="${I3}" font-size="9.5">也才能接受检验并得到发展</text>
+    <text class="ft" x="348" y="192" fill="${A}" font-size="12">实践的决定作用</text>
+    <text class="fs" x="348" y="212" fill="${I2}" font-size="10.5">① 实践是认识的来源</text>
+    <text class="fs" x="348" y="230" fill="${I2}" font-size="10.5">② 实践是认识发展的动力</text>
+    <text class="fs" x="348" y="248" fill="${I2}" font-size="10.5">③ 实践是认识的目的</text>
+    <text class="fs" x="348" y="266" fill="${I2}" font-size="10.5">④ 实践是检验真理的唯一标准</text>
+    <text class="fs" x="348" y="282" fill="${I3}" font-size="9">因实践具有直接现实性</text>
+    <text class="fs" x="175" y="312" text-anchor="middle" fill="${I2}" font-size="10.5">实践 → 认识 → 再实践 → 再认识</text>
+    <text class="fs" x="175" y="328" text-anchor="middle" fill="${I3}" font-size="9.5">循环往复以至无穷，每一循环都进入更高一级</text>
+    </svg><figcaption>认识的辩证运动：实践与认识的两次飞跃，循环上升、螺旋式前进</figcaption>`;
+},
+bafa(){
+  // 治法八法：按病位病性归类
+  const fa=[
+    ['汗','解表','表证 · 邪在肌表','麻黄汤·桂枝汤·银翘散','#4F6B3A'],
+    ['吐','涌吐','病位在上 · 痰食毒物','瓜蒂散','#7A9660'],
+    ['下','泻下','里实积滞 · 燥屎内结','大承气汤·麻子仁丸','#8A6212'],
+    ['和','和解','半表半里 · 脏腑不和','小柴胡汤·逍遥散·半夏泻心汤','#A67C1E'],
+    ['温','祛寒','里寒证 · 阳虚','理中丸·四逆汤·小建中汤','#B4472C'],
+    ['清','清热','里热证 · 火毒','白虎汤·黄连解毒汤·清营汤','#2E6B6B'],
+    ['消','消导','食积痰癥 · 渐消缓散','保和丸·枳实消痞丸','#2E4A7D'],
+    ['补','补虚','气血阴阳不足','四君子汤·四物汤·六味地黄丸','#6B5B95']
+  ];
+  let g='';
+  fa.forEach((f,i)=>{
+    const col=i%2, row=Math.floor(i/2);
+    const x=20+col*284, y=40+row*68;
+    g+=`<rect x="${x}" y="${y}" width="268" height="56" rx="8" fill="${C}" stroke="${f[4]}" stroke-width="1.3"/>`;
+    g+=`<circle cx="${x+30}" cy="${y+28}" r="19" fill="${f[4]}"/>`;
+    g+=`<text class="ft" x="${x+30}" y="${y+35}" text-anchor="middle" fill="#fff" font-size="19">${f[0]}</text>`;
+    g+=`<text class="ft" x="${x+60}" y="${y+21}" fill="${f[4]}" font-size="12.5">${f[1]}</text>`;
+    g+=`<text class="fs" x="${x+118}" y="${y+21}" fill="${I3}" font-size="9.5">${f[2]}</text>`;
+    g+=`<text class="fs" x="${x+60}" y="${y+42}" fill="${I2}" font-size="10">${f[3]}</text>`;
+  });
+  return `<svg viewBox="0 0 580 330">${g}
+    <text class="fs" x="290" y="26" text-anchor="middle" fill="${I3}" font-size="10.5">法随证立，方从法出——看一首方，先问它体现哪一法</text>
+    <text class="fs" x="290" y="318" text-anchor="middle" fill="${I2}" font-size="11">八法可单用，更多是合用：汗下并行、温清并用、攻补兼施、消补同施</text>
+    </svg><figcaption>治法八法：汗吐下和温清消补。每一法对应一类病位病性，也各有其代表方</figcaption>`;
+},
+bianzheng(){
+  // 中内：从主症到方药的完整链路
+  const step=(x,y,w,t,s,col)=>`<rect x="${x}" y="${y}" width="${w}" height="52" rx="8" fill="${C}" stroke="${col}" stroke-width="1.4"/>
+    <text class="ft" x="${x+w/2}" y="${y+22}" text-anchor="middle" fill="${col}" font-size="13">${t}</text>
+    <text class="fs" x="${x+w/2}" y="${y+40}" text-anchor="middle" fill="${I3}" font-size="9.5">${s}</text>`;
+  const dn=(x,y1,y2)=>`<line x1="${x}" y1="${y1}" x2="${x}" y2="${y2}" stroke="${A}" stroke-width="1.4" marker-end="url(#ah)"/>`;
+  return `<svg viewBox="0 0 580 400">${arrowDefs}
+    ${step(170,14,240,'四诊采集','望闻问切，收集全部信息','#8494A3')}
+    ${dn(290,66,88)}
+    ${step(170,88,240,'① 定病','据主症确定病名（咳嗽·胸痹·眩晕…）','#2E4A7D')}
+    ${dn(290,140,162)}
+    ${step(170,162,240,'② 定证','八纲定性 + 脏腑定位 → 证型','#4F6B3A')}
+    ${dn(290,214,236)}
+    ${step(170,236,240,'③ 立法','法随证立（八法之一或合用）','#8A6212')}
+    ${dn(290,288,310)}
+    ${step(170,310,240,'④ 选方遣药','方从法出，再随证加减','#9E2B25')}
+    <rect x="16" y="88" width="140" height="126" rx="8" fill="${C}" stroke="${RU}"/>
+    <text class="fs" x="30" y="108" fill="${I2}" font-size="10">定证三步：</text>
+    <text class="fs" x="30" y="128" fill="${I3}" font-size="9.5">• 外感 or 内伤</text>
+    <text class="fs" x="30" y="146" fill="${I3}" font-size="9.5">• 虚 or 实（邪正）</text>
+    <text class="fs" x="30" y="164" fill="${I3}" font-size="9.5">• 寒 or 热（性质）</text>
+    <text class="fs" x="30" y="182" fill="${I3}" font-size="9.5">• 病位在哪一脏腑</text>
+    <text class="fs" x="30" y="202" fill="${A}" font-size="9.5">四问答完，证型自现</text>
+    <rect x="424" y="236" width="140" height="126" rx="8" fill="${C}" stroke="${RU}"/>
+    <text class="fs" x="438" y="256" fill="${I2}" font-size="10">证—法—方三元组</text>
+    <text class="fs" x="438" y="278" fill="${I3}" font-size="9.5">肝阳上亢 → 平肝潜阳</text>
+    <text class="fs" x="438" y="294" fill="${I3}" font-size="9.5">　→ 天麻钩藤饮</text>
+    <text class="fs" x="438" y="316" fill="${I3}" font-size="9.5">脾虚湿盛 → 健脾化湿</text>
+    <text class="fs" x="438" y="332" fill="${I3}" font-size="9.5">　→ 参苓白术散</text>
+    <text class="fs" x="438" y="352" fill="${A}" font-size="9.5">成组记忆，不孤立背方</text>
+    <text class="fs" x="290" y="386" text-anchor="middle" fill="${I2}" font-size="11">中内是前四门的集成：中基给病机·中诊给辨证·中药给药·方剂给方</text>
+    </svg><figcaption>辨证论治总流程：从四诊到方药的完整链路。四步走通，一个病证才算真正学会</figcaption>`;
+},
+yaoxing(){
+  // 中药四性能：四气·五味·升降浮沉·归经
+  const quad=(x,y,w,h,t,sub,items,col)=>{
+    let g=`<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="9" fill="${C}" stroke="${col}" stroke-width="1.4"/>`;
+    g+=`<text class="ft" x="${x+16}" y="${y+26}" fill="${col}" font-size="14">${t}</text>`;
+    g+=`<text class="fs" x="${x+16}" y="${y+44}" fill="${I3}" font-size="10">${sub}</text>`;
+    items.forEach((it,i)=>{ g+=`<text class="fs" x="${x+16}" y="${y+66+i*17}" fill="${I2}" font-size="10.5">${it}</text>`; });
+    return g;
+  };
+  return `<svg viewBox="0 0 580 330">
+    ${quad(20,20,265,142,'四气（四性）','定寒热——治什么性质的病',['寒凉：清热泻火 → 治阳热证','温热：温里散寒 → 治阴寒证','另有「平性」，寒热不显','由用药后的反应归纳，非药物温度'],'#B4472C')}
+    ${quad(295,20,265,142,'五味','定功能——有什么作用',['辛：能散能行（发散·行气·行血）','甘：能补能和能缓','酸：能收能涩　苦：能泄能燥能坚','咸：能软能下　淡：能渗能利'],'#8A6212')}
+    ${quad(20,174,265,142,'升降浮沉','定趋向——往哪个方向走',['升浮属阳：向上向外（解表·升阳）','沉降属阴：向下向内（泻下·潜阳）','花叶质轻多升浮，子实矿石多沉降','炮制影响：酒升·姜散·醋收·盐下行'],'#4F6B3A')}
+    ${quad(295,174,265,142,'归经','定部位——作用在哪里',['以脏腑经络理论为基础','从疗效反推：朱砂归心能安神','同归肺经：黄芩清肺热·干姜温肺寒','须与四气五味结合，不可孤立看'],'#2E4A7D')}
+    </svg><figcaption>药性四维：四气定寒热·五味定功能·升降浮沉定趋向·归经定部位。四把尺子一量，药的性能就完整了</figcaption>`;
+},
+tezheng(){
+  // 特征值与特征向量的几何意义：矩阵作用下方向不变、只伸缩
+  const ox=110,oy=150,S=1;
+  const V=(x,y)=>[ox+x, oy-y];
+  const arrow=(x1,y1,x2,y2,col,w)=>`<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="${col}" stroke-width="${w||2}" marker-end="url(#ah)"/>`;
+  let g='';
+  // 坐标轴
+  g+=`<line x1="${ox-90}" y1="${oy}" x2="${ox+100}" y2="${oy}" stroke="${R}" stroke-width="0.9"/>`;
+  g+=`<line x1="${ox}" y1="${oy+90}" x2="${ox}" y2="${oy-100}" stroke="${R}" stroke-width="0.9"/>`;
+  // 特征向量 v（方向不变，长度×λ）
+  const v=[62,42];
+  g+=arrow(ox,oy,...V(v[0],v[1]),'#2E4A7D',2.2);
+  g+=`<text class="fs" x="${ox+v[0]+6}" y="${oy-v[1]-4}" fill="#2E4A7D" font-size="11">v</text>`;
+  g+=arrow(ox,oy,...V(v[0]*1.45,v[1]*1.45),'#4F6B3A',2.4);
+  g+=`<text class="fs" x="${ox+v[0]*1.45+6}" y="${oy-v[1]*1.45-2}" fill="#4F6B3A" font-size="11">Av = λv</text>`;
+  // 非特征向量 u（方向改变）
+  const u=[-46,56];
+  g+=arrow(ox,oy,...V(u[0],u[1]),'#8494A3',1.8);
+  g+=`<text class="fs" x="${ox+u[0]-16}" y="${oy-u[1]-4}" fill="${I3}" font-size="11">u</text>`;
+  g+=arrow(ox,oy,...V(u[0]*0.3-30,u[1]*1.15),'#B4472C',2);
+  g+=`<text class="fs" x="${ox+u[0]*0.3-56}" y="${oy-u[1]*1.15-2}" fill="#B4472C" font-size="11">Au</text>`;
+  g+=`<text class="fs" x="${ox}" y="${oy+108}" text-anchor="middle" fill="${I3}" font-size="9.5">v 方向不变（只伸缩）｜u 方向被改变</text>`;
+  return `<svg viewBox="0 0 580 280">${arrowDefs}${g}
+    <rect x="250" y="42" width="310" height="182" rx="8" fill="${C}" stroke="${RU}"/>
+    <text class="ft" x="268" y="66" fill="${A}" font-size="13">定义与求法</text>
+    <text class="fs" x="268" y="90" fill="${I}" font-size="11.5">Av = λv　(v ≠ 0)</text>
+    <text class="fs" x="268" y="110" fill="${I3}" font-size="10">λ 是特征值，v 是对应的特征向量</text>
+    <text class="fs" x="268" y="134" fill="${I}" font-size="11">① 解特征方程 |λE − A| = 0 求 λ</text>
+    <text class="fs" x="268" y="154" fill="${I}" font-size="11">② 解 (λE − A)x = 0 求特征向量</text>
+    <text class="fs" x="268" y="180" fill="#4F6B3A" font-size="10.5">Σλᵢ = tr(A)（迹）　Πλᵢ = |A|（行列式）</text>
+    <text class="fs" x="268" y="200" fill="${I2}" font-size="10.5">可对角化 ⟺ n 个线性无关的特征向量</text>
+    <text class="fs" x="268" y="216" fill="${I3}" font-size="9.5">实对称矩阵必可对角化，且可正交对角化</text>
+    <text class="fs" x="290" y="266" text-anchor="middle" fill="${I2}" font-size="11">特征向量＝矩阵变换下「方向不变的那些方向」，特征值＝在该方向上的伸缩倍数</text>
+    </svg><figcaption>特征值与特征向量的几何意义：绝大多数向量会被矩阵改变方向，唯有特征向量只被拉伸或压缩</figcaption>`;
+},
+sanfenbu(){
+  // 三大抽样分布的导出关系
+  const box=(x,y,w,h,t,s,col,fill)=>`<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="8" fill="${fill||C}" stroke="${col}" stroke-width="1.4"/>
+    <text class="ft" x="${x+w/2}" y="${y+24}" text-anchor="middle" fill="${col}" font-size="13">${t}</text>
+    <text class="fs" x="${x+w/2}" y="${y+42}" text-anchor="middle" fill="${I2}" font-size="10">${s}</text>`;
+  const ar=(x1,y1,x2,y2,t)=>`<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="${A}" stroke-width="1.3" marker-end="url(#ah)"/>
+    <text class="fs" x="${(x1+x2)/2}" y="${(y1+y2)/2-6}" text-anchor="middle" fill="${A}" font-size="9.5">${t}</text>`;
+  return `<svg viewBox="0 0 580 320">${arrowDefs}
+    ${box(210,16,160,56,'标准正态 N(0,1)','一切的源头','#6B5B95','#F1EFF5')}
+    ${ar(290,72,290,104,'n 个平方和')}
+    ${box(210,104,160,56,'χ²(n) 卡方分布','n 个 N(0,1) 平方和','#2E4A7D')}
+    <line x1="210" y1="132" x2="150" y2="132" stroke="${A}" stroke-width="1.3"/>
+    <line x1="150" y1="132" x2="150" y2="196" stroke="${A}" stroke-width="1.3" marker-end="url(#ah)"/>
+    <line x1="370" y1="132" x2="430" y2="132" stroke="${A}" stroke-width="1.3"/>
+    <line x1="430" y1="132" x2="430" y2="196" stroke="${A}" stroke-width="1.3" marker-end="url(#ah)"/>
+    ${box(30,196,240,58,'t(n) 分布','N(0,1) ÷ √(χ²(n)/n)','#4F6B3A')}
+    ${box(320,196,240,58,'F(n₁,n₂) 分布','两个 χ² 各除自由度之比','#9E2B25')}
+    <text class="fs" x="290" y="284" text-anchor="middle" fill="${I2}" font-size="11">t 用于小样本均值检验（σ 未知）· χ² 用于方差检验与拟合优度 · F 用于两方差比较与方差分析</text>
+    <text class="fs" x="290" y="304" text-anchor="middle" fill="${I3}" font-size="10">关系：t²(n) = F(1,n)　　n→∞ 时 t(n) → N(0,1)</text>
+    </svg><figcaption>三大抽样分布同出一源：都由标准正态构造而来，故统计推断的骨架是正态理论</figcaption>`;
+},
+
+zhongzhi(){
+  // 中值定理三兄弟：罗尔 / 拉格朗日 / 柯西的几何意义
+  const panel=(ox,title,sub,col,mode)=>{
+    const w=170,h=118,bx=ox,by=56;
+    let g=`<rect x="${bx}" y="${by}" width="${w}" height="${h}" rx="8" fill="${C}" stroke="${RU}"/>`;
+    // 坐标轴
+    g+=`<line x1="${bx+16}" y1="${by+h-18}" x2="${bx+w-12}" y2="${by+h-18}" stroke="${R}" stroke-width="0.9"/>`;
+    g+=`<line x1="${bx+16}" y1="${by+12}" x2="${bx+16}" y2="${by+h-18}" stroke="${R}" stroke-width="0.9"/>`;
+    // 曲线：一段先升后降
+    const x1=bx+30,x2=bx+w-28, base=by+h-18;
+    const ya= mode==='rolle'? base-34 : base-22;   // 左端点高度
+    const yb= mode==='rolle'? base-34 : base-62;   // 右端点高度
+    const peak=base-84;
+    const d=`M${x1} ${ya} C${x1+26} ${peak} ${x2-26} ${peak+ (mode==='rolle'?0:16)} ${x2} ${yb}`;
+    g+=`<path d="${d}" fill="none" stroke="${col}" stroke-width="2"/>`;
+    // 端点
+    g+=`<circle cx="${x1}" cy="${ya}" r="3.2" fill="${col}"/><circle cx="${x2}" cy="${yb}" r="3.2" fill="${col}"/>`;
+    g+=`<text class="fs" x="${x1}" y="${base+13}" text-anchor="middle" fill="${I3}" font-size="9">a</text>`;
+    g+=`<text class="fs" x="${x2}" y="${base+13}" text-anchor="middle" fill="${I3}" font-size="9">b</text>`;
+    // 割线（拉格朗日/柯西）或水平线（罗尔）
+    g+=`<line x1="${x1}" y1="${ya}" x2="${x2}" y2="${yb}" stroke="${I3}" stroke-width="1" stroke-dasharray="4 3"/>`;
+    // 切点 ξ：取曲线上斜率等于割线处（示意取中部偏左）
+    const xi=x1+(x2-x1)*(mode==='rolle'?0.5:0.42);
+    const yi= mode==='rolle'? peak+4 : peak+10;
+    const slope=(yb-ya)/(x2-x1);
+    g+=`<line x1="${xi-34}" y1="${yi-slope*(-34)}" x2="${xi+34}" y2="${yi+slope*34}" stroke="${col}" stroke-width="1.6"/>`;
+    g+=`<circle cx="${xi}" cy="${yi}" r="3.6" fill="#fff" stroke="${col}" stroke-width="1.8"/>`;
+    g+=`<line x1="${xi}" y1="${yi}" x2="${xi}" y2="${base}" stroke="${R}" stroke-width="0.8" stroke-dasharray="3 3"/>`;
+    g+=`<text class="fs" x="${xi}" y="${base+13}" text-anchor="middle" fill="${col}" font-size="9">ξ</text>`;
+    g+=`<text class="ft" x="${bx+w/2}" y="${by-20}" text-anchor="middle" fill="${col}" font-size="13">${title}</text>`;
+    g+=`<text class="fs" x="${bx+w/2}" y="${by-6}" text-anchor="middle" fill="${I3}" font-size="9.5">${sub}</text>`;
+    return g;
+  };
+  return `<svg viewBox="0 0 580 260">
+    ${panel(20,'罗尔定理','f(a)=f(b) → 存在水平切线','#2E4A7D','rolle')}
+    ${panel(205,'拉格朗日','切线 ∥ 割线','#4F6B3A','lag')}
+    ${panel(390,'柯西定理','参数形式的推广','#9E2B25','cauchy')}
+    <rect x="20" y="192" width="540" height="54" rx="8" fill="${C}" stroke="${RU}"/>
+    <text class="fs" x="36" y="212" fill="${I2}" font-size="11">罗尔：f(a)=f(b) ⇒ ∃ξ, f′(ξ)=0　　拉格朗日：∃ξ, f′(ξ)=[f(b)−f(a)]/(b−a)</text>
+    <text class="fs" x="36" y="230" fill="${I2}" font-size="11">柯西：∃ξ, f′(ξ)/g′(ξ)=[f(b)−f(a)]/[g(b)−g(a)]　　三者层层推广：罗尔 ⊂ 拉格朗日 ⊂ 柯西</text>
+    <text class="fs" x="36" y="243" fill="${I3}" font-size="9.5">共同前提：闭区间连续、开区间可导。几何意义都是「必有一点的切线平行于两端连线」</text>
+    </svg><figcaption>中值定理三兄弟：罗尔是特例（割线水平），拉格朗日是一般情形，柯西是参数推广</figcaption>`;
+},
+dingjifen(){
+  // 定积分几何意义 + 微积分基本定理
+  const x0=40,base=190,W=300,sc=1;
+  const f=x=>60*Math.sin(x/95)+34;   // 曲线高度
+  let curve='M';
+  for(let px=x0;px<=x0+W;px+=3){curve+=(px===x0?'':' L')+px+' '+(base-f(px-x0)).toFixed(1);}
+  // 矩形分割
+  let rects='';
+  const n=9,dw=W/n;
+  for(let i=0;i<n;i++){
+    const px=x0+i*dw, h=f(px-x0+dw/2);
+    rects+=`<rect x="${px.toFixed(1)}" y="${(base-h).toFixed(1)}" width="${(dw-1.5).toFixed(1)}" height="${h.toFixed(1)}" fill="#6B5B95" opacity="0.16" stroke="#6B5B95" stroke-width="0.6"/>`;
+  }
+  return `<svg viewBox="0 0 580 280">
+    <line x1="${x0-14}" y1="${base}" x2="${x0+W+24}" y2="${base}" stroke="${R}" stroke-width="1"/>
+    <line x1="${x0}" y1="${base+14}" x2="${x0}" y2="60" stroke="${R}" stroke-width="1"/>
+    ${rects}
+    <path d="${curve}" fill="none" stroke="#6B5B95" stroke-width="2.2"/>
+    <line x1="${x0}" y1="${base}" x2="${x0}" y2="${(base-f(0)).toFixed(1)}" stroke="#6B5B95" stroke-width="1.4"/>
+    <line x1="${x0+W}" y1="${base}" x2="${x0+W}" y2="${(base-f(W)).toFixed(1)}" stroke="#6B5B95" stroke-width="1.4"/>
+    <text class="fs" x="${x0}" y="${base+16}" text-anchor="middle" fill="${I3}" font-size="10">a</text>
+    <text class="fs" x="${x0+W}" y="${base+16}" text-anchor="middle" fill="${I3}" font-size="10">b</text>
+    <text class="fs" x="${x0+W/2}" y="${base-30}" text-anchor="middle" fill="#6B5B95" font-size="12">曲边梯形面积</text>
+    <text class="fs" x="${x0+W/2}" y="${base+34}" text-anchor="middle" fill="${I2}" font-size="10.5">分割 → 近似 → 求和 → 取极限</text>
+    <rect x="370" y="72" width="196" height="150" rx="8" fill="${C}" stroke="#6B5B95" stroke-width="1.2"/>
+    <text class="ft" x="386" y="96" fill="#6B5B95" font-size="12">微积分基本定理</text>
+    <text class="fs" x="386" y="120" fill="${I}" font-size="11">变上限积分：</text>
+    <text class="fs" x="386" y="140" fill="${I}" font-size="11">Φ(x) = ∫ₐˣ f(t)dt</text>
+    <text class="fs" x="386" y="164" fill="#4F6B3A" font-size="11">Φ′(x) = f(x)</text>
+    <text class="fs" x="386" y="184" fill="${I3}" font-size="9.5">「面积函数求导 = 被积函数」</text>
+    <text class="fs" x="386" y="206" fill="${I}" font-size="10.5">N-L 公式：∫ₐᵇf = F(b) − F(a)</text>
+    <text class="fs" x="290" y="266" text-anchor="middle" fill="${I2}" font-size="11">定积分是「和式的极限」，微积分基本定理把它与原函数连起来——这是微分与积分互逆的桥梁</text>
+    </svg><figcaption>定积分的几何意义与微积分基本定理：面积的极限定义，再由变上限积分打通微分与积分</figcaption>`;
+},
+huanxu(){
+  // 二重积分换序：以区域 y=x 与 y=x² 之间为例
+  const ox=40,oy=210,S=140;
+  const X=t=>ox+t*S, Y=t=>oy-t*S;
+  // 区域：0≤x≤1, x²≤y≤x
+  let area='M';
+  for(let t=0;t<=1.001;t+=0.05) area+=(t===0?'':' L')+X(t).toFixed(1)+' '+Y(t).toFixed(1);
+  for(let t=1;t>=-0.001;t-=0.05) area+=' L'+X(t).toFixed(1)+' '+Y(t*t).toFixed(1);
+  area+=' Z';
+  const g1=(panelX,label,strips,txt1,txt2,col)=>{
+    let g=`<text class="ft" x="${panelX+70}" y="34" text-anchor="middle" fill="${col}" font-size="13">${label}</text>`;
+    return g;
+  };
+  // 左图：先 y 后 x（竖条）
+  let v='';
+  for(let t=0.06;t<1;t+=0.11){ v+=`<line x1="${X(t).toFixed(1)}" y1="${Y(t*t).toFixed(1)}" x2="${X(t).toFixed(1)}" y2="${Y(t).toFixed(1)}" stroke="#2E4A7D" stroke-width="1.5" opacity="0.75"/>`; }
+  // 右图：先 x 后 y（横条），偏移 300
+  const ox2=340;
+  const X2=t=>ox2+t*S;
+  let area2='M';
+  for(let t=0;t<=1.001;t+=0.05) area2+=(t===0?'':' L')+X2(t).toFixed(1)+' '+Y(t).toFixed(1);
+  for(let t=1;t>=-0.001;t-=0.05) area2+=' L'+X2(t).toFixed(1)+' '+Y(t*t).toFixed(1);
+  area2+=' Z';
+  let h='';
+  for(let u=0.06;u<1;u+=0.11){ h+=`<line x1="${X2(u).toFixed(1)}" y1="${Y(u).toFixed(1)}" x2="${X2(Math.sqrt(u)).toFixed(1)}" y2="${Y(u).toFixed(1)}" stroke="#9E2B25" stroke-width="1.5" opacity="0.75"/>`; }
+  const axes=(o)=>`<line x1="${o-8}" y1="${oy}" x2="${o+S+22}" y2="${oy}" stroke="${R}" stroke-width="0.9"/>
+    <line x1="${o}" y1="${oy+8}" x2="${o}" y2="${oy-S-22}" stroke="${R}" stroke-width="0.9"/>
+    <text class="fs" x="${o+S+16}" y="${oy+14}" fill="${I3}" font-size="9">x</text>
+    <text class="fs" x="${o-12}" y="${oy-S-14}" fill="${I3}" font-size="9">y</text>
+    <text class="fs" x="${o+S}" y="${oy+14}" text-anchor="middle" fill="${I3}" font-size="9">1</text>`;
+  return `<svg viewBox="0 0 580 300">
+    ${axes(ox)}<path d="${area}" fill="#2E4A7D" opacity="0.1"/>${v}
+    <path d="${area}" fill="none" stroke="#2E4A7D" stroke-width="1.4"/>
+    <text class="fs" x="${X(0.62)}" y="${Y(0.30)}" fill="${I3}" font-size="9">y=x²</text>
+    <text class="fs" x="${X(0.34)}" y="${Y(0.52)}" fill="${I3}" font-size="9">y=x</text>
+    <text class="ft" x="${ox+S/2}" y="26" text-anchor="middle" fill="#2E4A7D" font-size="12.5">先积 y，后积 x（竖条）</text>
+    <text class="fs" x="${ox+S/2}" y="${oy+34}" text-anchor="middle" fill="${I}" font-size="10.5">∫₀¹dx ∫_{x²}^{x} f dy</text>
+    ${axes(ox2)}<path d="${area2}" fill="#9E2B25" opacity="0.1"/>${h}
+    <path d="${area2}" fill="none" stroke="#9E2B25" stroke-width="1.4"/>
+    <text class="ft" x="${ox2+S/2}" y="26" text-anchor="middle" fill="#9E2B25" font-size="12.5">先积 x，后积 y（横条）</text>
+    <text class="fs" x="${ox2+S/2}" y="${oy+34}" text-anchor="middle" fill="${I}" font-size="10.5">∫₀¹dy ∫_{y}^{√y} f dx</text>
+    <text class="fs" x="290" y="286" text-anchor="middle" fill="${I2}" font-size="11">换序的关键：先把积分区域画出来，再决定用竖条还是横条切——上下限从图上直接读</text>
+    </svg><figcaption>二重积分换序：同一区域，竖切与横切给出两种累次积分。画图是换序唯一可靠的方法</figcaption>`;
 },
 taylor(){
   // sin x 及其 1/3/5 阶泰勒逼近
