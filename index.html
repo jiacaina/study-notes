@@ -485,7 +485,15 @@ const SUB=[
  {t:"常微分方程",sub:"从导数反推函数：先认类型，再套解法",
   map:[["一阶","可分离变量；齐次；一阶线性；伯努利；全微分方程"],["可降阶高阶","$y^{(n)}=f(x)$；缺 y 型；缺 x 型"],["线性方程","解的结构；常系数齐次（特征方程）；非齐次特解（待定系数）"],["应用","几何问题、衰变、冷却、振动模型"]],
   spine:"做题第一步永远是「认类型」，不是「找技巧」——类型错了，后面全错。",
+  fig:"weifen",
   g:[
+  {g:"入门：为什么要先判类型",r:[
+   ["微分方程没有通用解法","核心认知","不同结构的方程有不同技巧。<strong>判型判对了，方法就是现成的</strong>；判错了怎么算都不对"],
+   ["第一步：看最高阶导数","","一阶还是二阶？这决定了走哪条路"],
+   ["一阶的三种常见型","按顺序试","① 能否分离变量（$\\frac{dy}{dx}=f(x)g(y)$）② 是否齐次（$y'=f(y/x)$，令 $u=y/x$）③ 是否一阶线性（$y'+P(x)y=Q(x)$，套通解公式）"],
+   ["二阶常系数线性","先写特征方程","$r^2+pr+q=0$，按根的情况定通解形式：两根相异、重根、共轭复根各一套"],
+   ["非齐次怎么办","","通解 = 齐次通解 + 一个特解。特解形式由右端 $f(x)$ 的类型决定（待定系数法）"],
+   ["为什么要背通解形式","","这些形式是推导出来的结论，考试直接用。记住「什么根 → 什么形式」即可"]]},
   {g:"一阶方程",r:[
    ["可分离变量","","$\\dfrac{dy}{dx}=f(x)g(y)\\Rightarrow\\displaystyle\\int\\frac{dy}{g(y)}=\\int f(x)dx$"],
    ["齐次方程","$y'=f(y/x)$","令 $u=\\dfrac yx$：$x\\dfrac{du}{dx}=f(u)-u$"],
@@ -681,7 +689,15 @@ const SUB=[
  {t:"二次型",sub:"对称矩阵的几何面貌：正负惯性指数",
   map:[["矩阵表示","$f=x^{T}Ax$，A 为实对称矩阵"],["标准形","配方法或正交变换法化为平方和"],["合同","$C^{T}AC=B$；合同保持正负惯性指数"],["正定","顺序主子式全大于 0 ⟺ 特征值全为正"]],
   spine:"惯性定理：不论用什么方法化标准形，正负项的个数不变——这是二次型的不变量。",
+  fig:"zhengjiao",
   g:[
+  {g:"入门：正交矩阵的几何意义",r:[
+   ["定义","三个等价说法","$A^TA=E$　⟺　$A^{-1}=A^T$　⟺　列（行）向量组是标准正交向量组"],
+   ["标准正交是什么意思","","两两正交（内积为 0），且每个都是单位向量（长度为 1）"],
+   ["几何意义","最直观的理解","正交变换是<strong>刚体运动</strong>——只旋转或反射，不拉伸不变形"],
+   ["因此它保长度保角度","","$|Ax|=|x|$，且 $(Ax)\\cdot(Ay)=x\\cdot y$。图形过去后形状大小不变，只是转了方向"],
+   ["快速判断","必要条件","$|A|=\\pm1$。$+1$ 为纯旋转，$-1$ 含反射"],
+   ["为什么二次型要用它","关键用途","实对称矩阵必可正交对角化：存在正交阵 $Q$ 使 $Q^TAQ=\\Lambda$。因为正交变换不改变几何形状，所以化标准形后二次型的几何性质不变"]]},
   {g:"标准形与合同",r:[
    ["矩阵表示","","$f(x)=x^{T}Ax$，$A=A^{T}$；二次型的秩 = $r(A)$"],
    ["正交变换法","","令 $x=Qy$（Q 正交），得 $f=\\lambda_1y_1^{2}+\\cdots+\\lambda_ny_n^{2}$，系数即特征值"],
@@ -2032,7 +2048,7 @@ const SUB=[
  {t:"总论：配伍与禁忌",sub:"药物相互作用的规律：七情与禁忌",
   map:[["七情","单行、相须、相使、相畏、相杀、相恶、相反"],["用药禁忌","配伍禁忌（十八反、十九畏）、证候禁忌、妊娠禁忌、服药食忌"],["剂量与用法","煎法（先煎、后下、包煎、另煎、烊化、冲服）；服法"]],
   spine:"七情里，相须相使是「要用的」，相畏相杀是「可用的」，相恶相反是「要避的」——分成三类记，比逐条背清楚得多。",
-  fig:"paozhi",
+  fig:["qiqing","paozhi"],
   g:[
   {g:"入门：炮制为什么能改变药性",r:[
    ["炮制不只是加工","核心机理","辅料本身有性味，会「带着」药力走向特定方向——从而改变药性、归经甚至功效"],
@@ -2540,7 +2556,7 @@ const SUB=[
  {t:"其他辨证方法",sub:"外感病的专用辨证体系：了解适用范围即可",
   map:[["六经辨证","《伤寒论》：太阳、阳明、少阳、太阴、少阴、厥阴——用于外感风寒"],["卫气营血辨证","叶天士：卫分、气分、营分、血分——用于温热病，辨浅深层次"],["三焦辨证","吴鞠通：上焦、中焦、下焦——用于温病，辨病位与传变"],["经络辨证","按十二经脉与奇经八脉的循行及病候辨证"]],
   spine:"三套外感辨证体系不是竞争关系，而是分工：六经用于伤寒（寒邪），卫气营血与三焦用于温病（热邪），各自描述了不同邪气的传变规律。",
-  fig:"weiqi",
+  fig:["weiqi","sanjiao"],
   g:[
   {g:"六经辨证（伤寒）",r:[
    ["太阳病","表证","恶寒发热、头项强痛、脉浮。分中风（有汗、脉浮缓）与伤寒（无汗、脉浮紧）"],
@@ -4762,6 +4778,108 @@ sheliucheng(){
     ${node(190,276,200,'③ 两半合参 → 得出证型','舌淡胖+苔白腻＝脾肾阳虚水湿内停','#4F6B3A','#F1F5EC')}
     <text class="fs" x="290" y="334" text-anchor="middle" fill="${I3}" font-size="9.5">注意排除染苔（牛奶·咖啡·药物）；本图为教材知识梳理，不构成诊断依据</text>
     </svg><figcaption>看舌的标准动作：先分舌质与舌苔，各自读出结论，再合起来得证型——分开看是不出错的关键</figcaption>`;
+},
+weifen(){
+  // 微分方程为什么分类型解
+  const node=(x,y,w,t,s,col,fill)=>`<rect x="${x}" y="${y}" width="${w}" height="46" rx="7" fill="${fill||C}" stroke="${col}" stroke-width="1.2"/>
+    <text class="ft" x="${x+w/2}" y="${y+20}" text-anchor="middle" fill="${col}" font-size="11.5">${t}</text>
+    <text class="fs" x="${x+w/2}" y="${y+36}" text-anchor="middle" fill="${I3}" font-size="9">${s}</text>`;
+  const ln=(x1,y1,x2,y2)=>`<path d="M${x1} ${y1} V${(y1+y2)/2} H${x2} V${y2}" fill="none" stroke="${R}" stroke-width="0.9" marker-end="url(#ah)"/>`;
+  return `<svg viewBox="0 0 580 340">${arrowDefs}
+    <text class="fs" x="290" y="20" text-anchor="middle" fill="${I2}" font-size="11">微分方程没有通用解法——先判类型，再套对应方法。判型是解题第一步</text>
+    ${node(220,32,140,'看最高阶导数','一阶？二阶？','#6B5B95','#F1EFF5')}
+    ${ln(290,78,140,104)}${ln(290,78,440,104)}
+    ${node(40,104,200,'一阶','看能否分离变量','#4F6B3A')}
+    ${node(340,104,200,'二阶（常系数线性）','看特征方程的根','#B4472C')}
+    ${ln(140,150,80,176)}${ln(140,150,200,176)}
+    ${node(20,176,120,'可分离变量','两边分别积分','#4F6B3A')}
+    ${node(150,176,140,'齐次 / 一阶线性','换元 / 用通解公式','#4F6B3A')}
+    ${ln(440,150,380,176)}${ln(440,150,500,176)}
+    ${node(320,176,110,'两根相异','C₁e^{r₁x}+C₂e^{r₂x}','#B4472C')}
+    ${node(440,176,120,'重根 / 复根','含 x 因子 / 三角函数','#B4472C')}
+    <rect x="20" y="240" width="540" height="94" rx="8" fill="${C}" stroke="${RU}"/>
+    <text class="ft" x="38" y="262" fill="${A}" font-size="12">判型口诀</text>
+    <text class="fs" x="38" y="284" fill="${I}" font-size="10.5">一阶：能分离 → 分离变量　｜　y′+P(x)y=Q(x) → 一阶线性（用通解公式）　｜　y′=f(y/x) → 齐次（令 u=y/x）</text>
+    <text class="fs" x="38" y="304" fill="${I}" font-size="10.5">二阶常系数：先写特征方程 r²+pr+q=0，按根的情况套通解形式</text>
+    <text class="fs" x="38" y="324" fill="#9E2B25" font-size="10.5">非齐次方程 = 齐次通解 + 特解。特解形式由右端 f(x) 的类型决定（待定系数法）</text>
+    </svg><figcaption>微分方程为什么分类型：不同结构的方程有不同的求解技巧。判型判对了，方法就是现成的</figcaption>`;
+},
+zhengjiao(){
+  // 正交矩阵的几何意义：保长度保角度
+  const ox=110,oy=150,S=1;
+  let g='';
+  g+=`<line x1="${ox-70}" y1="${oy}" x2="${ox+80}" y2="${oy}" stroke="${R}" stroke-width="0.8"/>`;
+  g+=`<line x1="${ox}" y1="${oy+70}" x2="${ox}" y2="${oy-80}" stroke="${R}" stroke-width="0.8"/>`;
+  // 原图形（正方形）
+  g+=`<rect x="${ox}" y="${oy-52}" width="52" height="52" fill="#2E4A7D" opacity="0.16" stroke="#2E4A7D" stroke-width="1.6"/>`;
+  g+=`<text class="fs" x="${ox+26}" y="${oy-58}" text-anchor="middle" fill="#2E4A7D" font-size="9.5">原图形</text>`;
+  // 旋转后（正交变换）
+  const th=-38*Math.PI/180, c=Math.cos(th), s2=Math.sin(th);
+  const pts=[[0,0],[52,0],[52,-52],[0,-52]].map(p=>[ox+p[0]*c-p[1]*s2, oy+p[0]*s2+p[1]*c]);
+  g+=`<path d="M${pts.map(p=>p[0].toFixed(1)+' '+p[1].toFixed(1)).join(' L')} Z" fill="#B4472C" opacity="0.16" stroke="#B4472C" stroke-width="1.6"/>`;
+  g+=`<text class="fs" x="${(pts[2][0]).toFixed(1)}" y="${(pts[2][1]-8).toFixed(1)}" text-anchor="middle" fill="#B4472C" font-size="9.5">正交变换后</text>`;
+  g+=`<text class="fs" x="${ox}" y="${oy+88}" text-anchor="middle" fill="${I3}" font-size="9.5">形状大小都不变，只是转了个方向</text>`;
+  return `<svg viewBox="0 0 580 300">${g}
+    <rect x="250" y="26" width="312" height="128" rx="8" fill="${C}" stroke="#4F6B3A" stroke-width="1.3"/>
+    <text class="ft" x="268" y="48" fill="#4F6B3A" font-size="12.5">定义与等价条件</text>
+    <text class="fs" x="268" y="70" fill="${I}" font-size="11">AᵀA = E　⟺　A⁻¹ = Aᵀ</text>
+    <text class="fs" x="268" y="90" fill="${I2}" font-size="10.5">⟺ A 的列（行）向量组是标准正交向量组</text>
+    <text class="fs" x="268" y="110" fill="${I2}" font-size="10.5">即：两两正交，且每个都是单位向量</text>
+    <text class="fs" x="268" y="132" fill="#9E2B25" font-size="10.5">|A| = ±1（+1 为旋转，−1 含反射）</text>
+    <text class="fs" x="268" y="148" fill="${I3}" font-size="9.5">这是判断正交矩阵最快的必要条件</text>
+    <rect x="250" y="166" width="312" height="96" rx="8" fill="${C}" stroke="#6B5B95" stroke-width="1.3"/>
+    <text class="ft" x="268" y="188" fill="#6B5B95" font-size="12.5">几何意义：保长度、保角度</text>
+    <text class="fs" x="268" y="210" fill="${I}" font-size="10.5">|Ax| = |x|　（不改变向量长度）</text>
+    <text class="fs" x="268" y="230" fill="${I}" font-size="10.5">(Ax)·(Ay) = x·y　（不改变夹角）</text>
+    <text class="fs" x="268" y="252" fill="${I2}" font-size="10.5">所以正交变换 = 刚体运动（旋转 / 反射）</text>
+    <text class="fs" x="290" y="288" text-anchor="middle" fill="${I2}" font-size="11">实对称矩阵必可正交对角化：存在正交阵 Q 使 QᵀAQ = Λ——这是二次型化标准形的理论依据</text>
+    </svg><figcaption>正交矩阵的几何意义：它代表刚体运动，只旋转或反射，不拉伸不变形。故保长度、保角度</figcaption>`;
+},
+sanjiao(){
+  // 三焦辨证
+  const zone=(y,h,t,bu,zang,z1,z2,col)=>`<rect x="24" y="${y}" width="248" height="${h}" rx="8" fill="${col}" opacity="0.12"/>
+    <rect x="24" y="${y}" width="248" height="${h}" rx="8" fill="none" stroke="${col}" stroke-width="1.4"/>
+    <text class="ft" x="44" y="${y+26}" fill="${col}" font-size="14">${t}</text>
+    <text class="fs" x="100" y="${y+25}" fill="${I3}" font-size="9.5">${bu}</text>
+    <text class="fs" x="44" y="${y+48}" fill="${I2}" font-size="10.5">${zang}</text>
+    <rect x="288" y="${y}" width="268" height="${h}" rx="8" fill="${C}" stroke="${col}" stroke-width="1.2"/>
+    <text class="fs" x="304" y="${y+26}" fill="${col}" font-size="10.5">${z1}</text>
+    <text class="fs" x="304" y="${y+48}" fill="${I2}" font-size="10">${z2}</text>`;
+  return `<svg viewBox="0 0 580 300">
+    <text class="fs" x="290" y="20" text-anchor="middle" fill="${I2}" font-size="11">温病由上而下的三个阶段——吴鞠通《温病条辨》</text>
+    ${zone(32,74,'上焦','心肺·病之初起','手太阴肺 · 手厥阴心包','肺卫失宣：发热微恶寒·咳嗽','热陷心包：神昏谵语·舌謇肢厥','#B4472C')}
+    ${zone(116,74,'中焦','脾胃·病之极期','足阳明胃 · 足太阴脾','阳明燥热：高热·大汗·便秘','太阴湿热：身热不扬·苔黄腻','#8A6212')}
+    ${zone(200,74,'下焦','肝肾·病之末期','足少阴肾 · 足厥阴肝','肝肾阴伤：低热·手足心热','虚风内动：手指蠕动·舌绛少苔','#2E4A7D')}
+    <text class="fs" x="290" y="292" text-anchor="middle" fill="${I3}" font-size="10">传变：上焦 → 中焦 → 下焦，由浅入深、由轻转重。与卫气营血辨证常合参使用</text>
+    </svg><figcaption>三焦辨证：温病自上而下的三个阶段。上焦心肺、中焦脾胃、下焦肝肾，标示病位深浅与病程阶段</figcaption>`;
+},
+qiqing(){
+  // 中药七情配伍
+  const rows=[
+    ['单行','单用一味即效','独参汤大补元气','用','#4F6B3A'],
+    ['相须','性能功效相似者合用，增效','石膏配知母　大黄配芒硝','用','#4F6B3A'],
+    ['相使','一主一辅，辅药提高主药疗效','黄芪配茯苓（茯苓助黄芪利水）','用','#4F6B3A'],
+    ['相畏','一药的毒烈之性被另一药减轻','生半夏畏生姜','可用','#8A6212'],
+    ['相杀','一药能减轻另一药的毒性','生姜杀生半夏之毒','可用','#8A6212'],
+    ['相恶','一药使另一药功效降低','人参恶莱菔子','避免','#B4472C'],
+    ['相反','合用产生或增强毒性','十八反 · 十九畏','禁用','#9E2B25']
+  ];
+  let g='';
+  rows.forEach((r,i)=>{
+    const y=52+i*36;
+    g+=`<rect x="20" y="${y}" width="540" height="30" rx="6" fill="${C}" stroke="${r[4]}" stroke-width="1.1"/>`;
+    g+=`<text class="ft" x="38" y="${y+20}" fill="${r[4]}" font-size="12">${r[0]}</text>`;
+    g+=`<text class="fs" x="86" y="${y+19}" fill="${I2}" font-size="10.5">${r[1]}</text>`;
+    g+=`<text class="fs" x="330" y="${y+19}" fill="${I3}" font-size="10">${r[2]}</text>`;
+    g+=`<rect x="500" y="${y+6}" width="46" height="18" rx="9" fill="${r[4]}"/>`;
+    g+=`<text class="fs" x="523" y="${y+19}" text-anchor="middle" fill="#fff" font-size="9.5">${r[3]}</text>`;
+  });
+  return `<svg viewBox="0 0 580 330">
+    <text class="fs" x="290" y="22" text-anchor="middle" fill="${I2}" font-size="11">七情分三类记：增效的要用 · 减毒的可用 · 减效增毒的要避</text>
+    <text class="fs" x="290" y="40" text-anchor="middle" fill="${I3}" font-size="9.5">相畏与相杀是同一配伍的两种说法，只是叙述角度不同</text>
+    ${g}
+    <text class="fs" x="290" y="322" text-anchor="middle" fill="#9E2B25" font-size="10">注意：七情中的「相畏」与「十九畏」的畏含义不同——前者指减毒配伍，后者指配伍禁忌</text>
+    </svg><figcaption>七情配伍：单行·相须·相使（增效）· 相畏·相杀（减毒）· 相恶·相反（须避）。三类分开记最省力</figcaption>`;
 },
 xiangliang(){
   // 向量数量积与向量积的几何意义
